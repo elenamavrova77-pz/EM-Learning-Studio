@@ -7,7 +7,7 @@
     "description": "Приключенска игра за мерни единици за лице с нива, отбори и точки.",
     "icon": "📐",
     "theme": "default",
-    "url": "games/mathematics/area.html",
+    "url": "/games/mathematics/area.html",
     "tags": [
       "мерни единици",
       "лице",
@@ -31,7 +31,7 @@
     "description": "Задачи от движение в спортен контекст – плуване, колоездене и бягане.",
     "icon": "🚴",
     "theme": "teal",
-    "url": "games/mathematics/movement.html",
+    "url": "/games/mathematics/movement.html",
     "tags": [
       "скорост",
       "път",
@@ -54,7 +54,7 @@
     "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.",
     "icon": "π",
     "theme": "purple",
-    "url": "games/mathematics/pi.html",
+    "url": "/games/mathematics/pi.html",
     "tags": [
       "числото π",
       "викторина",
@@ -77,7 +77,7 @@
     "description": "Математика и български език: морфемен анализ чрез геометрични фигури.",
     "icon": "🔤",
     "theme": "orange",
-    "url": "games/interdisciplinary/morphemes.html",
+    "url": "/games/interdisciplinary/morphemes.html",
     "tags": [
       "математика + БЕЛ",
       "морфеми",
