@@ -2,7 +2,7 @@
   "id": "M6-001",
   "title": "Задачи от движение",
   "icon": "🚴",
-  "cover": "images/cover.webp",
+  "cover": "images/cover.png",
   "description": "Интерактивен урок със спортен контекст за връзката между път, скорост и време. Комплектът съчетава презентации, игра, методически материали, инфографика, аудио и видео.",
   "duration": "40 минути",
   "lessonType": "Урок за упражнение",
@@ -32,60 +32,68 @@
   ],
   "presentations": [
     {
-      "title": "Презентация 1",
-      "description": "Преименувай файла и промени пътя в pack.json.",
-      "file": "",
+      "title": "Основна презентация",
+      "description": "Презентация към урока",
+      "file": "presentations/presentation1.pdf",
       "icon": "📊"
     },
     {
-      "title": "Презентация 2",
-      "description": "Преименувай файла и промени пътя в pack.json.",
-      "file": "",
+      "title": "Допълнителна презентация",
+      "description": "Втора презентация към урока",
+      "file": "presentations/presentation2.pdf",
       "icon": "📊"
     }
   ],
   "worksheets": [],
   "images": [
     {
+      "title": "Корица на урока",
+      "file": "images/cover.png"
+    },
+    {
       "title": "Инфографика",
-      "description": "Добави името на PNG/JPG/WEBP файла.",
-      "file": ""
+      "file": "images/infographic.png"
     }
   ],
   "videos": [
     {
       "title": "Видео към урока",
-      "description": "Добави името на MP4 файла.",
-      "file": ""
+      "description": "Видео материал за задачите от движение",
+      "file": "video/video.mp4"
     }
   ],
   "audio": [
     {
-      "title": "Озвучаване на урока",
-      "description": "Добави името на MP3 файла.",
-      "file": ""
+      "title": "Скорост – аудио 1",
+      "description": "Аудио към урока",
+      "file": "audio/lesson-audio1.mp3"
+    },
+    {
+      "title": "Скорост – аудио 2",
+      "description": "Втори аудио вариант",
+      "file": "audio/lesson-audio2.mp3"
     }
   ],
   "methodology": [
     {
-      "title": "Методическа разработка",
-      "description": "Добави името на PDF файла.",
-      "file": "",
+      "title": "План на урока",
+      "description": "Пълна методическа разработка",
+      "file": "methodology/methodology.pdf",
       "icon": "📘"
     }
   ],
   "teacherNotes": [
     {
-      "title": "Бележки за учителя",
-      "description": "Добави името на PDF файла.",
-      "file": "",
-      "icon": "👩‍🏫"
+      "title": "Бележки на учителя",
+      "description": "Кратко резюме и насоки за провеждане",
+      "file": "teacher-notes/teacher-notes.pdf",
+      "icon": "📄"
     }
   ],
   "assessment": [],
   "download": {
     "title": "Изтегли целия учебен комплект",
-    "description": "ZIP файл с всички материали.",
+    "description": "ZIP файл с всички материали",
     "file": "",
     "icon": "⬇️"
   },

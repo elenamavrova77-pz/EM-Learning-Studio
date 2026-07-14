@@ -3,37 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Учебен комплект | EM Learning Studio</title>
-<link rel="stylesheet" href="/css/style.css">
+<title>Пренасочване | EM Learning Studio</title>
+<script>
+  const id = new URLSearchParams(location.search).get('id');
+  location.replace('/pages/lesson.html' + (id ? '?id=' + encodeURIComponent(id) : ''));
+</script>
 </head>
-<body>
-<nav class="site-nav">
-  <div class="container nav-inner">
-    <a class="brand" href="/"><span class="brand-mark">EM</span><span>EM Learning Studio</span></a>
-    <div class="nav-links">
-      <a href="/pages/mathematics.html">Математика</a>
-      <a href="/pages/kmit.html">КМИТ</a>
-      <a href="/pages/it.html">ИТ</a>
-      <a href="/pages/bdp.html">БДП</a>
-      <a href="/pages/interdisciplinary.html">Интердисциплинарни</a>
-      <a href="/pages/projects.html">Проекти</a>
-    </div>
-    <a class="primary-btn nav-button" href="/pages/library.html">🎮 Библиотека</a>
-  </div>
-</nav>
-
-<main id="packRoot">
-  <section class="pack-loading">
-    <div class="container"><p>Зареждане на учебния комплект...</p></div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <div><strong>EM Learning Studio</strong><br><small>Учи. Играй. Побеждавай.</small></div>
-    <div><small>Автор: Елена Маврова-Ненкова · © 2026</small></div>
-  </div>
-</footer>
-<script src="/js/platform.js"></script>
-</body>
+<body><p>Пренасочване към учебния комплект...</p></body>
 </html>
