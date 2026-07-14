@@ -1,17 +1,46 @@
-<!DOCTYPE html><html lang="bg"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Библиотека с игри | EM Learning Studio</title><link rel="stylesheet" href="/css/style.css"></head><body>
+<!DOCTYPE html><html lang="bg"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Библиотека | EM Learning Studio</title>
+<link rel="stylesheet" href="/css/style.css"></head><body>
+
 <nav><div class="container nav">
 <a class="brand" href="/"><span class="mark">EM</span><span>EM Learning Studio</span></a>
 <div class="links">
-<a href="/">Начало</a><a href="/pages/mathematics.html">Математика</a><a href="/pages/it.html">ИТ</a><a href="/pages/bdp.html">БДП</a><a href="/pages/interdisciplinary.html">Интердисциплинарни</a><a href="/pages/projects.html">Проекти</a><a href="/pages/about.html">За автора</a>
+<a href="/pages/mathematics.html">Математика</a>
+<a href="/pages/kmit.html">КМИТ</a>
+<a href="/pages/it.html">ИТ</a>
+<a href="/pages/bdp.html">БДП</a>
+<a href="/pages/interdisciplinary.html">Интердисциплинарни</a>
+<a href="/pages/projects.html">Проекти</a>
 </div>
-<a class="cta" href="/pages/library.html">🎮 Играй</a>
+<a class="cta" href="/pages/library.html">🎮 Библиотека</a>
 </div></nav>
+<header class="page-hero"><div class="container"><span class="badge">EM Learning Studio v5</span><h1>Библиотека</h1><p>Търсене и филтриране по предмет, клас и тема.</p></div></header>
 
-<header class="page-hero"><div class="container"><span class="badge">EM Learning Studio</span><h1>Библиотека с игри</h1><p>Всички публикувани интерактивни ресурси на едно място.</p></div></header>
+<section><div class="container">
+<div class="search"><input id="search" type="search" placeholder="Търси по заглавие, тема, клас или ключова дума..."></div>
+<div class="filters">
+<button class="filter active" data-filter="all">Всички</button>
+<button class="filter" data-filter="mathematics">Математика</button>
+<button class="filter" data-filter="kmit">КМИТ</button>
+<button class="filter" data-filter="it">ИТ</button>
+<button class="filter" data-filter="bdp">БДП</button>
+<button class="filter" data-filter="interdisciplinary">Интердисциплинарни</button>
+</div>
+<div class="filters">
+<button class="filter grade-filter active" data-grade="all">Всички класове</button>
+<button class="filter grade-filter" data-grade="5">5. клас</button>
+<button class="filter grade-filter" data-grade="6">6. клас</button>
+<button class="filter grade-filter" data-grade="7">7. клас</button>
+<button class="filter grade-filter" data-grade="8">8. клас</button>
+<button class="filter grade-filter" data-grade="9">9. клас</button>
+<button class="filter grade-filter" data-grade="10">10. клас</button>
+</div>
+<div id="grid" class="games"></div>
+<div id="empty" class="empty hidden"><h3>Няма намерени ресурси.</h3></div>
+</div></section>
 
-<section><div class="container"><div class="search"><input id="search" type="search" placeholder="Търси по тема, клас или ключова дума..."></div><div class="filters"><button class="filter active" data-filter="all">Всички</button><button class="filter" data-filter="mathematics">Математика</button><button class="filter" data-filter="it">ИТ</button><button class="filter" data-filter="bdp">БДП</button><button class="filter" data-filter="interdisciplinary">Интердисциплинарни</button></div><div id="grid" class="games"></div><div id="empty" class="hidden empty"><h3>Все още няма ресурс в тази категория.</h3></div></div></section>
-
-
-<footer><div class="container foot"><div><strong>EM Learning Studio</strong><br><span class="small">Учи. Играй. Побеждавай.</span></div><div class="small">Автор: Елена Маврова-Ненкова</div></div></footer>
-
-<script src="/js/app.js"></script></body></html>
+<footer><div class="container foot">
+<div><strong>EM Learning Studio</strong><br><span class="small">Учи. Играй. Побеждавай.</span></div>
+<div class="small">Автор: Елена Маврова-Ненкова</div>
+</div></footer><script src="/js/app.js"></script></body></html>

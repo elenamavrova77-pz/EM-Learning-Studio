@@ -21,7 +21,10 @@
       "Решаване на практически задачи",
       "Работа в екип"
     ],
-    "materials": []
+    "materials": [],
+    "gradeNumber": "5",
+    "section": "Мерни единици",
+    "packUrl": "/pages/packs/area.html"
   },
   {
     "title": "Спортна мисия: Движение",
@@ -44,7 +47,10 @@
       "Прилагане на формулите за път, скорост и време",
       "Решаване на задачи в спортен контекст"
     ],
-    "materials": []
+    "materials": [],
+    "gradeNumber": "6",
+    "section": "Задачи от движение",
+    "packUrl": "/pages/packs/movement.html"
   },
   {
     "title": "Пътят към Пи",
@@ -67,7 +73,10 @@
       "Разпознаване на основни факти за π",
       "Работа с математическа информация"
     ],
-    "materials": []
+    "materials": [],
+    "gradeNumber": "5",
+    "section": "Числото π",
+    "packUrl": "/pages/packs/pi.html"
   },
   {
     "title": "Познай морфемата",
@@ -91,6 +100,9 @@
       "Морфемен анализ",
       "Екипна работа"
     ],
-    "materials": []
+    "materials": [],
+    "gradeNumber": "5",
+    "section": "Математика + БЕЛ",
+    "packUrl": "/pages/packs/morphemes.html"
   }
 ]

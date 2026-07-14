@@ -55,3 +55,23 @@ footer{margin-top:40px;background:var(--navy);color:#dceefe;padding:34px 0}.foot
 @media(max-width:1000px){.subjects{grid-template-columns:repeat(2,1fr)}.resource-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:900px){.hero-grid,.about,.latest{grid-template-columns:1fr}.feature-grid,.games{grid-template-columns:1fr}.links{display:none}.stats{grid-template-columns:1fr}}
 @media(max-width:620px){.subjects,.resource-grid{grid-template-columns:1fr}}
+
+/* v5 additions */
+.grade-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.grade-card{background:#fff;border-radius:26px;padding:28px;box-shadow:0 14px 36px rgba(20,70,110,.09);border:1px solid rgba(20,70,110,.08);transition:.22s ease}
+.grade-card:hover{transform:translateY(-6px)}
+.grade-card .grade-number{font-size:48px;font-weight:900;color:var(--blue)}
+.grade-card h3{font-size:26px;margin:8px 0;color:var(--navy)}
+.grade-card p{color:var(--muted);line-height:1.55}
+.pack-hero{padding:52px 0 26px}
+.pack-layout{display:grid;grid-template-columns:1.05fr .95fr;gap:28px;align-items:start}
+.pack-panel{background:#fff;border-radius:28px;padding:28px;box-shadow:0 16px 42px rgba(20,70,110,.1)}
+.pack-panel h2{color:var(--navy)}
+.pack-meta{display:flex;gap:9px;flex-wrap:wrap;margin:15px 0}
+.pack-list{display:grid;gap:12px;margin-top:18px}
+.pack-item{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 18px;background:#f4f9fd;border-radius:16px}
+.pack-item strong{color:var(--navy)}
+.pack-item .unavailable{opacity:.55}
+.breadcrumbs{font-size:14px;color:var(--muted);margin-bottom:16px}
+.resource-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+@media(max-width:900px){.grade-grid,.pack-layout{grid-template-columns:1fr}}
