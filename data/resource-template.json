@@ -1,0 +1,41 @@
+{
+  "id": "TEMPLATE-ID",
+  "title": "Заглавие на учебния комплект",
+  "subject": "Математика",
+  "subjectCode": "mathematics",
+  "grade": 6,
+  "type": "Учебен комплект",
+  "duration": "40 минути",
+  "difficulty": "Средно",
+  "method": "Игрово-базирано обучение",
+  "description": "Кратко описание на учебния комплект.",
+  "objectives": [
+    "Първа учебна цел.",
+    "Втора учебна цел.",
+    "Трета учебна цел."
+  ],
+  "competencies": [
+    "Компетентност 1",
+    "Компетентност 2"
+  ],
+  "tags": [
+    "ключова дума 1",
+    "ключова дума 2"
+  ],
+  "icon": "📚",
+  "theme": "default",
+  "cover": "/resources/TEMPLATE-ID/cover.webp",
+  "game": "",
+  "presentation": "/resources/TEMPLATE-ID/presentation.pdf",
+  "worksheet": "/resources/TEMPLATE-ID/worksheet.pdf",
+  "methodology": "/resources/TEMPLATE-ID/methodology.pdf",
+  "assessment": "/resources/TEMPLATE-ID/assessment.pdf",
+  "video": "",
+  "audio": "",
+  "teacherNotes": "",
+  "download": "/resources/TEMPLATE-ID/pack.zip",
+  "published": false,
+  "featured": false,
+  "created": "2026-07-14",
+  "updated": "2026-07-14"
+}
