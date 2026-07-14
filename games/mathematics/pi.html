@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Пътят към Пи — отборна игра</title>
+<style>
+:root {
+  --bg:#08111f;
+  --panel: rgba(255,255,255,0.09);
+  --panel-border: rgba(255,255,255,0.14);
+  --text:#eef6ff;
+  --muted:#b8c9e6;
+  --gold:#ffd166;
+  --blue:#8ecae6;
+  --green:#6ee7b7;
+  --red:#ff7b7b;
+}
+* { box-sizing:border-box; }
+body {
+  margin:0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(255,209,102,.15), transparent 18%),
+    radial-gradient(circle at 85% 20%, rgba(142,202,230,.12), transparent 18%),
+    radial-gradient(circle at 75% 85%, rgba(110,231,183,.10), transparent 16%),
+    linear-gradient(180deg, #0d1b2f, var(--bg));
+  color:var(--text);
+  min-height:100vh;
+  overflow:hidden;
+}
+.topbar {
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:14px;
+  padding:16px 18px 10px;
+}
+.brand {
+  display:flex;
+  align-items:center;
+  gap:14px;
+}
+.pi-badge {
+  width:58px; height:58px; border-radius:18px;
+  display:grid; place-items:center;
+  font-size:32px; font-weight:800;
+  background:linear-gradient(135deg, rgba(255,209,102,.28), rgba(255,255,255,.08));
+  box-shadow: 0 16px 40px rgba(0,0,0,.28);
+}
+.brand h1 { margin:0; font-size:clamp(24px,2.5vw,40px); }
+.brand p { margin:4px 0 0; color:var(--muted); }
+
+.controls {
+  display:flex; flex-wrap:wrap; gap:10px; align-items:center;
+}
+button, select {
+  border:none;
+  border-radius:14px;
+  background:var(--panel);
+  color:var(--text);
+  padding:10px 14px;
+  font-size:15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,.25);
+}
+button { cursor:pointer; }
+button.primary { background:linear-gradient(135deg, rgba(255,209,102,.28), rgba(255,255,255,.08)); }
+button.good { background:linear-gradient(135deg, rgba(110,231,183,.24), rgba(255,255,255,.08)); }
+button.warn { background:linear-gradient(135deg, rgba(255,123,123,.22), rgba(255,255,255,.08)); }
+
+.layout {
+  display:grid;
+  grid-template-columns: 320px 1fr;
+  gap:16px;
+  padding: 0 16px 16px;
+  height: calc(100vh - 92px);
+}
+
+.panel {
+  background:var(--panel);
+  border:1px solid var(--panel-border);
+  border-radius:24px;
+  box-shadow: 0 18px 48px rgba(0,0,0,.28);
+  backdrop-filter: blur(10px);
+}
+
+.sidebar {
+  padding:14px;
+  display:grid;
+  gap:14px;
+  align-content:start;
+}
+.section {
+  background:rgba(255,255,255,.05);
+  border-radius:18px;
+  padding:14px;
+}
+.section h3 {
+  margin:0 0 10px;
+  color:#fff3c8;
+  font-size:16px;
+}
+.timer {
+  font-size:42px;
+  font-weight:800;
+  letter-spacing:1px;
+}
+.progress {
+  height:10px;
+  width:100%;
+  border-radius:999px;
+  overflow:hidden;
+  background:rgba(255,255,255,.1);
+  margin-top:10px;
+}
+.progress > div {
+  height:100%;
+  width:100%;
+  background:linear-gradient(90deg, var(--gold), var(--blue));
+  transition:width .25s linear;
+}
+.small {
+  color:var(--muted);
+  line-height:1.45;
+  font-size:14px;
+}
+.teams {
+  display:grid;
+  gap:10px;
+}
+.team-card {
+  border-radius:16px;
+  background:rgba(255,255,255,.06);
+  padding:12px 14px;
+  display:grid;
+  grid-template-columns: 1fr auto;
+  gap:10px;
+  align-items:center;
+  border:1px solid transparent;
+}
+.team-card.active {
+  border-color: rgba(255,209,102,.8);
+  box-shadow: inset 0 0 0 2px rgba(255,209,102,.16);
+}
+.team-name {
+  display:flex; align-items:center; gap:10px;
+  font-weight:700;
+}
+.dot { width:14px; height:14px; border-radius:999px; }
+.team-score { font-size:26px; font-weight:800; }
+
+.board-wrap { position:relative; overflow:hidden; }
+#board { width:100%; height:100%; display:block; }
+.hud {
+  position:absolute; left:18px; right:18px; bottom:18px;
+  display:flex; gap:10px; justify-content:space-between; flex-wrap:wrap;
+}
+.hud-box {
+  background:rgba(7,17,31,.72);
+  border:1px solid rgba(255,255,255,.12);
+  padding:10px 14px;
+  border-radius:16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.22);
+}
+
+.modal {
+  position:fixed; inset:0;
+  background:rgba(0,0,0,.7);
+  display:none; align-items:center; justify-content:center;
+  z-index:20;
+  padding:16px;
+}
+.modal.show { display:flex; }
+.card {
+  width:min(920px, 95vw);
+  background:linear-gradient(180deg, rgba(10,21,40,.98), rgba(5,11,22,.98));
+  border:1px solid rgba(255,255,255,.12);
+  border-radius:28px;
+  padding:22px;
+  box-shadow: 0 24px 60px rgba(0,0,0,.35);
+}
+.card-head {
+  display:flex; justify-content:space-between; align-items:center; gap:10px;
+}
+.badge {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  border-radius:999px;
+  padding:8px 12px;
+  background:rgba(255,255,255,.08);
+  color:#fff3c8;
+  font-weight:700;
+}
+.question {
+  font-size: clamp(22px, 2vw, 30px);
+  line-height:1.3;
+  margin:16px 0;
+}
+.options {
+  display:grid; gap:12px;
+}
+.option {
+  width:100%;
+  text-align:left;
+  padding:14px 16px;
+  border-radius:16px;
+  font-size:18px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+}
+.option.correct { background:rgba(110,231,183,.18); border-color:rgba(110,231,183,.7); }
+.option.wrong { background:rgba(255,123,123,.18); border-color:rgba(255,123,123,.7); }
+.result {
+  margin-top:16px;
+  padding:14px 16px;
+  border-radius:16px;
+  display:none;
+  line-height:1.45;
+}
+.result.show { display:block; }
+.result.good { background:rgba(110,231,183,.14); border:1px solid rgba(110,231,183,.45); }
+.result.bad { background:rgba(255,123,123,.12); border:1px solid rgba(255,123,123,.4); }
+.footer-actions {
+  margin-top:16px;
+  display:flex;
+  justify-content:space-between;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.toast {
+  position:fixed;
+  top:18px; left:50%; transform:translateX(-50%);
+  background:rgba(8,17,31,.92);
+  border:1px solid rgba(255,255,255,.12);
+  color:#fff;
+  border-radius:14px;
+  padding:12px 16px;
+  z-index:30;
+  display:none;
+}
+.toast.show { display:block; }
+
+#confetti {
+  position:absolute; inset:0; pointer-events:none; overflow:hidden;
+}
+#confetti span {
+  position:absolute;
+  width:10px; height:20px;
+  top:-20px;
+  opacity:.95;
+  animation: fall linear forwards;
+}
+@keyframes fall {
+  to { transform:translateY(110vh) rotate(760deg); }
+}
+
+@media (max-width: 1100px) {
+  .layout { grid-template-columns: 1fr; height:auto; }
+  .board-wrap { min-height:70vh; }
+}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<div class="topbar">
+  <div class="brand">
+    <div class="pi-badge">π</div>
+    <div>
+      <h1>Пътят към Пи</h1>
+      <p>Истинска математическа спирала, отбори, точки, звук, анимации и финал в центъра</p>
+    </div>
+  </div>
+  <div class="controls">
+    <label>Отбори:
+      <select id="teamCount">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+      </select>
+    </label>
+    <button class="primary" id="applyTeams">Обнови отборите</button>
+    <button class="good" id="startBtn">Старт</button>
+    <button id="pauseBtn">Пауза</button>
+    <button class="warn" id="resetBtn">Нова игра</button>
+  </div>
+</div>
+
+<div class="layout">
+  <aside class="panel sidebar">
+    <div class="section">
+      <h3>⏱ Таймер</h3>
+      <div class="timer" id="timer">15:00</div>
+      <div class="progress"><div id="timerBar"></div></div>
+      <div class="small" style="margin-top:10px;">Всяка вярна задача носи 10 точки. При грешен отговор редът преминава към следващия отбор.</div>
+    </div>
+
+    <div class="section">
+      <h3>📊 Табло с класиране</h3>
+      <div class="teams" id="teams"></div>
+    </div>
+
+    <div class="section">
+      <h3>🎮 Правила</h3>
+      <div class="small">
+        Тръгнете отвън навътре по спиралата на π.<br>
+        Активната станция свети в златно.<br>
+        Решете задачата и отключете следващата цифра.<br>
+        В центъра ви очаква числото <strong>3</strong>.
+      </div>
+    </div>
+  </aside>
+
+  <section class="panel board-wrap">
+    <svg id="board" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid meet"></svg>
+    <div class="hud">
+      <div class="hud-box"><strong>Текуща станция:</strong> <span id="stationLbl">1</span> / 10</div>
+      <div class="hud-box"><strong>Ред е на:</strong> <span id="teamLbl">Отбор 1</span></div>
+      <div class="hud-box"><strong>Цел:</strong> <span id="goalLbl">Започнете от външната точка.</span></div>
+    </div>
+    
+<div id="piProgressBar" style="
+position:absolute;
+top:10px;
+left:50%;
+transform:translateX(-50%);
+background:rgba(7,17,31,.85);
+border:1px solid rgba(255,255,255,.15);
+border-radius:18px;
+padding:10px 18px;
+font-size:28px;
+font-weight:800;
+letter-spacing:2px;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+">
+π = 3.
+<span id="piDigits"></span>
+</div>
+
+    <div id="confetti"></div>
+  </section>
+</div>
+
+<div class="modal" id="modal">
+  <div class="card">
+    <div class="card-head">
+      <div class="badge" id="badge">Станция</div>
+      <button id="closeModal">Затвори</button>
+    </div>
+    <div class="question" id="question"></div>
+    <div class="options" id="options"></div>
+    <div class="result" id="resultBox"></div>
+    <div class="footer-actions">
+      <button class="primary" id="nextBtn" style="display:none;">Следващ ход</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const GAME = {"puzzles": [{"title": "Станция 1", "digit": "1", "question": "Какво представлява числото π (пи)?", "options": ["Отношението на обиколката на кръг към неговия диаметър", "Отношението на лице към радиус", "Броят на страните на правилен многоъгълник", "Стойността на ъгъла в правоъгълен триъгълник"], "correct": 0}, {"title": "Станция 2", "digit": "4", "question": "Кои са първите пет цифри на π след десетичната запетая?", "options": ["14159", "13159", "14259", "15926"], "correct": 0}, {"title": "Станция 3", "digit": "1", "question": "На коя дата се отбелязва Денят на числото π?", "options": ["22 юли", "14 март", "31 октомври", "28 февруари"], "correct": 1}, {"title": "Станция 4", "digit": "5", "question": "Колко е приблизително π, закръглено до стотни?", "options": ["3,14", "3,41", "3,12", "3,16"], "correct": 0}, {"title": "Станция 5", "digit": "9", "question": "Кой е бил първият учен, изчислил приближена стойност на π?", "options": ["Питагор", "Архимед", "Евклид", "Нютон"], "correct": 1}, {"title": "Станция 6", "digit": "2", "question": "Колко цифри на π са запомнени от световния рекордьор (приблизително)?", "options": ["около 1000", "около 2000", "около 70 000", "над 100 000"], "correct": 3}, {"title": "Станция 7", "digit": "6", "question": "Числото Пи е:", "options": ["крайна десетична дроб", "безкрайна периодична дроб", "безкрайна непериодична дроб", "цяло естествено число"], "correct": 2}, {"title": "Станция 8", "digit": "5", "question": "Коя гръцка буква се използва за числото пи?", "options": ["α (алфа)", "β (бета)", "π (пи)", "Σ (сигма)"], "correct": 2}, {"title": "Станция 9", "digit": "3", "question": "Защо на деня на числото Пи традиционно се ядат пайове?", "options": ["Защото пайовете са кръгли и свързани с π", "Защото π е измислено от пекар", "Защото пайовете имат точно 3,14 слоя", "Защото числото π е открито в кухня"], "correct": 0}, {"title": "Станция 10", "digit": "5", "question": "Защо Денят на числото Пи се празнува на 14 март?", "options": ["Защото 14/3 прилича на 3,14 — първите три цифри на π", "Защото на този ден Архимед открил числото π", "Защото 14 март е рожденият ден на Архимед", "Защото числото 14 се дели на π без остатък"], "correct": 0}]};
+
+const state = {
+  station: 0,
+  secondsLeft: 15 * 60,
+  totalSeconds: 15 * 60,
+  running: false,
+  complete: false,
+  teamIndex: 0,
+  teams: []
+};
+
+const colors = ["#ffb703", "#8ecae6", "#6ee7b7", "#c77dff"];
+let timer = null;
+
+const els = {
+  board: document.getElementById("board"),
+  teams: document.getElementById("teams"),
+  timer: document.getElementById("timer"),
+  timerBar: document.getElementById("timerBar"),
+  stationLbl: document.getElementById("stationLbl"),
+  teamLbl: document.getElementById("teamLbl"),
+  goalLbl: document.getElementById("goalLbl"),
+  modal: document.getElementById("modal"),
+  badge: document.getElementById("badge"),
+  question: document.getElementById("question"),
+  options: document.getElementById("options"),
+  resultBox: document.getElementById("resultBox"),
+  nextBtn: document.getElementById("nextBtn"),
+  toast: document.getElementById("toast"),
+  confetti: document.getElementById("confetti"),
+  teamCount: document.getElementById("teamCount")
+};
+
+function toast(msg) {
+  els.toast.textContent = msg;
+  els.toast.classList.add("show");
+  clearTimeout(window._toastT);
+  window._toastT = setTimeout(() => els.toast.classList.remove("show"), 1800);
+}
+
+function formatTime(sec) {
+  const m = String(Math.floor(sec / 60)).padStart(2, "0");
+  const s = String(sec % 60).padStart(2, "0");
+  return `${m}:${s}`;
+}
+
+function updateTimer() {
+  els.timer.textContent = formatTime(state.secondsLeft);
+  els.timerBar.style.width = ((state.secondsLeft / state.totalSeconds) * 100) + "%";
+}
+
+function initTeams(n=2) {
+  state.teams = Array.from({length:n}, (_, i) => ({
+    name: `Отбор ${i+1}`,
+    score: 0,
+    color: colors[i]
+  }));
+  state.teamIndex = 0;
+  renderTeams();
+  updateHud();
+updatePiDigits();
+}
+
+function renderTeams() {
+  els.teams.innerHTML = "";
+  const sorted = [...state.teams].map((t,i)=>({...t, idx:i})).sort((a,b)=>b.score-a.score);
+  sorted.forEach(t => {
+    const active = t.idx === state.teamIndex ? " active" : "";
+    const div = document.createElement("div");
+    div.className = "team-card" + active;
+    div.innerHTML = `
+      <div class="team-name">
+        <span class="dot" style="background:${t.color}"></span>
+        <span>${t.name}</span>
+      </div>
+      <div class="team-score">${t.score}</div>
+    `;
+    els.teams.appendChild(div);
+  });
+}
+
+
+function updatePiDigits(){
+  const digits = GAME.puzzles.map(p=>p.digit);
+  const opened = digits.slice(0, state.station).join("");
+  document.getElementById("piDigits").textContent = opened;
+}
+
+function updateHud() {
+  els.stationLbl.textContent = Math.min(state.station + 1, GAME.puzzles.length);
+  els.teamLbl.textContent = state.teams[state.teamIndex]?.name || "—";
+  els.goalLbl.textContent = state.complete
+    ? "Достигнахте центъра!"
+    : (state.station === 0 ? "Започнете от външната точка." : "Продължете към следващата активна цифра.");
+}
+
+function startTimer() {
+  if (state.running || state.complete) return;
+  state.running = true;
+  if (timer) clearInterval(timer);
+  timer = setInterval(() => {
+    if (!state.running) return;
+    state.secondsLeft--;
+    if (state.secondsLeft <= 0) {
+      state.secondsLeft = 0;
+      state.running = false;
+      clearInterval(timer);
+      finish(false);
+    }
+    updateTimer();
+  }, 1000);
+}
+
+function pauseTimer() {
+  state.running = false;
+  toast("Таймерът е паузиран.");
+}
+
+function resetGame() {
+  state.station = 0;
+  state.secondsLeft = state.totalSeconds = 15*60;
+  state.running = false;
+  state.complete = false;
+  state.teamIndex = 0;
+  state.teams.forEach(t => t.score = 0);
+  updateTimer();
+  renderTeams();
+  updateHud();
+updatePiDigits();
+  drawBoard();
+  els.confetti.innerHTML = "";
+  toast("Нова игра.");
+}
+
+function nextTeam() {
+  state.teamIndex = (state.teamIndex + 1) % state.teams.length;
+  renderTeams();
+  updateHud();
+updatePiDigits();
+}
+
+function playCorrectSound() {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const now = ctx.currentTime;
+  [523.25, 659.25, 783.99].forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "sine";
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.08, now + 0.02 + i*0.06);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.22 + i*0.06);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(now + i*0.06);
+    osc.stop(now + 0.28 + i*0.06);
+  });
+}
+
+function playWinSound() {
+  const ctx = new (window.AudioContext || window.webkitAudioContext)();
+  const now = ctx.currentTime;
+  [523.25, 659.25, 783.99, 1046.5].forEach((freq, i) => {
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+    osc.type = "triangle";
+    osc.frequency.value = freq;
+    gain.gain.setValueAtTime(0.0001, now);
+    gain.gain.linearRampToValueAtTime(0.10, now + 0.03 + i*0.08);
+    gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.35 + i*0.08);
+    osc.connect(gain).connect(ctx.destination);
+    osc.start(now + i*0.08);
+    osc.stop(now + 0.42 + i*0.08);
+  });
+}
+
+function drawBoard() {
+  const svg = els.board;
+  svg.innerHTML = "";
+  const NS = "http://www.w3.org/2000/svg";
+  const cx = 840, cy = 450;
+
+  for (let i=0; i<34; i++) {
+    const star = document.createElementNS(NS, "circle");
+    star.setAttribute("cx", 80 + (i*41)%1220);
+    star.setAttribute("cy", 70 + (i*89)%760);
+    star.setAttribute("r", i%5===0 ? 2.1 : 1.2);
+    star.setAttribute("fill", "rgba(255,255,255,.35)");
+    svg.appendChild(star);
+  }
+
+  let d = "";
+  for (let t = 0.35; t <= 26 * Math.PI; t += 0.03) {
+    const a = 6 + 11.5 * t;
+    const x = cx + a * Math.cos(t);
+    const y = cy + 0.72 * a * Math.sin(t);
+    d += (t === 0.35 ? "M" : "L") + x.toFixed(2) + " " + y.toFixed(2) + " ";
+  }
+  const spiralGlow = document.createElementNS(NS, "path");
+  spiralGlow.setAttribute("d", d);
+  spiralGlow.setAttribute("fill", "none");
+  spiralGlow.setAttribute("stroke", "rgba(255,209,102,.18)");
+  spiralGlow.setAttribute("stroke-width", "24");
+  spiralGlow.setAttribute("stroke-linecap", "round");
+  svg.appendChild(spiralGlow);
+
+  const spiral = document.createElementNS(NS, "path");
+  spiral.setAttribute("d", d);
+  spiral.setAttribute("fill", "none");
+  spiral.setAttribute("stroke", "rgba(142,202,230,.35)");
+  spiral.setAttribute("stroke-width", "10");
+  spiral.setAttribute("stroke-linecap", "round");
+  svg.appendChild(spiral);
+
+  const info = document.createElementNS(NS, "g");
+  const rect = document.createElementNS(NS, "rect");
+  rect.setAttribute("x", 44);
+  rect.setAttribute("y", 54);
+  rect.setAttribute("rx", 24);
+  rect.setAttribute("ry", 24);
+  rect.setAttribute("width", 350);
+  rect.setAttribute("height", 230);
+  rect.setAttribute("fill", "rgba(255,255,255,.07)");
+  rect.setAttribute("stroke", "rgba(255,255,255,.12)");
+  info.appendChild(rect);
+
+  [
+    ["🌀 Спирала на π", 82, 98, 28, "#fff3c8", "800"],
+    ["Следвайте цифрите отвън навътре.", 82, 138, 20, "#eef6ff", "500"],
+    ["Решете въпросите и печелете точки.", 82, 172, 20, "#eef6ff", "500"],
+    ["В центъра ви чака числото 3.", 82, 206, 20, "#eef6ff", "500"],
+  ].forEach(([txt,x,y,size,color,weight]) => {
+    const t = document.createElementNS(NS, "text");
+    t.setAttribute("x", x); t.setAttribute("y", y);
+    t.setAttribute("font-size", size);
+    t.setAttribute("fill", color);
+    t.setAttribute("font-weight", weight);
+    t.textContent = txt;
+    info.appendChild(t);
+  });
+  svg.appendChild(info);
+
+  const stationTs = [26.5,23.8,21.1,18.4,15.7,13.0,10.3,7.8,5.8,4.2];
+  GAME.puzzles.forEach((p, i) => {
+    const t = stationTs[i];
+    const a = 6 + 11.5 * t;
+    const x = cx + a * Math.cos(t);
+    const y = cy + 0.72 * a * Math.sin(t);
+
+    const g = document.createElementNS(NS, "g");
+    if (i === state.station && !state.complete) {
+      g.style.cursor = "pointer";
+      g.addEventListener("click", () => openQuestion(i));
+    }
+
+    const outer = document.createElementNS(NS, "circle");
+    outer.setAttribute("cx", x);
+    outer.setAttribute("cy", y);
+    outer.setAttribute("r", i === state.station ? 28 : 24);
+    outer.setAttribute("fill", i < state.station ? "rgba(110,231,183,.25)" : (i===state.station ? "rgba(255,209,102,.9)" : "rgba(255,255,255,.10)"));
+    outer.setAttribute("stroke", i===state.station ? "rgba(255,245,210,.95)" : "rgba(255,255,255,.20)");
+    outer.setAttribute("stroke-width", i===state.station ? "4" : "2");
+    g.appendChild(outer);
+
+    const inner = document.createElementNS(NS, "circle");
+    inner.setAttribute("cx", x);
+    inner.setAttribute("cy", y);
+    inner.setAttribute("r", 18);
+    inner.setAttribute("fill", i < state.station ? "rgba(110,231,183,.92)" : "rgba(10,21,40,.96)");
+    g.appendChild(inner);
+
+    const digit = document.createElementNS(NS, "text");
+    digit.setAttribute("x", x);
+    digit.setAttribute("y", y+8);
+    digit.setAttribute("text-anchor", "middle");
+    digit.setAttribute("font-size", "22");
+    digit.setAttribute("font-weight", "800");
+    digit.setAttribute("fill", i===state.station ? "#fff3c8" : "#eef6ff");
+    digit.textContent = p.digit;
+    g.appendChild(digit);
+
+    const no = document.createElementNS(NS, "text");
+    no.setAttribute("x", x);
+    no.setAttribute("y", y+48);
+    no.setAttribute("text-anchor", "middle");
+    no.setAttribute("font-size", "14");
+    no.setAttribute("font-weight", "700");
+    no.setAttribute("fill", "rgba(255,255,255,.9)");
+    no.textContent = "№" + (i+1);
+    g.appendChild(no);
+
+    svg.appendChild(g);
+  });
+
+  const centerGlow = document.createElementNS(NS, "circle");
+  centerGlow.setAttribute("cx", cx);
+  centerGlow.setAttribute("cy", cy);
+  centerGlow.setAttribute("r", state.complete ? "62" : "54");
+  centerGlow.setAttribute("fill", state.complete ? "rgba(255,209,102,.95)" : "rgba(255,255,255,.12)");
+  centerGlow.setAttribute("stroke", "rgba(255,255,255,.2)");
+  centerGlow.setAttribute("stroke-width", "4");
+  svg.appendChild(centerGlow);
+
+  const center = document.createElementNS(NS, "circle");
+  center.setAttribute("cx", cx);
+  center.setAttribute("cy", cy);
+  center.setAttribute("r", "36");
+  center.setAttribute("fill", "rgba(10,21,40,.98)");
+  svg.appendChild(center);
+
+  const text = document.createElementNS(NS, "text");
+  text.setAttribute("x", cx);
+  text.setAttribute("y", cy+15);
+  text.setAttribute("text-anchor", "middle");
+  text.setAttribute("font-size", "56");
+  text.setAttribute("font-weight", "900");
+  text.setAttribute("fill", "#fff3c8");
+  text.textContent = "3";
+  svg.appendChild(text);
+}
+
+function openQuestion(i) {
+  if (i !== state.station || state.complete) return;
+  const q = GAME.puzzles[i];
+  els.badge.textContent = `${q.title} • Цифра ${q.digit} • Ред е на ${state.teams[state.teamIndex].name}`;
+  els.question.textContent = q.question;
+  els.options.innerHTML = "";
+  els.resultBox.className = "result";
+  els.resultBox.innerHTML = "";
+  els.nextBtn.style.display = "none";
+
+  q.options.forEach((opt, idx) => {
+    const btn = document.createElement("button");
+    btn.className = "option";
+    btn.textContent = opt;
+    btn.addEventListener("click", () => checkAnswer(idx, q.correct));
+    els.options.appendChild(btn);
+  });
+
+  els.modal.classList.add("show");
+}
+
+function disableOptions() {
+  [...els.options.querySelectorAll("button")].forEach(b => b.disabled = true);
+}
+
+function checkAnswer(choice, correct) {
+  const buttons = [...els.options.querySelectorAll("button")];
+  if (choice === correct) {
+    buttons[choice].classList.add("correct");
+    disableOptions();
+    state.teams[state.teamIndex].score += 10;
+    playCorrectSound();
+    renderTeams();
+    state.station++;
+    drawBoard();
+    updateHud();
+updatePiDigits();
+    els.resultBox.className = "result good show";
+    const nextDigit = GAME.puzzles[state.station]?.digit || "3";
+    els.resultBox.innerHTML = `✅ Верен отговор! <strong>${state.teams[state.teamIndex].name}</strong> печели <strong>10 точки</strong>.<br>Следващата цел е цифрата <strong>${nextDigit}</strong>.`;
+    els.nextBtn.textContent = state.station >= GAME.puzzles.length ? "Финал" : "Следващ ход";
+    els.nextBtn.style.display = "inline-block";
+    els.nextBtn.onclick = () => {
+      els.modal.classList.remove("show");
+      if (state.station >= GAME.puzzles.length) finish(true);
+      else nextTeam();
+    };
+  } else {
+    buttons[choice].classList.add("wrong");
+    buttons[correct].classList.add("correct");
+    disableOptions();
+    els.resultBox.className = "result bad show";
+    els.resultBox.innerHTML = `❌ Невярно. Точките не се променят. Редът преминава към следващия отбор.`;
+    els.nextBtn.textContent = "Следващ отбор";
+    els.nextBtn.style.display = "inline-block";
+    els.nextBtn.onclick = () => {
+      els.modal.classList.remove("show");
+      nextTeam();
+    };
+  }
+}
+
+function finish(win) {
+  state.complete = true;
+  state.running = false;
+  if (timer) clearInterval(timer);
+  drawBoard();
+  updateHud();
+updatePiDigits();
+  updatePiDigits();
+
+  if (win) {
+    playWinSound();
+    confetti();
+    const winner = [...state.teams].sort((a,b)=>b.score-a.score)[0];
+    setTimeout(() => {
+      els.badge.textContent = "🎉 Финал";
+      els.question.innerHTML = `Поздравления! Достигнахте центъра на спиралата и числото <strong>3</strong>.`;
+      els.options.innerHTML = "";
+      els.resultBox.className = "result good show";
+      els.resultBox.innerHTML = `🏆 Победител по точки: <strong>${winner.name}</strong> с <strong>${winner.score}</strong> т.`;
+      els.nextBtn.textContent = "Нова игра";
+      els.nextBtn.style.display = "inline-block";
+      els.nextBtn.onclick = () => {
+        els.modal.classList.remove("show");
+        resetGame();
+      };
+      els.modal.classList.add("show");
+    }, 350);
+  } else {
+    toast("Времето изтече.");
+  }
+}
+
+function confetti() {
+  els.confetti.innerHTML = "";
+  const palette = ["#ffb703","#8ecae6","#6ee7b7","#c77dff","#ff7b7b"];
+  for (let i=0; i<120; i++) {
+    const s = document.createElement("span");
+    s.style.left = (Math.random()*100) + "vw";
+    s.style.background = palette[i % palette.length];
+    s.style.animationDuration = (3 + Math.random()*2.5) + "s";
+    s.style.animationDelay = (Math.random()*0.8) + "s";
+    s.style.transform = `rotate(${Math.random()*360}deg)`;
+    els.confetti.appendChild(s);
+  }
+}
+
+document.getElementById("applyTeams").addEventListener("click", () => {
+  initTeams(parseInt(els.teamCount.value, 10));
+  toast("Отборите са обновени.");
+});
+document.getElementById("startBtn").addEventListener("click", startTimer);
+document.getElementById("pauseBtn").addEventListener("click", pauseTimer);
+document.getElementById("resetBtn").addEventListener("click", resetGame);
+document.getElementById("closeModal").addEventListener("click", () => els.modal.classList.remove("show"));
+els.modal.addEventListener("click", (e) => {
+  if (e.target === els.modal) els.modal.classList.remove("show");
+});
+
+updateTimer();
+initTeams(2);
+drawBoard();
+updateHud();
+updatePiDigits();
+</script>
+</body>
+</html>

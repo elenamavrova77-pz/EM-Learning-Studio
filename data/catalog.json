@@ -1,0 +1,62 @@
+[
+  {
+    "title": "Мисия: Спаси спортната база",
+    "subject": "mathematics",
+    "subjectLabel": "Математика",
+    "grade": "5. клас",
+    "description": "Приключенска игра за мерни единици за лице с нива, отбори и точки.",
+    "icon": "📐",
+    "theme": "default",
+    "url": "games/mathematics/area.html",
+    "tags": [
+      "мерни единици",
+      "лице",
+      "отборна игра"
+    ]
+  },
+  {
+    "title": "Спортна мисия: Движение",
+    "subject": "mathematics",
+    "subjectLabel": "Математика",
+    "grade": "6. клас",
+    "description": "Задачи от движение в спортен контекст – плуване, колоездене и бягане.",
+    "icon": "🚴",
+    "theme": "teal",
+    "url": "games/mathematics/movement.html",
+    "tags": [
+      "скорост",
+      "път",
+      "време"
+    ]
+  },
+  {
+    "title": "Пътят към Пи",
+    "subject": "mathematics",
+    "subjectLabel": "Математика",
+    "grade": "5. клас",
+    "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.",
+    "icon": "π",
+    "theme": "purple",
+    "url": "games/mathematics/pi.html",
+    "tags": [
+      "числото π",
+      "викторина",
+      "отбори"
+    ]
+  },
+  {
+    "title": "Познай морфемата",
+    "subject": "interdisciplinary",
+    "subjectLabel": "Интердисциплинарен урок",
+    "grade": "5. клас",
+    "description": "Математика и български език: морфемен анализ чрез геометрични фигури.",
+    "icon": "🔤",
+    "theme": "orange",
+    "url": "games/interdisciplinary/morphemes.html",
+    "tags": [
+      "математика + БЕЛ",
+      "морфеми",
+      "drag & drop"
+    ]
+  }
+]
