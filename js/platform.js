@@ -34,7 +34,7 @@ function resourceCard(item){
           ${available.map(x => `<span>${x}</span>`).join('')}
         </div>
         <div class="resource-actions">
-          <a class="primary-btn" href="/pages/pack.html?id=${encodeURIComponent(item.id)}">📦 Отвори комплекта</a>
+          <a class="primary-btn" href="${item.lessonUrl || `/pages/lesson.html?id=${encodeURIComponent(item.id)}`}">📦 Отвори комплекта</a>
           ${item.game ? `<a class="secondary-btn" href="${item.game}">▶ Играй</a>` : ''}
         </div>
       </div>

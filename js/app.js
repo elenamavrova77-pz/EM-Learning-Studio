@@ -40,7 +40,7 @@ function render() {
         </div>
         <div class="resource-actions">
           <a class="cta" href="${item.url}">▶ Играй</a>
-          <a class="secondary" href="${item.packUrl || item.url}">📦 Комплект</a>
+          <a class="secondary" href="${item.lessonUrl || item.packUrl || item.url}">📦 Комплект</a>
         </div>
       </div>`;
     grid.appendChild(card);

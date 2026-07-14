@@ -17,7 +17,7 @@ async function loadFeatured(){
           <h3>${item.title}</h3>
           <p>${item.description}</p>
           <div class="resource-actions">
-            <a class="primary-btn" href="/pages/pack.html?id=${encodeURIComponent(item.id)}">📦 Отвори</a>
+            <a class="primary-btn" href="${item.lessonUrl || `/pages/lesson.html?id=${encodeURIComponent(item.id)}`}">📦 Отвори</a>
             ${item.game ? `<a class="secondary-btn" href="${item.game}">▶ Играй</a>` : ''}
           </div>
         </div>

@@ -34,7 +34,10 @@
     "featured": true,
     "created": "2026-07-14",
     "updated": "2026-07-14",
-    "gameTitle": "Предизвикателството на шампионите"
+    "gameTitle": "Предизвикателството на шампионите",
+    "lessonUrl": "/pages/lesson.html?id=M6-001",
+    "resourceFolder": "/resources/mathematics/M6-001",
+    "packManifest": "/resources/mathematics/M6-001/pack.json"
   },
   {
     "id": "M5-001",
@@ -68,7 +71,8 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14"
+    "updated": "2026-07-14",
+    "lessonUrl": "/pages/lesson.html?id=M5-001"
   },
   {
     "id": "M5-002",
@@ -102,7 +106,8 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14"
+    "updated": "2026-07-14",
+    "lessonUrl": "/pages/lesson.html?id=M5-002"
   },
   {
     "id": "INT-001",
@@ -137,6 +142,7 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14"
+    "updated": "2026-07-14",
+    "lessonUrl": "/pages/lesson.html?id=INT-001"
   }
 ]
