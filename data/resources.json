@@ -1,0 +1,141 @@
+[
+  {
+    "id": "M6-001",
+    "title": "Задачи от движение",
+    "subject": "Математика",
+    "subjectCode": "mathematics",
+    "grade": 6,
+    "type": "Учебен комплект",
+    "duration": "40 минути",
+    "difficulty": "Средно",
+    "description": "Интерактивен урок със спортен контекст за връзката между път, скорост и време.",
+    "objectives": [
+      "Прилага формулите за път, скорост и време.",
+      "Решава практически задачи от движение.",
+      "Работи в екип и аргументира решение."
+    ],
+    "tags": [
+      "движение",
+      "скорост",
+      "път",
+      "време",
+      "спорт"
+    ],
+    "icon": "🚴",
+    "theme": "teal",
+    "game": "/games/mathematics/movement.html",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-07-14",
+    "updated": "2026-07-14"
+  },
+  {
+    "id": "M5-001",
+    "title": "Мисия: Спаси спортната база",
+    "subject": "Математика",
+    "subjectCode": "mathematics",
+    "grade": 5,
+    "type": "Учебен комплект",
+    "duration": "35 минути",
+    "difficulty": "Средно",
+    "description": "Приключенска математическа игра за мерни единици за лице с нива, точки и отбори.",
+    "objectives": [
+      "Преобразува мерни единици за лице.",
+      "Решава практически задачи.",
+      "Работи в екип."
+    ],
+    "tags": [
+      "лице",
+      "мерни единици",
+      "спортна база"
+    ],
+    "icon": "📐",
+    "theme": "default",
+    "game": "/games/mathematics/area.html",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-07-14",
+    "updated": "2026-07-14"
+  },
+  {
+    "id": "M5-002",
+    "title": "Пътят към Пи",
+    "subject": "Математика",
+    "subjectCode": "mathematics",
+    "grade": 5,
+    "type": "Учебен комплект",
+    "duration": "30 минути",
+    "difficulty": "Средно",
+    "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.",
+    "objectives": [
+      "Разпознава основни факти за числото π.",
+      "Работи с математическа информация.",
+      "Участва в отборно състезание."
+    ],
+    "tags": [
+      "числото π",
+      "викторина",
+      "отбори"
+    ],
+    "icon": "π",
+    "theme": "purple",
+    "game": "/games/mathematics/pi.html",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-07-14",
+    "updated": "2026-07-14"
+  },
+  {
+    "id": "INT-001",
+    "title": "Познай морфемата",
+    "subject": "Интердисциплинарни",
+    "subjectCode": "interdisciplinary",
+    "grade": 5,
+    "type": "Учебен комплект",
+    "duration": "35 минути",
+    "difficulty": "Средно",
+    "description": "Математика и български език чрез геометрични фигури и морфемен анализ.",
+    "objectives": [
+      "Свързва геометрични фигури с морфеми.",
+      "Извършва морфемен анализ.",
+      "Работи в екип."
+    ],
+    "tags": [
+      "математика",
+      "БЕЛ",
+      "морфеми",
+      "геометрични фигури"
+    ],
+    "icon": "🔤",
+    "theme": "orange",
+    "game": "/games/interdisciplinary/morphemes.html",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-07-14",
+    "updated": "2026-07-14"
+  }
+]
