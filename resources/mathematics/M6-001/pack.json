@@ -34,13 +34,13 @@
     {
       "title": "Основна презентация",
       "description": "Презентация към урока",
-      "file": "presentations/presentation1.pdf",
+      "file": "presentations/presentation_1.pdf",
       "icon": "📊"
     },
     {
       "title": "Допълнителна презентация",
       "description": "Втора презентация към урока",
-      "file": "presentations/presentation2.pdf",
+      "file": "presentations/presentation_2.pdf",
       "icon": "📊"
     }
   ],
