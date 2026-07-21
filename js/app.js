@@ -1,67 +1,130 @@
+(() => {
+  'use strict';
 
-const catalog = [{"title": "Мисия: Спаси спортната база", "subject": "mathematics", "subjectLabel": "Математика", "grade": "5. клас", "description": "Приключенска игра за мерни единици за лице с нива, отбори и точки.", "icon": "📐", "theme": "default", "url": "/games/mathematics/area.html", "tags": ["мерни единици", "лице", "отборна игра"], "featured": true, "type": "game", "collection": "Спортна математика", "objectives": ["Преобразуване на мерни единици за лице", "Решаване на практически задачи", "Работа в екип"], "materials": [], "gradeNumber": "5", "section": "Мерни единици", "packUrl": "/pages/packs/area.html"}, {"title": "Спортна мисия: Движение", "subject": "mathematics", "subjectLabel": "Математика", "grade": "6. клас", "description": "Задачи от движение в спортен контекст – плуване, колоездене и бягане.", "icon": "🚴", "theme": "teal", "url": "/games/mathematics/movement.html", "tags": ["скорост", "път", "време"], "featured": true, "type": "game", "collection": "Спортна математика", "objectives": ["Прилагане на формулите за път, скорост и време", "Решаване на задачи в спортен контекст"], "materials": [], "gradeNumber": "6", "section": "Задачи от движение", "packUrl": "/pages/packs/movement.html"}, {"title": "Пътят към Пи", "subject": "mathematics", "subjectLabel": "Математика", "grade": "5. клас", "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.", "icon": "π", "theme": "purple", "url": "/games/mathematics/pi.html", "tags": ["числото π", "викторина", "отбори"], "featured": true, "type": "game", "collection": "Математически празници", "objectives": ["Разпознаване на основни факти за π", "Работа с математическа информация"], "materials": [], "gradeNumber": "5", "section": "Числото π", "packUrl": "/pages/packs/pi.html"}, {"title": "Познай морфемата", "subject": "interdisciplinary", "subjectLabel": "Интердисциплинарен урок", "grade": "5. клас", "description": "Математика и български език: морфемен анализ чрез геометрични фигури.", "icon": "🔤", "theme": "orange", "url": "/games/interdisciplinary/morphemes.html", "tags": ["математика + БЕЛ", "морфеми", "drag & drop"], "featured": true, "type": "interdisciplinary", "collection": "Математика + БЕЛ", "objectives": ["Свързване на геометрични фигури с морфеми", "Морфемен анализ", "Екипна работа"], "materials": [], "gradeNumber": "5", "section": "Математика + БЕЛ", "packUrl": "/pages/packs/morphemes.html"}];
-let active = 'all';
-let activeGrade = 'all';
-
-const grid = document.getElementById('grid');
-const search = document.getElementById('search');
-const buttons = [...document.querySelectorAll('.filter')];
-const gradeButtons = [...document.querySelectorAll('.grade-filter')];
-
-function themeClass(theme) {
-  return theme === 'teal' ? 'teal'
-       : theme === 'purple' ? 'purple'
-       : theme === 'orange' ? 'orange'
-       : '';
-}
-
-function render() {
-  if (!grid) return;
-  const term = (search?.value || '').trim().toLowerCase();
-  const items = catalog.filter(item => {
-    const subjectMatches = active === 'all' || item.subject === active;
-    const gradeMatches = activeGrade === 'all' || item.gradeNumber === activeGrade;
-    const text = [item.title,item.subjectLabel,item.grade,item.section,item.description,...(item.tags||[])].join(' ').toLowerCase();
-    return subjectMatches && gradeMatches && text.includes(term);
-  });
-  grid.innerHTML = '';
-  items.forEach(item => {
-    const card = document.createElement('article');
-    card.className = 'card';
-    card.innerHTML = `
-      <div class="banner ${themeClass(item.theme)}"><div class="icon">${item.icon}</div></div>
-      <div class="body">
-        <h3>${item.title}</h3>
-        <p>${item.description}</p>
-        <div class="tags">
-          <span class="tag">${item.subjectLabel}</span>
-          <span class="tag">${item.grade}</span>
-          ${item.section ? `<span class="tag">${item.section}</span>` : ''}
-        </div>
-        <div class="resource-actions">
-          <a class="cta" href="${EMLS.url(item.url)}">▶ Играй</a>
-          <a class="secondary" href="${EMLS.url(item.lessonUrl || item.packUrl || item.url)}">📦 Комплект</a>
-        </div>
-      </div>`;
-    grid.appendChild(card);
-  });
+  const grid = document.getElementById('grid');
   const empty = document.getElementById('empty');
-  if (empty) empty.classList.toggle('hidden', items.length > 0);
-}
+  const search = document.getElementById('search');
 
-buttons.forEach(button => button.addEventListener('click', () => {
-  buttons.forEach(x => x.classList.remove('active'));
-  button.classList.add('active');
-  active = button.dataset.filter;
-  render();
-}));
+  let catalog = [];
+  let activeSubject = document.querySelector('.filter[data-filter].active')?.dataset.filter || 'all';
+  let activeGrade = document.querySelector('.grade-filter[data-grade].active')?.dataset.grade || 'all';
 
-gradeButtons.forEach(button => button.addEventListener('click', () => {
-  gradeButtons.forEach(x => x.classList.remove('active'));
-  button.classList.add('active');
-  activeGrade = button.dataset.grade;
-  render();
-}));
+  function rootUrl(path = '') {
+    if (window.EMLS?.url) return window.EMLS.url(path);
+    return new URL(String(path).replace(/^\/+/, ''), document.baseURI).href;
+  }
 
-if (search) search.addEventListener('input', render);
-render();
+  function escapeHtml(value = '') {
+    return String(value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#039;');
+  }
+
+  function themeClass(theme) {
+    return ['teal', 'purple', 'orange'].includes(theme) ? theme : '';
+  }
+
+  function normalise(item) {
+    return {
+      ...item,
+      subjectCode: item.subjectCode || item.subject || '',
+      subjectLabel: item.subject || item.subjectLabel || '',
+      gradeNumber: String(item.grade ?? item.gradeNumber ?? '').replace(/\D/g, ''),
+      gradeLabel: String(item.grade ?? item.gradeNumber ?? ''),
+      lessonUrl: item.lessonUrl || item.packUrl || item.game || item.url || '',
+      gameUrl: item.game || item.url || '',
+      published: item.published !== false
+    };
+  }
+
+  function matches(item) {
+    const subjectOk = activeSubject === 'all' || item.subjectCode === activeSubject;
+    const gradeOk = activeGrade === 'all' || item.gradeNumber === String(activeGrade);
+    const term = (search?.value || '').trim().toLowerCase();
+    const text = [
+      item.title,
+      item.subjectLabel,
+      item.gradeLabel,
+      item.type,
+      item.description,
+      ...(item.tags || [])
+    ].join(' ').toLowerCase();
+    return item.published && subjectOk && gradeOk && text.includes(term);
+  }
+
+  function render() {
+    if (!grid) return;
+    const items = catalog.filter(matches);
+    grid.innerHTML = '';
+
+    for (const item of items) {
+      const article = document.createElement('article');
+      article.className = 'card';
+      const gradeText = item.gradeNumber ? `${item.gradeNumber}. клас` : '';
+      const gameButton = item.gameUrl
+        ? `<a class="cta" href="${rootUrl(item.gameUrl)}">▶ Играй</a>`
+        : '';
+      const lessonButton = item.lessonUrl
+        ? `<a class="secondary" href="${rootUrl(item.lessonUrl)}">📦 Отвори комплекта</a>`
+        : '';
+
+      article.innerHTML = `
+        <div class="banner ${themeClass(item.theme)}"><div class="icon">${escapeHtml(item.icon || '📘')}</div></div>
+        <div class="body">
+          <h3>${escapeHtml(item.title)}</h3>
+          <p>${escapeHtml(item.description || '')}</p>
+          <div class="tags">
+            <span class="tag">${escapeHtml(item.subjectLabel)}</span>
+            ${gradeText ? `<span class="tag">${escapeHtml(gradeText)}</span>` : ''}
+            ${item.type ? `<span class="tag">${escapeHtml(item.type)}</span>` : ''}
+          </div>
+          <div class="resource-actions">${gameButton}${lessonButton}</div>
+        </div>`;
+      grid.appendChild(article);
+    }
+
+    empty?.classList.toggle('hidden', items.length > 0);
+  }
+
+  async function loadCatalog() {
+    try {
+      const response = await fetch(rootUrl('data/resources.json'), { cache: 'no-store' });
+      if (!response.ok) throw new Error(`resources.json: HTTP ${response.status}`);
+      const data = await response.json();
+      if (!Array.isArray(data)) throw new Error('resources.json трябва да съдържа масив.');
+      catalog = data.map(normalise);
+      render();
+    } catch (error) {
+      console.error('EM Learning Studio:', error);
+      if (grid) grid.innerHTML = '';
+      if (empty) {
+        empty.classList.remove('hidden');
+        empty.innerHTML = '<h3>Ресурсите не могат да бъдат заредени.</h3><p>Проверете data/resources.json и опитайте отново.</p>';
+      }
+    }
+  }
+
+  document.querySelectorAll('.filter[data-filter]:not(.grade-filter)').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.filter[data-filter]:not(.grade-filter)').forEach(x => x.classList.remove('active'));
+      button.classList.add('active');
+      activeSubject = button.dataset.filter || 'all';
+      render();
+    });
+  });
+
+  document.querySelectorAll('.grade-filter[data-grade]').forEach(button => {
+    button.addEventListener('click', () => {
+      document.querySelectorAll('.grade-filter[data-grade]').forEach(x => x.classList.remove('active'));
+      button.classList.add('active');
+      activeGrade = button.dataset.grade || 'all';
+      render();
+    });
+  });
+
+  search?.addEventListener('input', render);
+  loadCatalog();
+})();
