@@ -74,11 +74,6 @@
   ],
   "videos": [
     {
-      "title": "14 март – Денят на числото Пи",
-      "description": "Кратко тематично видео за празника",
-      "file": "video/pi-day-march-14.mp4"
-    },
-    {
       "title": "Историята на Пи",
       "description": "Видео за развитието на представите за числото π",
       "file": "video/history-of-pi.mp4"
@@ -102,11 +97,6 @@
   "assessment": [],
   "download": null,
   "conductLesson": [
-    {
-      "title": "Въведение в празника",
-      "description": "Представи 14 март като Международен ден на числото Пи.",
-      "file": "video/pi-day-march-14.mp4"
-    },
     {
       "title": "Презентация и дискусия",
       "description": "Разгледайте символа, историята и любопитните факти за π.",
