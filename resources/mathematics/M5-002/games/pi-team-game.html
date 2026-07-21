@@ -261,6 +261,8 @@ button.warn { background:linear-gradient(135deg, rgba(255,123,123,.22), rgba(255
   .board-wrap { min-height:70vh; }
 }
 </style>
+
+<style id="em-branding-logo-style">.em-resource-branding-logo{position:fixed;right:14px;bottom:14px;width:96px;max-width:18vw;z-index:9999;pointer-events:none;opacity:.95;filter:drop-shadow(0 4px 10px rgba(0,0,0,.25));}@media (max-width:768px){.em-resource-branding-logo{width:70px;right:10px;bottom:10px;}}</style>
 </head>
 <body>
 <div class="toast" id="toast"></div>
@@ -806,5 +808,7 @@ drawBoard();
 updateHud();
 updatePiDigits();
 </script>
+
+<img class="em-resource-branding-logo" src="../images/em-logo.png" alt="EM logo">
 </body>
 </html>

@@ -100,12 +100,7 @@
   ],
   "teacherNotes": [],
   "assessment": [],
-  "download": {
-    "title": "Изтегли целия учебен комплект",
-    "description": "ZIP архив с презентацията, работните листове, видеата, методиката и игрите",
-    "file": "downloads/lesson-pack.zip",
-    "icon": "⬇️"
-  },
+  "download": null,
   "conductLesson": [
     {
       "title": "Въведение в празника",
