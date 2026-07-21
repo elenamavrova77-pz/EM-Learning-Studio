@@ -37,14 +37,14 @@
   "presentations": [
     {
       "title": "Основна презентация",
-      "description": "Презентация за мерните единици за лице, създадена с Gamma",
-      "file": "presentations/presentation-gamma.pptx",
+      "description": "PDF версия на основната презентация за мерните единици за лице",
+      "file": "presentations/presentation-gamma.pdf",
       "icon": "📊"
     },
     {
       "title": "Допълнителна презентация",
-      "description": "Втори вариант на презентацията, създаден с NotebookLM",
-      "file": "presentations/presentation-notebooklm.pptx",
+      "description": "PDF версия на допълнителната презентация",
+      "file": "presentations/presentation-notebooklm.pdf",
       "icon": "📊"
     }
   ],
@@ -95,7 +95,12 @@
       "icon": "✅"
     }
   ],
-  "download": null,
+  "download": {
+    "title": "Изтегли целия учебен комплект",
+    "description": "ZIP архив с всички материали за урока",
+    "file": "downloads/lesson-pack.zip",
+    "icon": "⬇️"
+  },
   "conductLesson": [
     {
       "title": "Мотивация и представяне на мисията",
