@@ -3,30 +3,27 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script>
-    (function () {
-      const basePath = location.hostname.endsWith("github.io")
-        ? "/EM-Learning-Studio/"
-        : "./";
-      document.write('<base href="' + basePath + '">');
-    })();
-  </script>
-  <title>EM Learning Studio</title>
-  <meta name="description" content="Авторска образователна платформа с интерактивни игри и учебни комплекти по математика, КМИТ, информационни технологии и БДП.">
+  <title>EM Learning Studio — Учи. Играй. Побеждавай.</title>
+  <meta name="description" content="Авторска образователна платформа с интерактивни игри и цялостни учебни комплекти по математика, КМИТ, информационни технологии и БДП.">
   <meta property="og:title" content="EM Learning Studio">
   <meta property="og:description" content="Учи. Играй. Побеждавай.">
   <meta property="og:image" content="assets/images/hero/hero-banner.webp">
-  <link rel="stylesheet" href="css/style.css?v=7.3.1">
+  <meta name="theme-color" content="#0b2b4c">
+  <link rel="stylesheet" href="css/style.css?v=7.3.2">
 </head>
-<body>
-  <nav class="site-nav">
+<body class="home-v732">
+  <a class="skip-link" href="#mainContent">Към основното съдържание</a>
+
+  <nav class="site-nav home-nav" aria-label="Основна навигация">
     <div class="container nav-inner">
-      <a class="brand" href="./">
+      <a class="brand" href="index.html" aria-label="EM Learning Studio — начало">
         <span class="brand-mark">EM</span>
         <span>EM Learning Studio</span>
       </a>
 
-      <div class="nav-links">
+      <button class="mobile-menu-button" type="button" aria-expanded="false" aria-controls="homeNavLinks">☰</button>
+
+      <div id="homeNavLinks" class="nav-links">
         <a href="pages/mathematics.html">Математика</a>
         <a href="pages/kmit.html">КМИТ</a>
         <a href="pages/it.html">ИТ</a>
@@ -39,119 +36,145 @@
     </div>
   </nav>
 
-  <main>
-    <section class="home-hero">
-      <div class="container hero-shell">
-        <div class="hero-copy">
-          <span class="eyebrow"><strong>Учи.</strong> <em>Играй.</em> Побеждавай.</span>
-
-          <h1><span>EM</span> Learning Studio</h1>
-
+  <main id="mainContent">
+    <section class="home-hero home-hero-v732">
+      <div class="hero-orb hero-orb-one" aria-hidden="true"></div>
+      <div class="hero-orb hero-orb-two" aria-hidden="true"></div>
+      <div class="container hero-shell-v732">
+        <div class="hero-copy-v732">
+          <span class="platform-badge">✨ Авторска образователна платформа</span>
+          <h1>Уроци, които превръщат <span>знанието в преживяване.</span></h1>
           <p>
-            Интерактивни игри и учебни комплекти по математика, КМИТ,
-            информационни технологии и БДП за ученици от 5. до 10. клас.
+            Готови интерактивни игри, презентации и учебни комплекти за ученици
+            от 5. до 10. клас — създадени за активен, модерен и вдъхновяващ час.
           </p>
 
           <div class="hero-actions">
-            <a class="primary-btn" href="pages/library.html">📖 Отвори библиотеката</a>
-            <a class="secondary-btn" href="#directions">◉ Избери направление</a>
+            <a class="primary-btn hero-primary" href="pages/library.html">📚 Разгледай библиотеката</a>
+            <a class="secondary-btn hero-secondary" href="pages/lesson.html?id=M6-001">▶ Виж примерен урок</a>
           </div>
 
-          <div class="hero-stats">
-            <div class="stat-card">
-              <span class="stat-icon green">🎮</span>
-              <div><strong>4</strong><small>работещи игри</small></div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon blue">🎓</span>
-              <div><strong>9</strong><small>класови раздела</small></div>
-            </div>
-            <div class="stat-card">
-              <span class="stat-icon purple">▣</span>
-              <div><strong>6</strong><small>направления</small></div>
-            </div>
+          <div class="hero-trust" aria-label="Предимства">
+            <span>✓ Готово за интерактивен дисплей</span>
+            <span>✓ Подходящо за екипна работа</span>
+            <span>✓ Без инсталация</span>
           </div>
         </div>
 
-        <div class="hero-media">
-          <img src="assets/images/hero/hero-banner.webp"
-               alt="Математика, КМИТ и информационни технологии в EM Learning Studio">
+        <div class="hero-visual-v732">
+          <div class="hero-image-frame">
+            <img src="assets/images/hero/hero-banner.webp" alt="Спорт, математика и технологии в EM Learning Studio">
+            <div class="floating-card floating-card-top"><strong>🎮 4</strong><span>интерактивни игри</span></div>
+            <div class="floating-card floating-card-bottom"><strong>📦 Учебен комплект</strong><span>Всичко за един завършен урок</span></div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="directions" class="directions-section">
-      <div class="container directions-grid">
-        <a class="direction-card math" href="pages/mathematics.html">
-          <span class="direction-icon">π</span>
-          <div><strong>Математика</strong><small>5. – 7. клас</small></div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="direction-card kmit" href="pages/kmit.html">
-          <span class="direction-icon">💻</span>
-          <div><strong>КМИТ</strong><small>5. – 7. клас</small></div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="direction-card it" href="pages/it.html">
-          <span class="direction-icon">🖥️</span>
-          <div><strong>ИТ</strong><small>8. – 10. клас</small></div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="direction-card bdp" href="pages/bdp.html">
-          <span class="direction-icon">🚦</span>
-          <div><strong>БДП</strong><small>Всички класове</small></div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="direction-card inter" href="pages/interdisciplinary.html">
-          <span class="direction-icon">👥</span>
-          <div><strong>Интердисциплинарни</strong><small>уроци</small></div>
-          <span class="arrow">→</span>
-        </a>
-
-        <a class="direction-card projects" href="pages/projects.html">
-          <span class="direction-icon">🏆</span>
-          <div><strong>Проекти</strong><small>Ученически инициативи</small></div>
-          <span class="arrow">→</span>
-        </a>
+    <section class="quick-search-section" aria-label="Бързо търсене">
+      <div class="container">
+        <div class="quick-search-card">
+          <div>
+            <span class="mini-label">Намери подходящ ресурс</span>
+            <h2>Какво ще преподавате днес?</h2>
+          </div>
+          <form class="home-search" action="pages/library.html" method="get">
+            <label class="sr-only" for="homeSearchInput">Търсене по тема</label>
+            <input id="homeSearchInput" name="q" type="search" placeholder="Например: задачи от движение, число Пи…">
+            <button class="primary-btn" type="submit">🔎 Търси</button>
+          </form>
+        </div>
       </div>
     </section>
 
+    <section id="directions" class="directions-section home-directions">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <span class="eyebrow"><strong>Избери</strong> направление</span>
+          <h2>Една платформа. Много възможности.</h2>
+          <p>Влезте директно в желаната предметна област.</p>
+        </div>
 
-    <section class="featured-resources-section">
+        <div class="directions-grid directions-grid-v732">
+          <a class="direction-card math" href="pages/mathematics.html"><span class="direction-icon">π</span><div><strong>Математика</strong><small>5. – 7. клас</small></div><span class="arrow">→</span></a>
+          <a class="direction-card kmit" href="pages/kmit.html"><span class="direction-icon">💻</span><div><strong>КМИТ</strong><small>5. – 7. клас</small></div><span class="arrow">→</span></a>
+          <a class="direction-card it" href="pages/it.html"><span class="direction-icon">🖥️</span><div><strong>Информационни технологии</strong><small>8. – 10. клас</small></div><span class="arrow">→</span></a>
+          <a class="direction-card bdp" href="pages/bdp.html"><span class="direction-icon">🚦</span><div><strong>БДП</strong><small>Всички класове</small></div><span class="arrow">→</span></a>
+          <a class="direction-card inter" href="pages/interdisciplinary.html"><span class="direction-icon">🧩</span><div><strong>Интердисциплинарни</strong><small>Уроци и практики</small></div><span class="arrow">→</span></a>
+          <a class="direction-card projects" href="pages/projects.html"><span class="direction-icon">🏆</span><div><strong>Проекти</strong><small>Ученически инициативи</small></div><span class="arrow">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="featured-resources-section home-featured-v732">
       <div class="container">
         <div class="section-title-row">
           <div>
-            <span class="eyebrow"><strong>Ново</strong> в платформата</span>
-            <h2>Препоръчани учебни комплекти</h2>
+            <span class="eyebrow"><strong>Препоръчани</strong> ресурси</span>
+            <h2>Започнете с готов учебен комплект</h2>
+            <p class="section-lead">Всеки комплект обединява материали за учителя и учениците на едно място.</p>
           </div>
           <a class="secondary-btn" href="pages/library.html">Виж всички →</a>
         </div>
-        <div id="homeFeatured" class="resource-cards"></div>
+        <div id="homeFeatured" class="resource-cards home-resource-cards">
+          <div class="home-loading">Зареждане на учебните комплекти…</div>
+        </div>
       </div>
     </section>
 
-    <section class="benefits-section">
-      <div class="container benefits-grid">
-        <div class="benefit"><span>⭐</span><div><strong>Интерактивно учене</strong><small>Учи чрез игра и практика</small></div></div>
-        <div class="benefit"><span>🎯</span><div><strong>Развива умения</strong><small>Логика, творчество, технологии</small></div></div>
-        <div class="benefit"><span>🛡️</span><div><strong>Безопасна среда</strong><small>Подходящо и защитено съдържание</small></div></div>
-        <div class="benefit"><span>📈</span><div><strong>Проследим напредък</strong><small>Постигай и се развивай</small></div></div>
-        <div class="benefit"><span>❤️</span><div><strong>Създадено с любов</strong><small>За ученици и учители</small></div></div>
+    <section class="workflow-section">
+      <div class="container workflow-shell">
+        <div class="workflow-copy">
+          <span class="eyebrow"><strong>Лесно</strong> за използване</span>
+          <h2>От идея до проведен урок в три стъпки</h2>
+          <p>Подберете комплект, отворете материалите и започнете часа — без сложна подготовка.</p>
+          <a class="primary-btn" href="pages/lesson.html?id=M6-001">Разгледай структурата на урок →</a>
+        </div>
+        <div class="workflow-steps">
+          <article><span>1</span><div><strong>Изберете тема</strong><p>Филтрирайте по предмет, клас и вид ресурс.</p></div></article>
+          <article><span>2</span><div><strong>Подгответе часа</strong><p>Използвайте презентации, работни листове и методически насоки.</p></div></article>
+          <article><span>3</span><div><strong>Ангажирайте класа</strong><p>Стартирайте играта и превърнете ученето в състезание.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits-section benefits-v732">
+      <div class="container">
+        <div class="section-heading centered-heading">
+          <span class="eyebrow"><strong>Създадено</strong> за реалната класна стая</span>
+          <h2>Повече активност. По-малко подготовка.</h2>
+        </div>
+        <div class="benefits-grid benefits-grid-v732">
+          <div class="benefit"><span>⭐</span><div><strong>Интерактивно учене</strong><small>Практика, игра и състезателен елемент</small></div></div>
+          <div class="benefit"><span>🎯</span><div><strong>Ясни учебни цели</strong><small>Съдържание с конкретна педагогическа стойност</small></div></div>
+          <div class="benefit"><span>🖥️</span><div><strong>Готово за дисплей</strong><small>Работи в браузър на компютър и интерактивен екран</small></div></div>
+          <div class="benefit"><span>📦</span><div><strong>Всичко на едно място</strong><small>Презентации, видео, аудио, листове и оценяване</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-cta-section">
+      <div class="container home-cta-card">
+        <div><span>EM</span></div>
+        <section>
+          <span class="mini-label">Учи. Играй. Побеждавай.</span>
+          <h2>Готови ли сте за следващия вдъхновяващ урок?</h2>
+          <p>Отворете библиотеката и изберете ресурс за вашия клас.</p>
+        </section>
+        <a class="primary-btn" href="pages/library.html">Отвори библиотеката →</a>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="site-footer home-footer-v732">
     <div class="container footer-inner">
-      <div><strong>EM Learning Studio</strong><br><small>Учи. Играй. Побеждавай.</small></div>
+      <div><strong>EM Learning Studio</strong><br><small>Авторска образователна платформа</small></div>
+      <div class="footer-links"><a href="pages/about.html">За платформата</a><a href="pages/contact.html">Контакти</a></div>
       <div><small>Автор: Елена Маврова-Ненкова · © 2026</small></div>
     </div>
   </footer>
-<script src="js/config.js?v=7.3.1"></script>
-<script src="js/home.js?v=7.3.1"></script>
+
+  <script src="js/config.js?v=7.3.2"></script>
+  <script src="js/home.js?v=7.3.2"></script>
 </body>
 </html>

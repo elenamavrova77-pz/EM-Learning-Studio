@@ -1,5 +1,5 @@
-# EM Learning Studio
+# EM Learning Studio v7.3.2
 
-**Version:** 7.3.1
+**Release:** Homepage Experience
 
-Infrastructure release for GitHub Pages, Netlify and local static hosting.
+Основен фокус: нова начална страница, единен визуален стил и стабилно зареждане в GitHub Pages и Netlify.
