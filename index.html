@@ -3,17 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      const basePath = location.hostname.endsWith("github.io")
+        ? "/EM-Learning-Studio/"
+        : "./";
+      document.write('<base href="' + basePath + '">');
+    })();
+  </script>
   <title>EM Learning Studio</title>
   <meta name="description" content="Авторска образователна платформа с интерактивни игри и учебни комплекти по математика, КМИТ, информационни технологии и БДП.">
   <meta property="og:title" content="EM Learning Studio">
   <meta property="og:description" content="Учи. Играй. Побеждавай.">
   <meta property="og:image" content="assets/images/hero/hero-banner.webp">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=7.3.1">
 </head>
 <body>
   <nav class="site-nav">
     <div class="container nav-inner">
-      <a class="brand" href="index.html">
+      <a class="brand" href="./">
         <span class="brand-mark">EM</span>
         <span>EM Learning Studio</span>
       </a>
@@ -143,7 +151,7 @@
       <div><small>Автор: Елена Маврова-Ненкова · © 2026</small></div>
     </div>
   </footer>
-<script src="js/config.js"></script>
-<script src="js/home.js"></script>
+<script src="js/config.js?v=7.3.1"></script>
+<script src="js/home.js?v=7.3.1"></script>
 </body>
 </html>
