@@ -83,9 +83,9 @@
     "subjectCode": "mathematics",
     "grade": 5,
     "type": "Учебен комплект",
-    "duration": "30 минути",
+    "duration": "40 минути",
     "difficulty": "Средно",
-    "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.",
+    "description": "Пълен учебен комплект за Деня на числото Пи с PDF презентация, три работни листа, три видеа и две интерактивни игри.",
     "objectives": [
       "Разпознава основни факти за числото π.",
       "Работи с математическа информация.",
@@ -98,7 +98,7 @@
     ],
     "icon": "π",
     "theme": "purple",
-    "game": "games/mathematics/pi.html",
+    "game": "resources/mathematics/M5-002/games/pi-team-game.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -108,8 +108,10 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14",
-    "lessonUrl": "pages/lesson.html?id=M5-002"
+    "updated": "2026-07-21",
+    "lessonUrl": "pages/lesson.html?id=M5-002",
+    "resourceFolder": "resources/mathematics/M5-002",
+    "packManifest": "resources/mathematics/M5-002/pack.json"
   },
   {
     "id": "INT-001",
