@@ -46,9 +46,9 @@
     "subjectCode": "mathematics",
     "grade": 5,
     "type": "Учебен комплект",
-    "duration": "35 минути",
+    "duration": "40 минути",
     "difficulty": "Средно",
-    "description": "Приключенска математическа игра за мерни единици за лице с нива, точки и отбори.",
+    "description": "Приключенски учебен комплект по мерни единици за лице с интерактивна мисия, две презентации, тест, видео и методически материали.",
     "objectives": [
       "Преобразува мерни единици за лице.",
       "Решава практически задачи.",
@@ -71,8 +71,10 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14",
-    "lessonUrl": "pages/lesson.html?id=M5-001"
+    "updated": "2026-07-21",
+    "lessonUrl": "pages/lesson.html?id=M5-001",
+    "resourceFolder": "resources/mathematics/M5-001",
+    "packManifest": "resources/mathematics/M5-001/pack.json"
   },
   {
     "id": "M5-002",
