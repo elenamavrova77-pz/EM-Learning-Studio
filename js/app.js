@@ -39,8 +39,8 @@ function render() {
           ${item.section ? `<span class="tag">${item.section}</span>` : ''}
         </div>
         <div class="resource-actions">
-          <a class="cta" href="${item.url}">▶ Играй</a>
-          <a class="secondary" href="${item.lessonUrl || item.packUrl || item.url}">📦 Комплект</a>
+          <a class="cta" href="${EMLS.url(item.url)}">▶ Играй</a>
+          <a class="secondary" href="${EMLS.url(item.lessonUrl || item.packUrl || item.url)}">📦 Комплект</a>
         </div>
       </div>`;
     grid.appendChild(card);

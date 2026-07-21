@@ -1,0 +1,19 @@
+EM Learning Studio v7.2
+
+1. Разархивирай този пакет на Работния плот.
+2. Копирай съдържанието върху локалния проект:
+   Documents/GitHub/EM-Learning-Studio
+3. Разреши сливане и замяна.
+4. Твоите PDF, MP3, MP4 и изображения няма да бъдат изтрити.
+5. Провери точните имена на презентациите в:
+   resources/mathematics/M6-001/pack.json
+6. Ако твоите файлове не се казват presentation1.pdf и presentation2.pdf,
+   замени тези две имена с реалните.
+7. GitHub Desktop:
+   Summary: EM Learning Studio v7.2
+   Commit to main
+   Push origin
+8. Изчакай Netlify да покаже Published.
+9. Отвори:
+   /pages/lesson.html?id=M6-001
+   и натисни Ctrl+F5.

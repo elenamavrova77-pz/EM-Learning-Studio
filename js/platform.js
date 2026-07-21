@@ -34,8 +34,8 @@ function resourceCard(item){
           ${available.map(x => `<span>${x}</span>`).join('')}
         </div>
         <div class="resource-actions">
-          <a class="primary-btn" href="${item.lessonUrl || `/pages/lesson.html?id=${encodeURIComponent(item.id)}`}">📦 Отвори комплекта</a>
-          ${item.game ? `<a class="secondary-btn" href="${item.game}">▶ Играй</a>` : ''}
+          <a class="primary-btn" href="${EMLS.url(item.lessonUrl || `pages/lesson.html?id=${encodeURIComponent(item.id)}`)}">📦 Отвори комплекта</a>
+          ${item.game ? `<a class="secondary-btn" href="${EMLS.url(item.game)}">▶ Играй</a>` : ''}
         </div>
       </div>
     </article>`;
@@ -63,7 +63,7 @@ function renderLibrary(){
 
 function fileButton(label, url, icon){
   if(url){
-    return `<a class="pack-file available" href="${url}"><span>${icon}</span><div><strong>${label}</strong><small>Отвори ресурса</small></div><b>→</b></a>`;
+    return `<a class="pack-file available" href="${EMLS.url(url)}"><span>${icon}</span><div><strong>${label}</strong><small>Отвори ресурса</small></div><b>→</b></a>`;
   }
   return `<div class="pack-file unavailable"><span>${icon}</span><div><strong>${label}</strong><small>Предстои да бъде добавен</small></div><b>—</b></div>`;
 }
@@ -76,7 +76,7 @@ function renderPack(){
   const item = resources.find(x => x.id === id);
 
   if(!item){
-    root.innerHTML = `<section class="page-hero"><div class="container"><h1>Ресурсът не е намерен</h1><p>Провери адреса или се върни към библиотеката.</p><a class="primary-btn" href="/pages/library.html">Към библиотеката</a></div></section>`;
+    root.innerHTML = `<section class="page-hero"><div class="container"><h1>Ресурсът не е намерен</h1><p>Провери адреса или се върни към библиотеката.</p><a class="primary-btn" href="${EMLS.url('pages/library.html')}">Към библиотеката</a></div></section>`;
     return;
   }
 
@@ -85,7 +85,7 @@ function renderPack(){
   root.innerHTML = `
     <section class="pack-page">
       <div class="container">
-        <div class="breadcrumbs"><a href="/">Начало</a> › <a href="/pages/library.html">Библиотека</a> › ${item.title}</div>
+        <div class="breadcrumbs"><a href="${EMLS.url('index.html')}">Начало</a> › <a href="${EMLS.url('pages/library.html')}">Библиотека</a> › ${item.title}</div>
 
         <div class="pack-header">
           <div class="pack-cover ${getThemeClass(item.theme)}">
@@ -102,8 +102,8 @@ function renderPack(){
             <h1>${item.title}</h1>
             <p>${item.description}</p>
             <div class="resource-actions">
-              ${item.game ? `<a class="primary-btn" href="${item.game}">▶ Стартирай играта</a>` : ''}
-              <a class="secondary-btn" href="/pages/library.html">← Към библиотеката</a>
+              ${item.game ? `<a class="primary-btn" href="${EMLS.url(item.game)}">▶ Стартирай играта</a>` : ''}
+              <a class="secondary-btn" href="${EMLS.url('pages/library.html')}">← Към библиотеката</a>
             </div>
           </div>
         </div>
@@ -134,7 +134,7 @@ function renderPack(){
 
 async function initPlatform(){
   try{
-    const response = await fetch('/data/resources.json', {cache:'no-store'});
+    const response = await fetch(EMLS.url('data/resources.json'), {cache:'no-store'});
     resources = await response.json();
   }catch(error){
     console.error('Resources failed to load:', error);

@@ -10,7 +10,8 @@ const valid = item => item && typeof item.file === 'string' && item.file.trim() 
 
 function fileUrl(folder, file){
   if(!file) return '';
-  if(/^https?:\/\//i.test(file) || file.startsWith('/')) return file;
+  if(/^https?:\/\//i.test(file)) return file;
+  if(file.startsWith('/')) return EMLS.url(file);
   return `${folder.replace(/\/$/,'')}/${file.replace(/^\//,'')}`;
 }
 function fileType(url=''){
@@ -134,7 +135,7 @@ function conduct(folder){
   if(!steps.length) return `<div class="empty-state">Последователността предстои да бъде добавена.</div>`;
   return `<div class="conduct-flow">${steps.map((step,i)=>{
     let action='';
-    if(step.game && meta.game) action=`<a class="mini-btn" href="${meta.game}">Стартирай</a>`;
+    if(step.game && meta.game) action=`<a class="mini-btn" href="${EMLS.url(meta.game)}">Стартирай</a>`;
     else if(step.file){
       const url=fileUrl(folder,step.file), type=fileType(url);
       action= type==='file'
@@ -146,7 +147,7 @@ function conduct(folder){
 }
 function render(){
   const app=$('#lessonApp');
-  const folder=meta.resourceFolder;
+  const folder=EMLS.url(meta.resourceFolder || '');
   const cover=pack.cover ? fileUrl(folder,pack.cover) : '';
   const presentations=visible(pack.presentations);
   const worksheets=visible(pack.worksheets);
@@ -185,7 +186,7 @@ function render(){
   app.innerHTML=`
   <section class="lesson-page">
     <div class="container">
-      <div class="lesson-breadcrumbs"><a href="/">Начало</a> › <a href="/pages/library.html">Библиотека</a> › ${meta.title}</div>
+      <div class="lesson-breadcrumbs"><a href="${EMLS.url('index.html')}">Начало</a> › <a href="${EMLS.url('pages/library.html')}">Библиотека</a> › ${meta.title}</div>
 
       <section class="lesson-hero">
         <div class="lesson-cover">
@@ -201,9 +202,9 @@ function render(){
           <h1>${meta.title}</h1>
           <p class="lead">${pack.description||meta.description||''}</p>
           <div class="lesson-actions">
-            ${meta.game?`<a class="primary-btn" href="${meta.game}">▶ Стартирай играта</a>`:''}
+            ${meta.game?`<a class="primary-btn" href="${EMLS.url(meta.game)}">▶ Стартирай играта</a>`:''}
             <button class="secondary-btn" id="conductButton">🎓 Проведи урок</button>
-            <a class="secondary-btn" href="/pages/library.html">← Библиотека</a>
+            <a class="secondary-btn" href="${EMLS.url('pages/library.html')}">← Библиотека</a>
           </div>
           <div class="mode-switch"><span>Режим:</span><div class="mode-toggle">
             <button class="active" data-mode="teacher">👩‍🏫 Учител</button>
@@ -247,14 +248,14 @@ async function init(){
   const app=$('#lessonApp');
   try{
     if(!id) throw new Error('missing id');
-    const all=await (await fetch('/data/resources.json',{cache:'no-store'})).json();
+    const all=await (await fetch(EMLS.url('data/resources.json'),{cache:'no-store'})).json();
     meta=all.find(x=>x.id===id);
     if(!meta) throw new Error('not found');
-    pack=meta.packManifest ? await (await fetch(meta.packManifest,{cache:'no-store'})).json() : {};
+    pack=meta.packManifest ? await (await fetch(EMLS.url(meta.packManifest),{cache:'no-store'})).json() : {};
     render();
   }catch(err){
     console.error(err);
-    app.innerHTML=`<section class="lesson-page"><div class="container"><div class="error-card"><h1>Комплектът не може да бъде зареден</h1><p>Провери pack.json и пътищата към файловете.</p><a class="primary-btn" href="/pages/library.html">Към библиотеката</a></div></div></section>`;
+    app.innerHTML=`<section class="lesson-page"><div class="container"><div class="error-card"><h1>Комплектът не може да бъде зареден</h1><p>Провери pack.json и пътищата към файловете.</p><a class="primary-btn" href="${EMLS.url('pages/library.html')}">Към библиотеката</a></div></div></section>`;
   }
 }
 init();

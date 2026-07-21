@@ -44,7 +44,14 @@
       "icon": "📊"
     }
   ],
-  "worksheets": [],
+  "worksheets": [
+    {
+      "title": "Работен лист",
+      "description": "Задачи за самостоятелна или екипна работа",
+      "file": "worksheets/worksheet.pdf",
+      "icon": "📝"
+    }
+  ],
   "images": [
     {
       "title": "Корица на урока",
@@ -52,14 +59,14 @@
     },
     {
       "title": "Инфографика",
-      "file": "images/infographic.png"
+      "file": "images/inphografic.png"
     }
   ],
   "videos": [
     {
       "title": "Видео към урока",
       "description": "Видео материал за задачите от движение",
-      "file": "video/video.mp4"
+      "file": "video/lesson-video.mp4"
     }
   ],
   "audio": [
@@ -90,11 +97,18 @@
       "icon": "📄"
     }
   ],
-  "assessment": [],
+  "assessment": [
+    {
+      "title": "Критерии за оценяване",
+      "description": "Материал за оценяване и обратна връзка",
+      "file": "assessment/assessment.pdf",
+      "icon": "✅"
+    }
+  ],
   "download": {
     "title": "Изтегли целия учебен комплект",
     "description": "ZIP файл с всички материали",
-    "file": "",
+    "file": "downloads/lesson-pack.zip",
     "icon": "⬇️"
   },
   "conductLesson": [
@@ -106,7 +120,7 @@
     {
       "title": "Презентация",
       "description": "Припомни връзката между път, скорост и време.",
-      "file": ""
+      "file": "presentations/presentation_1.pdf"
     },
     {
       "title": "Интерактивна игра",
@@ -116,7 +130,7 @@
     {
       "title": "Работа по задачи",
       "description": "Използвай работен лист, когато бъде добавен.",
-      "file": ""
+      "file": "worksheets/worksheet.pdf"
     },
     {
       "title": "Рефлексия и оценяване",

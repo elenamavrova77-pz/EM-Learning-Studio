@@ -3,7 +3,7 @@ async function loadFeatured(){
   const grid = document.getElementById('homeFeatured');
   if(!grid) return;
   try{
-    const response = await fetch('/data/resources.json', {cache:'no-store'});
+    const response = await fetch(EMLS.url('data/resources.json'), {cache:'no-store'});
     const resources = await response.json();
     const featured = resources.filter(x => x.published !== false && x.featured).slice(0,4);
     grid.innerHTML = featured.map(item => `
@@ -17,8 +17,8 @@ async function loadFeatured(){
           <h3>${item.title}</h3>
           <p>${item.description}</p>
           <div class="resource-actions">
-            <a class="primary-btn" href="${item.lessonUrl || `/pages/lesson.html?id=${encodeURIComponent(item.id)}`}">📦 Отвори</a>
-            ${item.game ? `<a class="secondary-btn" href="${item.game}">▶ Играй</a>` : ''}
+            <a class="primary-btn" href="${EMLS.url(item.lessonUrl || `pages/lesson.html?id=${encodeURIComponent(item.id)}`)}">📦 Отвори</a>
+            ${item.game ? `<a class="secondary-btn" href="${EMLS.url(item.game)}">▶ Играй</a>` : ''}
           </div>
         </div>
       </article>`).join('');
