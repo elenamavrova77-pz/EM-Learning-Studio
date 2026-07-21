@@ -877,3 +877,105 @@ body{
   .library-toggle-group{display:grid;width:100%}
   .library-check{border-radius:14px}
 }
+
+/* =========================================================
+   EM Learning Studio v8.3.2 – Visible author branding
+   ========================================================= */
+.lesson-cover-card{
+  position:relative;
+}
+
+.lesson-brand-badge{
+  position:absolute;
+  right:18px;
+  bottom:18px;
+  width:112px;
+  aspect-ratio:1/1;
+  display:grid;
+  place-items:center;
+  padding:8px;
+  border-radius:22px;
+  background:rgba(255,255,255,.94);
+  border:1px solid rgba(8,35,63,.10);
+  box-shadow:0 14px 34px rgba(8,35,63,.22);
+  backdrop-filter:blur(10px);
+  z-index:4;
+}
+
+.lesson-brand-badge img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+}
+
+.lesson-brand-signature{
+  margin:28px 0 4px;
+  padding:18px 22px;
+  display:flex;
+  align-items:center;
+  justify-content:flex-end;
+  gap:14px;
+  border-radius:22px;
+  background:rgba(255,255,255,.88);
+  border:1px solid rgba(8,35,63,.08);
+  box-shadow:0 12px 30px rgba(20,70,110,.07);
+}
+
+.lesson-brand-signature img{
+  width:72px;
+  height:72px;
+  object-fit:contain;
+  flex:0 0 auto;
+}
+
+.lesson-brand-signature div{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-end;
+  gap:4px;
+  text-align:right;
+}
+
+.lesson-brand-signature strong{
+  color:#08233f;
+  font-size:18px;
+}
+
+.lesson-brand-signature span{
+  color:#61768a;
+  font-size:13px;
+  font-weight:700;
+}
+
+html[data-theme="dark"] .lesson-brand-badge,
+html[data-theme="dark"] .lesson-brand-signature{
+  background:rgba(10,35,58,.92);
+  border-color:rgba(255,255,255,.12);
+}
+
+html[data-theme="dark"] .lesson-brand-signature strong{
+  color:#f2f8ff;
+}
+
+html[data-theme="dark"] .lesson-brand-signature span{
+  color:#b7cad9;
+}
+
+@media(max-width:720px){
+  .lesson-brand-badge{
+    width:86px;
+    right:12px;
+    bottom:12px;
+    border-radius:18px;
+  }
+
+  .lesson-brand-signature{
+    justify-content:center;
+  }
+
+  .lesson-brand-signature div{
+    align-items:flex-start;
+    text-align:left;
+  }
+}
