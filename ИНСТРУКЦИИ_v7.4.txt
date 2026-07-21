@@ -1,0 +1,11 @@
+EM LEARNING STUDIO v7.4.0
+
+1. Копирайте цялото съдържание на папката в локалното GitHub хранилище EM-Learning-Studio.
+2. Изберете замяна на съществуващите файлове.
+3. В GitHub Desktop направете Commit: EM Learning Studio v7.4 lesson redesign
+4. Натиснете Push origin.
+5. Изчакайте публикуването на GitHub Pages.
+6. Отворете страницата на урока и натиснете Ctrl+F5.
+
+Проверка:
+https://elenamavrova77-pz.github.io/EM-Learning-Studio/pages/lesson.html?id=M6-001
