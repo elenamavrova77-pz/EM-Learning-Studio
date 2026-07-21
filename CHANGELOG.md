@@ -1,3 +1,7 @@
+## Favicon update
+- Добавени favicon.ico, favicon.png, apple-touch-icon.png, favicon-192.png и favicon-512.png.
+- Добавени коректни относителни пътища към favicon във всички HTML страници.
+
 # Changelog
 
 ## 8.0.1 — 21.07.2026
