@@ -1,5 +1,4 @@
 # EM Learning Studio
 
-**Version 8.0.0**
-
-Release: Lesson Experience 8.0
+**Версия:** 8.0.1
+**Дата:** 21.07.2026 г.

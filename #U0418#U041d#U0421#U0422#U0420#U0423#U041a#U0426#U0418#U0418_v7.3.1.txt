@@ -1,0 +1,22 @@
+EM LEARNING STUDIO v7.3.1 — ИНСТРУКЦИИ
+
+1. Разархивирайте EM-Learning-Studio-v7.3.1.zip.
+2. Отворете получената папка EM-Learning-Studio-v7.3.1.
+3. Копирайте цялото съдържание на папката.
+4. Поставете го в локалната папка на GitHub проекта:
+   Документи\GitHub\EM-Learning-Studio
+5. При въпрос от Windows изберете „Замени файловете в местоназначението“.
+6. Отворете GitHub Desktop.
+7. В Summary напишете: EM Learning Studio v7.3.1
+8. Натиснете Commit to main, след това Push origin.
+9. Изчакайте GitHub Pages да приключи публикуването.
+10. Проверете:
+   https://elenamavrova77-pz.github.io/EM-Learning-Studio/
+   https://elenamavrova77-pz.github.io/EM-Learning-Studio/pages/lesson.html?id=M6-001
+
+Основни промени:
+- Поправени пътища за GitHub Pages.
+- Добавен общ js/config.js.
+- Поправено динамичното зареждане на data/resources.json и pack.json.
+- Добавени реалните работен лист, оценяване и ZIP пакет в M6-001.
+- Поправени имената на инфографиката и видеото в pack.json.

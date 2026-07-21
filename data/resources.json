@@ -23,7 +23,7 @@
     ],
     "icon": "🚴",
     "theme": "teal",
-    "game": "/games/mathematics/movement.html",
+    "game": "games/mathematics/movement.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -33,11 +33,11 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-14",
+    "updated": "2026-07-21",
     "gameTitle": "Предизвикателството на шампионите",
-    "lessonUrl": "/pages/lesson.html?id=M6-001",
-    "resourceFolder": "/resources/mathematics/M6-001",
-    "packManifest": "/resources/mathematics/M6-001/pack.json"
+    "lessonUrl": "pages/lesson.html?id=M6-001",
+    "resourceFolder": "resources/mathematics/M6-001",
+    "packManifest": "resources/mathematics/M6-001/pack.json"
   },
   {
     "id": "M5-001",
@@ -61,7 +61,7 @@
     ],
     "icon": "📐",
     "theme": "default",
-    "game": "/games/mathematics/area.html",
+    "game": "games/mathematics/area.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -72,7 +72,7 @@
     "featured": true,
     "created": "2026-07-14",
     "updated": "2026-07-14",
-    "lessonUrl": "/pages/lesson.html?id=M5-001"
+    "lessonUrl": "pages/lesson.html?id=M5-001"
   },
   {
     "id": "M5-002",
@@ -96,7 +96,7 @@
     ],
     "icon": "π",
     "theme": "purple",
-    "game": "/games/mathematics/pi.html",
+    "game": "games/mathematics/pi.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -107,7 +107,7 @@
     "featured": true,
     "created": "2026-07-14",
     "updated": "2026-07-14",
-    "lessonUrl": "/pages/lesson.html?id=M5-002"
+    "lessonUrl": "pages/lesson.html?id=M5-002"
   },
   {
     "id": "INT-001",
@@ -132,7 +132,7 @@
     ],
     "icon": "🔤",
     "theme": "orange",
-    "game": "/games/interdisciplinary/morphemes.html",
+    "game": "games/interdisciplinary/morphemes.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -143,6 +143,6 @@
     "featured": true,
     "created": "2026-07-14",
     "updated": "2026-07-14",
-    "lessonUrl": "/pages/lesson.html?id=INT-001"
+    "lessonUrl": "pages/lesson.html?id=INT-001"
   }
 ]

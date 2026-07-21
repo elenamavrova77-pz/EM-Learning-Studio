@@ -12,9 +12,13 @@ const esc = value => String(value ?? '').replace(/[&<>'"]/g, ch => ({'&':'&amp;'
 
 function fileUrl(folder, file){
   if(!file) return '';
-  if(/^https?:\/\//i.test(file)) return file;
-  if(file.startsWith('/')) return EMLS.url(file);
-  return `${folder.replace(/\/$/,'')}/${file.replace(/^\//,'')}`;
+  if(/^(https?:|data:|blob:)/i.test(file)) return file;
+
+  const folderPath = String(folder || '').replace(/^\/+|\/+$/g, '');
+  const filePath = String(file).replace(/^\/+/, '');
+  const joinedPath = folderPath ? `${folderPath}/${filePath}` : filePath;
+
+  return EMLS.url(joinedPath);
 }
 function fileType(url=''){
   const clean = url.toLowerCase().split('?')[0];
@@ -315,10 +319,20 @@ async function init(){
   const app=$('#lessonApp');
   try{
     if(!id) throw new Error('missing id');
-    allResources=await (await fetch(EMLS.url('data/resources.json'),{cache:'no-store'})).json();
+    const resourcesResponse = await fetch(EMLS.url('data/resources.json'), {cache:'no-store'});
+    if(!resourcesResponse.ok) throw new Error(`resources.json: HTTP ${resourcesResponse.status}`);
+    allResources = await resourcesResponse.json();
+
     meta=allResources.find(x=>x.id===id);
-    if(!meta) throw new Error('not found');
-    pack=meta.packManifest ? await (await fetch(EMLS.url(meta.packManifest),{cache:'no-store'})).json() : {};
+    if(!meta) throw new Error(`Учебният комплект ${id} не е намерен.`);
+
+    if(meta.packManifest){
+      const packResponse = await fetch(EMLS.url(meta.packManifest), {cache:'no-store'});
+      if(!packResponse.ok) throw new Error(`pack.json: HTTP ${packResponse.status}`);
+      pack = await packResponse.json();
+    }else{
+      pack = {};
+    }
     document.title=`${meta.title} | EM Learning Studio`;
     loadProgress();
     render();
