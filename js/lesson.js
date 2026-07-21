@@ -2,6 +2,7 @@ let meta = null;
 let pack = null;
 let allResources = [];
 let teacherMode = true;
+let visitedTabs = new Set();
 
 const $ = (s, r=document) => r.querySelector(s);
 const $$ = (s, r=document) => [...r.querySelectorAll(s)];
@@ -41,6 +42,33 @@ function setupTheme(){
   $('#themeToggle')?.addEventListener('click',()=>applyTheme(document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark'));
 }
 function favoriteKey(){ return `emls-favorite-${meta?.id || 'lesson'}`; }
+function modeKey(){ return `emls-mode-${meta?.id || 'lesson'}`; }
+function progressKey(){ return `emls-progress-${meta?.id || 'lesson'}`; }
+function loadProgress(){
+  try{ visitedTabs = new Set(JSON.parse(localStorage.getItem(progressKey()) || '[\"overview\"]')); }
+  catch{ visitedTabs = new Set(['overview']); }
+}
+function saveProgress(){ localStorage.setItem(progressKey(), JSON.stringify([...visitedTabs])); }
+function trackableTabs(){
+  return $$('.lesson-tab').filter(tab => !tab.classList.contains('teacher-only') && tab.dataset.tab !== 'preview' && tab.dataset.tab !== 'related');
+}
+function updateProgress(){
+  const tabs = trackableTabs();
+  const done = tabs.filter(tab => visitedTabs.has(tab.dataset.tab)).length;
+  const percent = tabs.length ? Math.round((done / tabs.length) * 100) : 0;
+  const bar = $('#lessonProgressBar');
+  const label = $('#lessonProgressLabel');
+  if(bar) bar.style.width = `${percent}%`;
+  if(label) label.textContent = `${percent}% завършено`;
+  $$('.lesson-tab').forEach(tab => tab.classList.toggle('visited', visitedTabs.has(tab.dataset.tab)));
+}
+function resetProgress(){
+  visitedTabs = new Set(['overview']);
+  saveProgress();
+  updateProgress();
+  activate('overview');
+}
+
 function updateFavoriteButton(){
   const btn = $('#favoriteButton');
   if(!btn) return;
@@ -53,6 +81,8 @@ function toggleFavorite(){
   const active = localStorage.getItem(favoriteKey()) === '1';
   localStorage.setItem(favoriteKey(), active ? '0' : '1');
   updateFavoriteButton();
+  setMode(localStorage.getItem(modeKey()) || 'teacher');
+  updateProgress();
 }
 function openPreview(url, type, title){
   const viewer = $('#previewViewer');
@@ -137,13 +167,17 @@ function panel(id, title, body, teacher=false){
   return `<section class="lesson-panel ${teacher?'teacher-only':''}" id="panel-${id}"><div class="panel-heading"><h2>${title}</h2></div>${body}</section>`;
 }
 function activate(id){
+  if(id !== 'preview' && id !== 'related'){ visitedTabs.add(id); saveProgress(); }
   $$('.lesson-tab').forEach(x=>x.classList.toggle('active',x.dataset.tab===id));
   $$('.lesson-panel').forEach(x=>x.classList.toggle('active',x.id===`panel-${id}`));
   const target=$('.lesson-tabs-wrap');
   if(target) window.scrollTo({top:target.offsetTop-96,behavior:'smooth'});
+  updateProgress();
 }
 function setMode(mode){
   teacherMode = mode === 'teacher';
+  localStorage.setItem(modeKey(), mode);
+  document.body.dataset.lessonMode = mode;
   $$('.mode-toggle button').forEach(x=>x.classList.toggle('active',x.dataset.mode===mode));
   $$('.teacher-only').forEach(x=>x.classList.toggle('mode-hidden',!teacherMode));
   if(!teacherMode && $('.lesson-tab.active')?.classList.contains('teacher-only')) activate('overview');
@@ -153,6 +187,7 @@ function bind(){
   $$('.mode-toggle button').forEach(x=>x.addEventListener('click',()=>setMode(x.dataset.mode)));
   $('#conductButton')?.addEventListener('click',()=>activate('conduct'));
   $('#favoriteButton')?.addEventListener('click',toggleFavorite);
+  $('#resetProgressButton')?.addEventListener('click',resetProgress);
   $$('.preview-btn').forEach(btn=>btn.addEventListener('click',()=>openPreview(btn.dataset.url,btn.dataset.type,btn.dataset.title)));
   $$('.gallery-tile').forEach(btn=>btn.addEventListener('click',()=>{
     $('#lightboxImage').src=btn.dataset.lightbox;
@@ -243,7 +278,13 @@ function render(){
           <div class="lesson-actions">
             <button class="primary-btn conduct-main" id="conductButton">▶ Проведи урока</button>
             ${meta.game?`<a class="secondary-btn hero-secondary" href="${EMLS.url(meta.game)}">🎮 Стартирай играта</a>`:''}
+            ${valid(pack.download)?`<a class="secondary-btn hero-secondary" href="${esc(fileUrl(folder,pack.download.file))}" download>⬇ Изтегли комплекта</a>`:''}
             <button class="secondary-btn hero-secondary favorite-btn" id="favoriteButton" type="button" aria-pressed="false">☆ Добави в любими</button>
+          </div>
+          <div class="hero-progress">
+            <div class="hero-progress-top"><span>Напредък по урока</span><strong id="lessonProgressLabel">0% завършено</strong></div>
+            <div class="hero-progress-track"><span id="lessonProgressBar"></span></div>
+            <button id="resetProgressButton" type="button">Нулирай напредъка</button>
           </div>
           <div class="mode-switch"><span>Режим:</span><div class="mode-toggle"><button class="active" data-mode="teacher">👩‍🏫 Учител</button><button data-mode="student">👨‍🎓 Ученик</button></div></div>
         </div>
@@ -253,7 +294,7 @@ function render(){
       <div class="lesson-summary">${summary.map(x=>`<div class="summary-card"><span>${x[0]}</span><div><strong>${esc(x[1])}</strong><small>${esc(x[2])}</small></div></div>`).join('')}</div>
       <div class="lesson-tabs-wrap"><div class="lesson-tabs">${tabs}</div></div>
 
-      ${panel('overview','📖 За урока',`<div class="overview-grid"><div class="overview-main"><p class="overview-text">${esc(pack.description||meta.description||'')}</p><div class="soft-card"><h3>🎯 Учебни цели</h3>${objectives.length?`<ul>${objectives.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Предстои да бъдат добавени.</p>'}</div></div><aside class="overview-side"><div class="soft-card"><h3>🧠 Компетентности</h3>${competencies.length?`<ul>${competencies.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Предстои да бъдат добавени.</p>'}</div><div class="soft-card"><h3>🛠️ Необходими материали</h3>${materials.length?`<ul>${materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Компютър и интерактивен дисплей.</p>'}</div><div class="resource-badges">${tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div></aside></div>`)}
+      ${panel('overview','📖 За урока',`<div class="overview-grid"><div class="overview-main"><p class="overview-text">${esc(pack.description||meta.description||'')}</p><div class="soft-card"><h3>🎯 Учебни цели</h3>${objectives.length?`<ul>${objectives.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Предстои да бъдат добавени.</p>'}</div></div><aside class="overview-side"><div class="soft-card"><h3>🧠 Компетентности</h3>${competencies.length?`<div class="competency-chips">${competencies.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<p>Предстои да бъдат добавени.</p>'}</div><div class="soft-card"><h3>🛠️ Необходими материали</h3>${materials.length?`<ul>${materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Компютър и интерактивен дисплей.</p>'}</div><div class="resource-badges">${tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div></aside></div>`)}
       ${panel('conduct','🎓 Проведи урока стъпка по стъпка',conduct(folder))}
       ${presentations.length?panel('presentations','📊 Презентации',materialGrid(presentations,folder,'📊','presentation','')):''}
       ${worksheets.length?panel('worksheets','📝 Работни листове',materialGrid(worksheets,folder,'📝','worksheet','')):''}
@@ -279,6 +320,7 @@ async function init(){
     if(!meta) throw new Error('not found');
     pack=meta.packManifest ? await (await fetch(EMLS.url(meta.packManifest),{cache:'no-store'})).json() : {};
     document.title=`${meta.title} | EM Learning Studio`;
+    loadProgress();
     render();
   }catch(err){
     console.error(err);

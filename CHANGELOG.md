@@ -1,16 +1,11 @@
 # Changelog
 
-## 7.4.0
+## 8.0.0
 
-- Нова голяма визуална корица на урока.
-- Заглавието, предметът и класът се виждат веднага.
-- Основен бутон „Проведи урока“.
-- Карти за продължителност, аудитория, трудност и налични ресурси.
-- Вградени видео и аудио плейъри.
-- Подобрени карти за презентации, работни листове и файлове.
-- Нов „Учителски център“ за методика, бележки и оценяване.
-- Секция „Свързани уроци“.
-- Любими, запазвани локално в браузъра.
-- Светла и тъмна тема.
-- Подобрена адаптивност за телефон и таблет.
-- Версионирани CSS и JavaScript ресурси за избягване на стар кеш.
+- New lesson experience with progress tracking.
+- Persistent Teacher and Student modes.
+- Hero progress indicator and quick actions.
+- Competency chips and improved lesson flow.
+- Download-all action when a lesson package is available.
+- Improved responsive layout and dark theme.
+- Cache-busting version updated to 8.0.0.

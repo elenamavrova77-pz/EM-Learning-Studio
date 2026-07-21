@@ -1,0 +1,10 @@
+EM Learning Studio v8.0.0
+
+1. Копирайте цялото съдържание на тази папка в локалното GitHub хранилище EM-Learning-Studio.
+2. Разрешете замяна на съществуващите файлове.
+3. Направете commit: EM Learning Studio v8.0.0
+4. Натиснете Push origin.
+5. Изчакайте публикуването на GitHub Pages и презаредете с Ctrl+F5.
+
+Проверка:
+https://elenamavrova77-pz.github.io/EM-Learning-Studio/pages/lesson.html?id=M6-001
