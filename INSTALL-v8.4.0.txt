@@ -1,0 +1,1 @@
+Копирайте папките data и resources върху EM-Learning-Studio, заменете файловете, Commit и Push origin. След това отворете pages/lesson.html?id=KMIT5-001 и натиснете Ctrl+F5.

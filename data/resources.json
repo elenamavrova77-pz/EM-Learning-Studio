@@ -1,5 +1,44 @@
 [
   {
+    "id": "KMIT5-001",
+    "title": "КМИТ – 5. клас: пълен учебен комплект",
+    "subject": "КМИТ",
+    "subjectCode": "kmit",
+    "grade": 5,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси и тестове по КМИТ за 5. клас.",
+    "objectives": [
+      "Подпомага преподаването на темите от учебната програма по КМИТ за 5. клас.",
+      "Осигурява презентации за въвеждане и затвърдяване на учебното съдържание.",
+      "Предлага файлове за практическа работа и проектни задачи."
+    ],
+    "tags": [
+      "КМИТ",
+      "5. клас",
+      "презентации",
+      "упражнения",
+      "тестове"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-07-22",
+    "updated": "2026-07-22",
+    "lessonUrl": "pages/lesson.html?id=KMIT5-001",
+    "resourceFolder": "resources/kmit/KMIT5-001",
+    "packManifest": "resources/kmit/KMIT5-001/pack.json"
+  },
+  {
     "id": "M6-001",
     "title": "Задачи от движение",
     "subject": "Математика",
@@ -46,9 +85,9 @@
     "subjectCode": "mathematics",
     "grade": 5,
     "type": "Учебен комплект",
-    "duration": "40 минути",
+    "duration": "35 минути",
     "difficulty": "Средно",
-    "description": "Приключенски учебен комплект по мерни единици за лице с интерактивна мисия, две презентации, тест, видео и методически материали.",
+    "description": "Приключенска математическа игра за мерни единици за лице с нива, точки и отбори.",
     "objectives": [
       "Преобразува мерни единици за лице.",
       "Решава практически задачи.",
@@ -71,10 +110,8 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-21",
-    "lessonUrl": "pages/lesson.html?id=M5-001",
-    "resourceFolder": "resources/mathematics/M5-001",
-    "packManifest": "resources/mathematics/M5-001/pack.json"
+    "updated": "2026-07-14",
+    "lessonUrl": "pages/lesson.html?id=M5-001"
   },
   {
     "id": "M5-002",
@@ -83,9 +120,9 @@
     "subjectCode": "mathematics",
     "grade": 5,
     "type": "Учебен комплект",
-    "duration": "40 минути",
+    "duration": "30 минути",
     "difficulty": "Средно",
-    "description": "Пълен учебен комплект за Деня на числото Пи с PDF презентация, три работни листа, три видеа и две интерактивни игри.",
+    "description": "Отборна викторина по спиралата на π с десет станции, таймер и класиране.",
     "objectives": [
       "Разпознава основни факти за числото π.",
       "Работи с математическа информация.",
@@ -98,7 +135,7 @@
     ],
     "icon": "π",
     "theme": "purple",
-    "game": "resources/mathematics/M5-002/games/pi-team-game.html",
+    "game": "games/mathematics/pi.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
@@ -108,10 +145,8 @@
     "published": true,
     "featured": true,
     "created": "2026-07-14",
-    "updated": "2026-07-21",
-    "lessonUrl": "pages/lesson.html?id=M5-002",
-    "resourceFolder": "resources/mathematics/M5-002",
-    "packManifest": "resources/mathematics/M5-002/pack.json"
+    "updated": "2026-07-14",
+    "lessonUrl": "pages/lesson.html?id=M5-002"
   },
   {
     "id": "INT-001",
