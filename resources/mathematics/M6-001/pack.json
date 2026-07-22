@@ -32,42 +32,24 @@
   ],
   "presentations": [
     {
-      "title": "Основна презентация – PDF",
+      "title": "Основна презентация",
       "description": "Преглед и провеждане на урока",
-      "file": "presentations/presentation_1.pdf",
+      "file": "presentations/presentation_1_logo.pdf",
       "icon": "📊"
     },
     {
-      "title": "Основна презентация – редактируем PPTX",
-      "description": "Редактируем файл на презентацията",
-      "file": "presentations/presentation_1.pptx",
-      "icon": "✏️"
-    },
-    {
-      "title": "Допълнителна презентация – PDF",
+      "title": "Допълнителна презентация",
       "description": "Втора презентация към урока",
-      "file": "presentations/presentation_2.pdf",
+      "file": "presentations/presentation_2_logo.pdf",
       "icon": "📊"
-    },
-    {
-      "title": "Допълнителна презентация – редактируем PPTX",
-      "description": "Редактируем файл на втората презентация",
-      "file": "presentations/presentation_2.pptx",
-      "icon": "✏️"
     }
   ],
   "worksheets": [
     {
-      "title": "Работен лист – PDF",
+      "title": "Работен лист",
       "description": "Готов за печат",
-      "file": "worksheets/worksheet.pdf",
+      "file": "worksheets/worksheet_logo.pdf",
       "icon": "📝"
-    },
-    {
-      "title": "Работен лист – редактируем DOCX",
-      "description": "Редактируем файл",
-      "file": "worksheets/Работни_листове_Задачи_от_движение.docx",
-      "icon": "✏️"
     }
   ],
   "images": [
@@ -101,30 +83,18 @@
   ],
   "methodology": [
     {
-      "title": "План на урока – PDF",
+      "title": "План на урока",
       "description": "Пълна методическа разработка",
-      "file": "methodology/methodology.pdf",
+      "file": "methodology/methodology_logo.pdf",
       "icon": "📘"
-    },
-    {
-      "title": "План на урока – редактируем DOCX",
-      "description": "Редактируема методическа разработка",
-      "file": "methodology/Открит_урок_Предизвикателството_на_шампионите (1).docx",
-      "icon": "✏️"
     }
   ],
   "teacherNotes": [
     {
-      "title": "Бележки на учителя – PDF",
+      "title": "Бележки на учителя",
       "description": "Кратко резюме и насоки",
-      "file": "teacher-notes/teacher-notes.pdf",
+      "file": "teacher-notes/teacher-notes_logo.pdf",
       "icon": "📄"
-    },
-    {
-      "title": "Бележки на учителя – редактируем DOCX",
-      "description": "Редактируем файл",
-      "file": "teacher-notes/teacher-notes.docx",
-      "icon": "✏️"
     }
   ],
   "assessment": [],
