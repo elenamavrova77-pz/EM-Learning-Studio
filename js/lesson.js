@@ -114,7 +114,7 @@ function resourceCard(item, folder, icon, kind){
       </div>
       <div class="material-actions">
         ${type === 'file'
-          ? `<a class="mini-btn" href="${esc(url)}" target="_blank" rel="noopener">Отвори</a>`
+          ? `<a class="mini-btn" href="${esc(url)}" download>Изтегли</a>`
           : `<button class="mini-btn preview-btn" data-url="${esc(url)}" data-type="${type}" data-title="${esc(labelFor(item,'Ресурс'))}">Преглед</button>`}
         <a class="icon-btn" href="${esc(url)}" download title="Изтегли">↓</a>
       </div>
@@ -292,13 +292,7 @@ function render(){
           </div>
           <div class="mode-switch"><span>Режим:</span><div class="mode-toggle"><button class="active" data-mode="teacher">👩‍🏫 Учител</button><button data-mode="student">👨‍🎓 Ученик</button></div></div>
         </div>
-        <div class="lesson-cover-card">
-          ${cover?`<img src="${esc(cover)}" alt="Корица: ${esc(meta.title)}">`:`<div class="lesson-cover-fallback">${pack.icon||meta.icon||'📚'}</div>`}
-          <span class="lesson-code">${esc(meta.id)}</span>
-          <div class="lesson-brand-badge" aria-label="Елена Маврова – образователна платформа">
-            <img src="${EMLS.url('assets/branding/em-logo.png')}" alt="Лого Елена Маврова">
-          </div>
-        </div>
+        <div class="lesson-cover-card">${cover?`<img src="${esc(cover)}" alt="Корица: ${esc(meta.title)}">`:`<div class="lesson-cover-fallback">${pack.icon||meta.icon||'📚'}</div>`}<span class="lesson-code">${esc(meta.id)}</span></div>
       </section>
 
       <div class="lesson-summary">${summary.map(x=>`<div class="summary-card"><span>${x[0]}</span><div><strong>${esc(x[1])}</strong><small>${esc(x[2])}</small></div></div>`).join('')}</div>
@@ -315,14 +309,6 @@ function render(){
       ${valid(pack.download)?panel('download','📦 Изтегляне',materialGrid([pack.download],folder,'⬇️','download','')):''}
       ${panel('related','⭐ Свързани уроци',relatedLessons())}
       ${panel('preview','🔎 Преглед на ресурс','<h3 id="previewTitle">Избери материал</h3><div class="media-viewer" id="previewViewer"><div class="empty-state">Избери бутон „Преглед“.</div></div>')}
-
-      <div class="lesson-brand-signature">
-        <img src="${EMLS.url('assets/branding/em-logo.png')}" alt="Лого Елена Маврова">
-        <div>
-          <strong>Елена Маврова</strong>
-          <span>Авторска образователна платформа</span>
-        </div>
-      </div>
     </div>
   </section>`;
   activate('overview'); bind();
