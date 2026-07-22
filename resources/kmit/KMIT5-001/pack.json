@@ -37,237 +37,237 @@
   "presentations": [
     {
       "title": "1 2 Въведение в КС и ИТ.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_001.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_001.pdf",
       "icon": "📊"
     },
     {
       "title": "3 Носители на информация",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_002.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_002.pdf",
       "icon": "📊"
     },
     {
       "title": "4 Организация на данните.Файлове и папки",
-      "description": "Презентация за урока (PPT)",
-      "file": "files/presentations/presentations_003.ppt",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_003.pdf",
       "icon": "📊"
     },
     {
       "title": "5 Действия с папки и файлове",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_004.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_004.pdf",
       "icon": "📊"
     },
     {
       "title": "5 Пътеводител за папки и файлове",
-      "description": "Изображение за практическа задача",
-      "file": "files/presentations/presentations_005.png",
-      "icon": "🖼️"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_005.pdf",
+      "icon": "📊"
     },
     {
       "title": "5 Работен лист Действия с папки и файлове",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_006.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_006.pdf",
+      "icon": "📊"
     },
     {
       "title": "6 Използване на Интернет в ежедневието",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_007.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_007.pdf",
       "icon": "📊"
     },
     {
       "title": "7 Електронна поща",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_008.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_008.pdf",
       "icon": "📊"
     },
     {
       "title": "8 Изпращане и получаване на електронно писмо",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_009.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_009.pdf",
       "icon": "📊"
     },
     {
       "title": "8 Работен лист Изпращане и получаване на електронно писмо. Упражнение",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_010.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_010.pdf",
+      "icon": "📊"
     },
     {
       "title": "9 Търсене на информация в интернет",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_011.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_011.pdf",
       "icon": "📊"
     },
     {
       "title": "10 Работа в интернет. Вашата дигитална мисия",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_012.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_012.pdf",
       "icon": "📊"
     },
     {
       "title": "10 Работа в интернет. Упражнение.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_013.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_013.pdf",
       "icon": "📊"
     },
     {
       "title": "10 Работа в интернет инфографика",
-      "description": "Изображение за практическа задача",
-      "file": "files/presentations/presentations_014.png",
-      "icon": "🖼️"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_014.pdf",
+      "icon": "📊"
     },
     {
       "title": "10 Работен лист  Работа в интернет",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_015.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_015.pdf",
+      "icon": "📊"
     },
     {
       "title": "11 Звук и видеоинформация",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_016.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_016.pdf",
       "icon": "📊"
     },
     {
       "title": "12 Създаване и обработка на графично изображение.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_017.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_017.pdf",
       "icon": "📊"
     },
     {
       "title": "13 14 Цветова палитра. Създаване на изображение с готови фигури и рисуване със свободна ръка",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_018.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_018.pdf",
       "icon": "📊"
     },
     {
       "title": "15 Вмъкване на текст в графично изображение. Характеристики на символите",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_019.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_019.pdf",
       "icon": "📊"
     },
     {
       "title": "16 Преобразуване на графично изображение и на части от него.Отпечатване.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_020.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_020.pdf",
       "icon": "📊"
     },
     {
       "title": "17 18 Създаване на визуален проект по тема упражнение",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_021.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_021.pdf",
+      "icon": "📊"
     },
     {
       "title": "19 Работа със Scratch. Създаване на собствен герой. Упражнение",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_022.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_022.pdf",
+      "icon": "📊"
     },
     {
       "title": "19 Работа със Scratch.Преговор.Компютърно моделиране",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_023.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_023.pdf",
       "icon": "📊"
     },
     {
       "title": "20 Създаване на графични изображения с език за блоково програмиране",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_024.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_024.pdf",
       "icon": "📊"
     },
     {
       "title": "21 Блокове в Scratch",
-      "description": "PDF ресурс за преглед",
-      "file": "files/presentations/presentations_025.pdf",
-      "icon": "📄"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_025.pdf",
+      "icon": "📊"
     },
     {
       "title": "21 Създаване и използване на собствени блокове или подпрограми",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_026.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_026.pdf",
       "icon": "📊"
     },
     {
       "title": "22 Създаване и използване на собствени блокове и подпрограми. Упражнение.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_027.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_027.pdf",
       "icon": "📊"
     },
     {
       "title": "23 Създаване на образователен проект със средствата на изучаван език за блоково програмиране",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_028.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_028.pdf",
       "icon": "📊"
     },
     {
       "title": "24 25 Основни понятия и правила при при компютърна обработка на текстове",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_029.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_029.pdf",
       "icon": "📊"
     },
     {
       "title": "26 Въвеждане и редактиране на текст на български и начужд език",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_030.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_030.pdf",
       "icon": "📊"
     },
     {
       "title": "27 28 29 Форматиране на текст на ниво символи и абзац",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_031.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_031.pdf",
       "icon": "📊"
     },
     {
       "title": "30 Електронна таблица.Предназначение и основни елементи.Експериментиране с данни.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_032.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_032.pdf",
       "icon": "📊"
     },
     {
       "title": "31 Диаграми.Графична интерпретация на данни.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_033.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_033.pdf",
       "icon": "📊"
     },
     {
       "title": "32 Характеристики на оформлението на клетките и данните",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_034.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_034.pdf",
       "icon": "📊"
     },
     {
       "title": "33 Обработка на таблични данни. Упражнение.",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_035.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_035.pdf",
+      "icon": "📊"
     },
     {
       "title": "34 Основни елементи на компютърната презентация. Разглеждане и редактиране на готова презентация",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_036.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_036.pdf",
       "icon": "📊"
     },
     {
       "title": "35 Създаване и съхраняване на кратка презентация, съдържаща текст и изображения",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_037.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_037.pdf",
       "icon": "📊"
     },
     {
       "title": "36 Създаване на презентация по зададена съдържателна част. Форматиране на графични и текстови обекти.",
-      "description": "Презентация за урока (PPTX)",
-      "file": "files/presentations/presentations_038.pptx",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_038.pdf",
       "icon": "📊"
     },
     {
       "title": "37 Създаване на презентация по зададена съдържателна част. Упражнение.",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/presentations/presentations_039.docx",
-      "icon": "📝"
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_039.pdf",
+      "icon": "📊"
     }
   ],
   "worksheets": [
@@ -475,108 +475,108 @@
   "methodology": [
     {
       "title": "Описание на учебен комплект КМИТ 5 клас",
-      "description": "Файл с електронна таблица",
-      "file": "files/catalog/catalog_001.xlsx",
-      "icon": "📈"
+      "description": "PDF описание и каталог на ресурсите",
+      "file": "pdf/catalog/catalog_001.pdf",
+      "icon": "📘"
     }
   ],
   "teacherNotes": [],
   "assessment": [
     {
       "title": "Изходно ниво_КМИТ_5 клас: Ключ Изходно ниво КМИТ 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_001.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_001.pdf",
+      "icon": "✅"
     },
     {
       "title": "Изходно ниво_КМИТ_5 клас: Тест Изходно ниво КМИТ 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_002.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_002.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Звук и видеоинформация: Ключ Звук и видеоинформация",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_003.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_003.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Звук и видеоинформация: Тест Звук и видеоинформация 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_004.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_004.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Интернет: Ключ Интернет 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_005.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_005.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Интернет: Тест Интернет 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_006.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_006.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна презентация: Ключ Компютърна презентация 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_007.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_007.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна презентация: Тест Компютърна презентация 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_008.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_008.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна система и информационни технологии: Ключ Компютърна система и информационни технологии",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_009.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_009.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна система и информационни технологии: Тест Компютърна система и информационни технологии 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_010.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_010.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна текстообработка: Ключ Компютърна текстообработка",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_011.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_011.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Компютърна текстообработка: Тест Компютърна текстообработка 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_012.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_012.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Обработка на таблични данни: Ключ Обработка на таблични данни",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_013.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_013.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Обработка на таблични данни: Тест Обработка на таблични данни 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_014.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_014.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Създаване и обработка на графично изображение: Ключ Създаване и обработка на графично изображение",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_015.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_015.pdf",
+      "icon": "✅"
     },
     {
       "title": "Раздел_Създаване и обработка на графично изображение: Тест Създаване и обработка на графично изображение 5 клас",
-      "description": "Редактируем учебен или работен файл",
-      "file": "files/assessment/assessment_016.docx",
-      "icon": "📝"
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_016.pdf",
+      "icon": "✅"
     }
   ],
   "download": null,
@@ -584,12 +584,12 @@
     {
       "title": "Избери урок",
       "description": "Намери презентацията по номера и темата на урока.",
-      "file": "files/catalog/catalog_001.xlsx"
+      "file": "pdf/catalog/catalog_001.pdf"
     },
     {
       "title": "Представи учебното съдържание",
       "description": "Отвори избраната презентация от раздел „Презентации“.",
-      "file": "presentations/1_2_Въведение в КС и ИТ..pptx"
+      "file": "pdf/presentations/presentation_001.pdf"
     },
     {
       "title": "Организирай упражнение",
@@ -599,7 +599,7 @@
     {
       "title": "Провери знанията",
       "description": "Използвай подходящ тест и ключ от раздел „Контрол и оценяване“.",
-      "file": "assessment/Раздел_Интернет/Тест_Интернет_5 клас.docx"
+      "file": "pdf/presentations/presentation_001.pdf"
     }
   ]
 }
