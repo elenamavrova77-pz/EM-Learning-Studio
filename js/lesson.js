@@ -30,7 +30,7 @@ function fileType(url=''){
 }
 function typeLabel(type){ return ({pdf:'PDF документ',video:'Видео',audio:'Аудио',image:'Изображение',file:'Файл'})[type] || 'Файл'; }
 function visible(items){ return arr(items).filter(valid); }
-function teacherTotal(){ return visible(pack.methodology).length + visible(pack.teacherNotes).length + visible(pack.assessment).length; }
+function teacherTotal(){ return visible(pack.methodology).length + visible(pack.teacherNotes).length; }
 function labelFor(item, fallback){ return item.title || fallback; }
 
 function applyTheme(theme){
@@ -114,8 +114,8 @@ function resourceCard(item, folder, icon, kind){
       </div>
       <div class="material-actions">
         ${type === 'file'
-          ? `<a class="mini-btn" href="${esc(url)}" download>Изтегли</a>`
-          : `<button class="mini-btn preview-btn" data-url="${esc(url)}" data-type="${type}" data-title="${esc(labelFor(item,'Ресурс'))}">Преглед</button>`}
+          ? `<a class="mini-btn" href="${esc(url)}" download>Отвори</a>`
+          : `<button class="mini-btn preview-btn" data-url="${esc(url)}" data-type="${type}" data-title="${esc(labelFor(item,'Ресурс'))}">Отвори</button>`}
         <a class="icon-btn" href="${esc(url)}" download title="Изтегли">↓</a>
       </div>
     </article>`;
@@ -141,7 +141,7 @@ function videoSection(folder){
   if(!list.length) return '<div class="empty-state">Няма добавено видео.</div>';
   return `<div class="embedded-media-grid">${list.map(item=>{
     const url=fileUrl(folder,item.file);
-    return `<article class="embedded-media-card"><video controls preload="metadata" src="${esc(url)}"></video><div><strong>${esc(labelFor(item,'Видео'))}</strong><small>${esc(item.description||'Видео материал към урока')}</small><a href="${esc(url)}" download>Изтегли видеото ↓</a></div></article>`;
+    return `<article class="embedded-media-card"><video controls preload="metadata" src="${esc(url)}"></video><div><strong>${esc(labelFor(item,'Видео'))}</strong><small>${esc(item.description||'Видео материал към урока')}</small><a href="${esc(url)}" download>Отвори видеото ↓</a></div></article>`;
   }).join('')}</div>`;
 }
 function audioSection(folder){
@@ -155,8 +155,7 @@ function audioSection(folder){
 function teacherMaterials(folder){
   const groups = [
     ['📘 План и методика', pack.methodology, '📘', 'methodology'],
-    ['🗒️ Бележки на учителя', pack.teacherNotes, '🗒️', 'notes'],
-    ['✅ Оценяване и обратна връзка', pack.assessment, '✅', 'assessment']
+    ['🗒️ Бележки на учителя', pack.teacherNotes, '🗒️', 'notes']
   ];
   const cards = groups.map(([title,items,icon,kind])=>{
     const list=visible(items);
@@ -193,6 +192,7 @@ function bind(){
   $('#favoriteButton')?.addEventListener('click',toggleFavorite);
   $('#resetProgressButton')?.addEventListener('click',resetProgress);
   $$('.preview-btn').forEach(btn=>btn.addEventListener('click',()=>openPreview(btn.dataset.url,btn.dataset.type,btn.dataset.title)));
+  $$('.conduct-tab-btn').forEach(btn=>btn.addEventListener('click',()=>activate(btn.dataset.targetTab)));
   $$('.gallery-tile').forEach(btn=>btn.addEventListener('click',()=>{
     $('#lightboxImage').src=btn.dataset.lightbox;
     $('#lightboxCaption').textContent=btn.dataset.caption;
@@ -214,6 +214,9 @@ function conduct(folder){
   return `<div class="conduct-flow">${steps.map((step,i)=>{
     let action='';
     if(step.game && meta.game) action=`<a class="mini-btn" href="${EMLS.url(meta.game)}">Стартирай</a>`;
+    else if(step.tab){
+      action=`<button class="mini-btn conduct-tab-btn" data-target-tab="${esc(step.tab)}">Отвори</button>`;
+    }
     else if(step.file){
       const url=fileUrl(folder,step.file), type=fileType(url);
       action= type==='file'
@@ -242,6 +245,7 @@ function render(){
   const images=visible(pack.images);
   const videos=visible(pack.videos);
   const audio=visible(pack.audio);
+  const assessment=visible(pack.assessment);
   const teacher=teacherTotal();
   const objectives=arr(pack.objectives?.length?pack.objectives:meta.objectives);
   const competencies=arr(pack.competencies);
@@ -254,7 +258,8 @@ function render(){
   const tabs = [
     tab('overview','🏠 Преглед'), tab('conduct','🎓 Проведи урок'),
     presentations.length ? tab('presentations','📊 Презентации',presentations.length) : '',
-    worksheets.length ? tab('worksheets','📝 Работни листове',worksheets.length) : '',
+    worksheets.length ? tab('worksheets','🧰 Ресурси за упражнение',worksheets.length) : '',
+    assessment.length ? tab('assessment','✅ Контрол и оценяване',assessment.length) : '',
     images.length ? tab('gallery','🖼️ Галерия',images.length) : '',
     videos.length ? tab('video','🎥 Видео',videos.length) : '',
     audio.length ? tab('audio','🎵 Аудио',audio.length) : '',
@@ -265,7 +270,7 @@ function render(){
 
   const summary = [
     ['⏱️',duration,'Продължителност'], ['👥',audience,'Подходящо за'], ['🎯',difficulty,'Ниво'],
-    ['🎮',meta.game?1:0,'Игра'], ['📚',presentations.length+worksheets.length+videos.length+audio.length+images.length,'Учебни ресурси'], ['👩‍🏫',teacher,'За учителя']
+    ['🎮',meta.game?1:0,'Игра'], ['📚',presentations.length+worksheets.length+assessment.length+videos.length+audio.length+images.length,'Учебни ресурси'], ['👩‍🏫',teacher,'За учителя']
   ].filter(x=>x[1]!==0);
 
   app.innerHTML=`
@@ -301,14 +306,15 @@ function render(){
       ${panel('overview','📖 За урока',`<div class="overview-grid"><div class="overview-main"><p class="overview-text">${esc(pack.description||meta.description||'')}</p><div class="soft-card"><h3>🎯 Учебни цели</h3>${objectives.length?`<ul>${objectives.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Предстои да бъдат добавени.</p>'}</div></div><aside class="overview-side"><div class="soft-card"><h3>🧠 Компетентности</h3>${competencies.length?`<div class="competency-chips">${competencies.map(x=>`<span>${esc(x)}</span>`).join('')}</div>`:'<p>Предстои да бъдат добавени.</p>'}</div><div class="soft-card"><h3>🛠️ Необходими материали</h3>${materials.length?`<ul>${materials.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`:'<p>Компютър и интерактивен дисплей.</p>'}</div><div class="resource-badges">${tags.map(x=>`<span>${esc(x)}</span>`).join('')}</div></aside></div>`)}
       ${panel('conduct','🎓 Проведи урока стъпка по стъпка',conduct(folder))}
       ${presentations.length?panel('presentations','📊 Презентации',materialGrid(presentations,folder,'📊','presentation','')):''}
-      ${worksheets.length?panel('worksheets','📝 Работни листове',materialGrid(worksheets,folder,'📝','worksheet','')):''}
+      ${worksheets.length?panel('worksheets','🧰 Ресурси за упражнение',materialGrid(worksheets,folder,'🧰','worksheet','')):''}
+      ${assessment.length?panel('assessment','✅ Контрол и оценяване',materialGrid(assessment,folder,'✅','assessment','')):''}
       ${images.length?panel('gallery','🖼️ Галерия',gallery(folder)):''}
       ${videos.length?panel('video','🎥 Видео',videoSection(folder)):''}
       ${audio.length?panel('audio','🎵 Аудио',audioSection(folder)):''}
       ${teacher?panel('teacher','👩‍🏫 Учителски център',teacherMaterials(folder),true):''}
       ${valid(pack.download)?panel('download','📦 Изтегляне',materialGrid([pack.download],folder,'⬇️','download','')):''}
       ${panel('related','⭐ Свързани уроци',relatedLessons())}
-      ${panel('preview','🔎 Преглед на ресурс','<h3 id="previewTitle">Избери материал</h3><div class="media-viewer" id="previewViewer"><div class="empty-state">Избери бутон „Преглед“.</div></div>')}
+      ${panel('preview','🔎 Преглед на ресурс','<h3 id="previewTitle">Избери материал</h3><div class="media-viewer" id="previewViewer"><div class="empty-state">Избери бутон „Отвори“.</div></div>')}
     </div>
   </section>`;
   activate('overview'); bind();

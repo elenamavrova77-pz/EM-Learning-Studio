@@ -583,23 +583,23 @@
   "conductLesson": [
     {
       "title": "Избери урок",
-      "description": "Намери презентацията по номера и темата на урока.",
-      "file": "pdf/catalog/catalog_001.pdf"
+      "description": "Отвори интерактивния каталог и избери презентация или свързан ресурс.",
+      "file": "catalog/lessons.html"
     },
     {
       "title": "Представи учебното съдържание",
-      "description": "Отвори избраната презентация от раздел „Презентации“.",
-      "file": "pdf/presentations/presentation_001.pdf"
+      "description": "Отвори раздел „Презентации“ и избери урок.",
+      "tab": "presentations"
     },
     {
       "title": "Организирай упражнение",
-      "description": "Избери свързания файл от раздел „Ресурси за упражнение“.",
-      "file": "exercises/10/gabrovo.pdf"
+      "description": "Отвори раздел „Ресурси за упражнение“ и избери необходимия файл.",
+      "tab": "worksheets"
     },
     {
       "title": "Провери знанията",
-      "description": "Използвай подходящ тест и ключ от раздел „Контрол и оценяване“.",
-      "file": "pdf/presentations/presentation_001.pdf"
+      "description": "Отвори раздел „Контрол и оценяване“ и избери тест или ключ.",
+      "tab": "assessment"
     }
   ]
 }
