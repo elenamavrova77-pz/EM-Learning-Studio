@@ -1,0 +1,769 @@
+{
+  "id": "KMIT6-001",
+  "title": "КМИТ - 6. клас: пълен учебен комплект",
+  "icon": "💻",
+  "cover": "images/cover.png",
+  "description": "Годишен комплект по компютърно моделиране и информационни технологии за 6. клас. Съдържа презентации, ресурси за практическа работа, видео материали и тестове с ключове за контрол и оценяване.",
+  "duration": "Учебна година",
+  "lessonType": "Годишен учебен комплект",
+  "method": "Демонстрация, практическа работа и контрол на знанията",
+  "objectives": [
+    "Подпомага преподаването на темите от учебната програма по КМИТ за 6. клас.",
+    "Осигурява презентации и визуални материали за въвеждане и затвърдяване на учебното съдържание.",
+    "Предлага файлове за практическа работа по текстообработка, електронни таблици, презентации и програмиране.",
+    "Подкрепя контрола и оценяването чрез тестове и ключове."
+  ],
+  "competencies": [
+    "Дигитална компетентност.",
+    "Създаване и обработка на дигитално съдържание.",
+    "Работа с текст, електронни таблици и презентации.",
+    "Алгоритмично мислене и програмиране с Python.",
+    "Безопасно и отговорно използване на интернет."
+  ],
+  "materials": [
+    "Компютър и интерактивен дисплей.",
+    "Офис пакет и среда за програмиране с Python.",
+    "Интернет връзка.",
+    "Файловете за упражнения."
+  ],
+  "tags": [
+    "КМИТ",
+    "6. клас",
+    "Python",
+    "интернет",
+    "текстообработка",
+    "електронни таблици",
+    "презентации"
+  ],
+  "presentations": [
+    {
+      "title": "10 Компютърна текстообработка. Форматиране на текстов документ упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_001.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "11 Създаване на таблица по модел с данни от различен тип. Формат на представяне на данните",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_002.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "12 Формулиза извършване на аритметични действия с въведените данни",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_003.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "13 Работен лист. Използване на формули и функции в електронна таблица. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_004.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "14 Наръчник за печат на таблици инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_005.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "14 Отпечатване на таблица и на отделни части от нея",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_006.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "14 Работен лист Отпечатване на таблица и на отделни части от нея",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_007.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "15 Работен лист. Обработка на таблични данни. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_008.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "16 Основни файлови формати при създаване и обработка на изображения",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_009.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "17 Дигитализация От хартия към пиксели инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_010.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "17 Дигитализиране на изображения чрез смартфон скенер или цифров фотоапарат",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_011.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "17 Наръчник за дигитализация и обработка инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_012.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "17 Работен лист. Дигитализиране на изображение чрез смартфон, скенер или цифров фотоапарат",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_013.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "18 Инструменти за промяна на графично изображение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_014.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "19 Работен лист. Работа с графични изображения. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_015.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "1 Основни единици за измерване на информация",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_016.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "20 Използване на звукови файлове и звукови ефекти в компютърна презентация",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_017.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "21 Анимационни ефекти и времетраене на слайд.Настройки на дизайна",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_018.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "22 Запазване на презентация в различни файлови формати",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_019.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "22 Работен лист Запазване на презентация в различни файлови формати",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_020.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "23 Изкуството на успешната презентация инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_021.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "23 Представяне на презентация пред публика",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_022.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "24 Компютърна презентация. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_023.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "24 Работен лист. Компютърна презентаци. Създаване на презентация по дадена тема",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_024.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "25 Същност на глобалната мрежа интернет",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_025.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "26 Средства за комуникация в реално време",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_026.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "27 Търсене на материали по зададена тема на български и чужд език. Авторски права",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_027.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "28 Интернет и интегриране на дейности. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_028.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "29 Преминаване от език за блоково програмиране към скриптов текстов език",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_029.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "2 Операционна система.Файлова структура на организация на данните",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_030.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "30 Език за програмиране Python 1",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_031.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "30 Език за програмиране Python 2",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_032.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "30 Език за програмиране Python 3",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_033.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "30 Работен лист. Език за програне Python",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_034.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "31 Линейни и разклонени алгоритми инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_035.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "31 Реализиране на линеен и разклонен алгоритъм",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_036.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "32 Програмиране с костенурка първи стъпки инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_037.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "32 Реализиране на цикличен алгоритъм",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_038.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "33 Програмиране на герой с код инфографика",
+      "description": "PDF инфографика за директен преглед",
+      "file": "pdf/presentations/presentation_039.pdf",
+      "icon": "🖼️"
+    },
+    {
+      "title": "33 Създаване на компютърен герой и програмиране на състоянието му",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_040.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "34 Работен лист. Създаване на анимационен герой и програмиране на състоянието му. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_041.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "3 Работен лист. Операционна система. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_042.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "4 Носители на информация и файлови формати",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_043.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "5 Въвеждане на текст съдържащ специални знаци и символи",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_044.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "6 Вмъкване и форматиране на графични изображения от библиотека и файл",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_045.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "7 Работен лист. Въвеждане на текст.Вмъкване и форматиране на изображение.Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_046.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "8 Търсене и замяна на текст. Търсене и получаване на помощна информация",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_047.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "9 Форматиране на страница.Отпечатване на текстов документ",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_048.pdf",
+      "icon": "📊"
+    }
+  ],
+  "worksheets": [
+    {
+      "title": "11: sreden uspeh",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_001.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "12: stoka",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_002.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "15: bulgaria oblast",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_003.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "15: otsenka",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_004.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "15: south america",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_005.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "15: stoka",
+      "description": "Файл с електронна таблица",
+      "file": "files/exercises/exercise_006.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "16: boyanska tsarkva",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_007.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19: planina",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_008.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19: plovdiv",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_009.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19: yovkov",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_010.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "22: bg darzhava",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_011.pptx",
+      "icon": "📝"
+    },
+    {
+      "title": "22: bg kultura",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_012.pptx",
+      "icon": "📝"
+    },
+    {
+      "title": "22: stara planina",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_013.pptx",
+      "icon": "📝"
+    },
+    {
+      "title": "24: Green energy",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_014.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24: bethoven 9 simfonia",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_015.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: bethoven lunna sonata",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_016.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: Bize Karmen opera",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_017.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: daychovo horo",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_018.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: haydn 45 simfonia",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_019.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: lebedevo ezero balet",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_020.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: maler 8 simfoniа",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_021.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: Mozart Don Zhuan opera",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_022.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: mozart sonata",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_023.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: paydushko horo",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_024.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: pravo horo",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_025.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: rachenitsa",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_026.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: romeo i zhulieta balet",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_027.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: shopen 2 sonata-",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_028.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "24: Vagner Tanhoyzer opera",
+      "description": "Аудио ресурс към упражнението",
+      "file": "files/exercises/exercise_029.mp3",
+      "icon": "🎵"
+    },
+    {
+      "title": "6: manastir",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_030.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "6: rozhen manastir",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_031.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "7: aheloy",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_032.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: amazonka",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_033.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: antarktida",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_034.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: bulgarofigon",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_035.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: everest",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_036.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: kenguru",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_037.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: kontinenti",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_038.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "7: New-York",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_039.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: preslav",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_040.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: sahara",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_041.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: simeon",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_042.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "7: simeon",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_043.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "7: volga",
+      "description": "Изображение за практическа задача",
+      "file": "files/exercises/exercise_044.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "8: pod igoto",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_045.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "8: predmet",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_046.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "9: Certificate",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_047.dotx",
+      "icon": "📝"
+    },
+    {
+      "title": "9: Eco",
+      "description": "Редактируем учебен или работен файл",
+      "file": "files/exercises/exercise_048.dotx",
+      "icon": "📝"
+    }
+  ],
+  "images": [
+    {
+      "title": "Корица на комплекта",
+      "file": "images/cover.png"
+    }
+  ],
+  "videos": [
+    {
+      "title": "32 От Scratch към Python",
+      "description": "Видео ресурс към учебното съдържание",
+      "file": "video/video_001.mp4",
+      "icon": "🎬"
+    },
+    {
+      "title": "33 От блокове до код",
+      "description": "Видео ресурс към учебното съдържание",
+      "file": "video/video_002.mp4",
+      "icon": "🎬"
+    }
+  ],
+  "audio": [],
+  "methodology": [
+    {
+      "title": "Описание на учебния комплект КМИТ 6. клас",
+      "description": "PDF описание и каталог на ресурсите",
+      "file": "pdf/catalog/catalog_KMIT6.pdf",
+      "icon": "📘"
+    }
+  ],
+  "teacherNotes": [],
+  "assessment": [
+    {
+      "title": "Изходно ниво КМИТ 6 клас: Изходно ниво КМИТ 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_001.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Изходно ниво КМИТ 6 клас: Ключ Изходно ниво КМИТ 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_002.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Интернет: Ключ Интернет 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_003.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Интернет: Тест Интернет 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_004.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Компютърна презентация: Ключ Компютърна презентация 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_005.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Компютърна презентация: Тест Компютърна презентация 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_006.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Компютърна текстообработка: Ключ Компютърна текстообработка 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_007.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Компютърна текстообработка: Тест Компютърна текстообработка 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_008.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Компютърно моделиране: Ключ Компютърно моделиране Програмиране с Python 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_009.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Компютърно моделиране: Тест Компютърно моделиране Програмиране с Python 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_010.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Обработка на таблични данни: Ключ Обработка на таблични данни 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_011.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Обработка на таблични данни: Тест Обработка на таблични данни 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_012.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Операционна система и носители на информация: Ключ Операционна система и носители на информация 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_013.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Операционна система и носители на информация: Тест Операционна система и носители на информация 6 клас",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_014.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Раздел Работа с графични изображения: Ключ Работа с графични изображения",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_015.pdf",
+      "icon": "🔑"
+    },
+    {
+      "title": "Раздел Работа с графични изображения: Тест Работа с графични изображения",
+      "description": "PDF тест или ключ за директен преглед",
+      "file": "pdf/assessment/assessment_016.pdf",
+      "icon": "✅"
+    }
+  ],
+  "download": null,
+  "conductLesson": [
+    {
+      "title": "Избери урок",
+      "description": "Отвори интерактивния каталог и избери презентация, видео или свързан ресурс.",
+      "file": "catalog/lessons.html"
+    },
+    {
+      "title": "Представи учебното съдържание",
+      "description": "Отвори раздел „Презентации“ и избери урок.",
+      "tab": "presentations"
+    },
+    {
+      "title": "Организирай упражнение",
+      "description": "Отвори раздел „Ресурси за упражнение“ и избери необходимия файл.",
+      "tab": "worksheets"
+    },
+    {
+      "title": "Провери знанията",
+      "description": "Отвори раздел „Контрол и оценяване“ и избери тест или ключ.",
+      "tab": "assessment"
+    }
+  ]
+}

@@ -39,6 +39,46 @@
     "packManifest": "resources/kmit/KMIT5-001/pack.json"
   },
   {
+    "id": "KMIT6-001",
+    "title": "КМИТ - 6. клас: пълен учебен комплект",
+    "subject": "КМИТ",
+    "subjectCode": "kmit",
+    "grade": 6,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси, видеа и тестове по КМИТ за 6. клас.",
+    "objectives": [
+      "Подпомага преподаването на темите от учебната програма по КМИТ за 6. клас.",
+      "Осигурява презентации и ресурси за практическа работа.",
+      "Предлага тестове и ключове за контрол и оценяване."
+    ],
+    "tags": [
+      "КМИТ",
+      "6. клас",
+      "Python",
+      "презентации",
+      "упражнения",
+      "тестове"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-08-05",
+    "updated": "2026-08-05",
+    "lessonUrl": "pages/lesson.html?id=KMIT6-001",
+    "resourceFolder": "resources/kmit/KMIT6-001",
+    "packManifest": "resources/kmit/KMIT6-001/pack.json"
+  },
+  {
     "id": "M6-001",
     "title": "Задачи от движение",
     "subject": "Математика",
