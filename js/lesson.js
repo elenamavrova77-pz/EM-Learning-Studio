@@ -104,8 +104,9 @@ function openPreview(url, type, title){
 function resourceCard(item, folder, icon, kind){
   const url = fileUrl(folder, item.file);
   const type = fileType(url);
+  const isAnswerKey = kind === 'assessment' && /(^|[\s_:.-])ключ([\s_:.-]|$)/i.test(labelFor(item,'Ресурс'));
   return `
-    <article class="material-card material-${kind}">
+    <article class="material-card material-${kind} ${isAnswerKey ? 'answer-key' : ''}">
       <span class="material-icon">${item.icon || icon}</span>
       <div class="material-copy">
         <span class="file-pill">${typeLabel(type)}</span>
@@ -183,6 +184,7 @@ function setMode(mode){
   document.body.dataset.lessonMode = mode;
   $$('.mode-toggle button').forEach(x=>x.classList.toggle('active',x.dataset.mode===mode));
   $$('.teacher-only').forEach(x=>x.classList.toggle('mode-hidden',!teacherMode));
+  $$('.answer-key').forEach(x=>x.classList.toggle('mode-hidden',!teacherMode));
   if(!teacherMode && $('.lesson-tab.active')?.classList.contains('teacher-only')) activate('overview');
 }
 function bind(){
@@ -317,7 +319,7 @@ function render(){
       ${panel('preview','🔎 Преглед на ресурс','<h3 id="previewTitle">Избери материал</h3><div class="media-viewer" id="previewViewer"><div class="empty-state">Избери бутон „Отвори“.</div></div>')}
     </div>
   </section>`;
-  activate('overview'); bind();
+  activate('overview'); bind(); setMode(localStorage.getItem(modeKey()) || 'teacher');
 }
 async function init(){
   setupTheme();
