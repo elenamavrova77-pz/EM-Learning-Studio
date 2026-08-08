@@ -223,5 +223,45 @@
     "created": "2026-07-14",
     "updated": "2026-07-14",
     "lessonUrl": "pages/lesson.html?id=INT-001"
+  },
+  {
+    "id": "KMIT7-001",
+    "title": "КМИТ – 7. клас: пълен учебен комплект",
+    "subject": "КМИТ",
+    "subjectCode": "kmit",
+    "grade": 7,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси и тестове по КМИТ за 7. клас.",
+    "objectives": [
+      "Подпомага преподаването на темите от учебната програма по КМИТ за 7. клас.",
+      "Осигурява презентации и ресурси за упражнения.",
+      "Предлага тестове за контрол и оценяване."
+    ],
+    "tags": [
+      "КМИТ",
+      "7. клас",
+      "Python",
+      "презентации",
+      "упражнения",
+      "тестове"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-08-08",
+    "updated": "2026-08-08",
+    "lessonUrl": "/pages/lesson.html?id=KMIT7-001",
+    "resourceFolder": "/resources/kmit/KMIT7-001",
+    "packManifest": "/resources/kmit/KMIT7-001/pack.json"
   }
 ]
