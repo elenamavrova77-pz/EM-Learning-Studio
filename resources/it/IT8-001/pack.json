@@ -1,0 +1,865 @@
+{
+  "id": "IT8-001",
+  "title": "Информационни технологии - 8. клас: пълен учебен комплект",
+  "icon": "💻",
+  "cover": "images/cover.png",
+  "description": "Годишен учебен комплект по информационни технологии за 8. клас. Съдържа презентации и работни материали към уроците, ресурси за практическа работа, тестове и ключове за контрол и оценяване. Темите обхващат социално общуване и споделена работа, компютърни системи и операционни системи, мобилни и периферни устройства, архивиране на данни, уеб дизайн, проектна работа, програмиране и изкуствен интелект.",
+  "duration": "Учебна година",
+  "lessonType": "Годишен учебен комплект",
+  "method": "Демонстрация, практическа работа, проектна дейност и контрол на знанията",
+  "objectives": [
+    "Подпомага преподаването на темите от учебната програма по информационни технологии за 8. клас.",
+    "Осигурява презентации и работни материали за въвеждане и затвърдяване на учебното съдържание.",
+    "Предлага практически ресурси за работа с компютърни системи, архиви, уеб сайтове, проекти и изкуствен интелект.",
+    "Подкрепя контрола и оценяването чрез тестове, ключове и критерии."
+  ],
+  "competencies": [
+    "Дигитална компетентност.",
+    "Онлайн комуникация и съвместна работа.",
+    "Работа с компютърни системи, операционни системи и периферни устройства.",
+    "Уеб дизайн и публикуване на съдържание.",
+    "Проектна работа и представяне на резултати.",
+    "Критично и отговорно използване на изкуствен интелект."
+  ],
+  "materials": [
+    "Компютър и интерактивен дисплей.",
+    "Интернет връзка.",
+    "Офис пакет и браузър.",
+    "Файловете за упражнения от комплекта."
+  ],
+  "tags": [
+    "ИТ",
+    "8. клас",
+    "компютърни системи",
+    "уеб дизайн",
+    "проекти",
+    "изкуствен интелект",
+    "архивиране",
+    "интернет"
+  ],
+  "presentations": [
+    {
+      "title": "10 Правила за използване и инсталиране на периферни устройства",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_001.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "11 Инсталиране и деинсталиране на програми",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_002.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "12 Използване на помощни системи и самоучители при работа с приложни програми",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_003.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "12 Работен лист Помощни системи и самоучители",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_004.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "13 14 15 Архивиране и компресиране на данни. Работа с архивирани данни (упражнение)",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_005.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "16 Специализирани софтуерни средства за създаване на уеб сайтове",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_006.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "17 Проектиране на статичен уеб сайт",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_007.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "18 Създаване на структура визуален дизайн и навигационна схема на сайт",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_008.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "19 20 Създаване и интегриране на компонентите на сайт",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_009.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "1 Информационни технологии за социално общуване",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_010.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "21 Публикуване на уебсайт",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_011.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "22 Работа по проекти. Основни етапи при разработване и изпълнение на проект",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_012.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "23 Работа в екип. Документация и защита на проект",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_013.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "24 Изработване на проекти",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_014.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "25 26 27 28 Работен лист Програмиране и изкуствен интелект",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_015.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "25 Въведение в изкуствения интелект",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_016.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "26 Машинно обучение и Deepfake",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_017.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "27 Генеративен изкуствен интелект",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_018.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "28 Проложение на ИИ в програмирането",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_019.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "2 Среди и средства за споделена съвместна работа и обучение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_020.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "3 Ефективно търсене на информация",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_021.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "4 Работен лист Компютърни мрежи и услуги. Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_022.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "5 История на компютърната техника",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_023.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "6 Съвременни компютърни системи",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_024.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "7 Съвременни операционни системи",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_025.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "8 Принципи на действие на съвременните мобилни устройства",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_026.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "9 Работен лист Съвременни мобилни устройства",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_027.pdf",
+      "icon": "📝"
+    }
+  ],
+  "worksheets": [
+    {
+      "title": "13 › BANDIZIP-SETUP.EXE",
+      "description": "Инсталационен файл",
+      "file": "files/exercises/exercise_001.exe",
+      "icon": "💾"
+    },
+    {
+      "title": "13 › IZArc_4.3.exe",
+      "description": "Инсталационен файл",
+      "file": "files/exercises/exercise_002.exe",
+      "icon": "💾"
+    },
+    {
+      "title": "13 › primer_2.z01",
+      "description": "Част от архив",
+      "file": "files/exercises/exercise_003.z01",
+      "icon": "🗜️"
+    },
+    {
+      "title": "13 › primer_2.z02",
+      "description": "Част от архив",
+      "file": "files/exercises/exercise_004.z02",
+      "icon": "🗜️"
+    },
+    {
+      "title": "13 › primer_2.z03",
+      "description": "Част от архив",
+      "file": "files/exercises/exercise_005.z03",
+      "icon": "🗜️"
+    },
+    {
+      "title": "13 › primer_2.zip",
+      "description": "Архив",
+      "file": "files/exercises/exercise_006.zip",
+      "icon": "🗜️"
+    },
+    {
+      "title": "19_20 › Web site1 › Information › cast.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_007.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "19_20 › Web site1 › Information › Movie info.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_008.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "19_20 › Web site1 › Information › News.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_009.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "19_20 › Web site1 › Information › Story.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_010.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › 22.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_011.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › action.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_012.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men1.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_013.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men10.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_014.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men11.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_015.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men12.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_016.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men2.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_017.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men3.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_018.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men4.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_019.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men5.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_020.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men6.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_021.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men7.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_022.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men8.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_023.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Gallery › sp_men9.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_024.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › newgoblin.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_025.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › p_225585.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_026.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_027.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat2.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_028.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat3.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_029.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat4.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_030.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat5.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_031.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat6.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_032.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Plakat › plakat7.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_033.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Andrew Garfield.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_034.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Colm Feore.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_035.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Dane DeHaan.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_036.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Embeth Davidtz.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_037.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Emma Stone.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_038.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Felisity Jones.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_039.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Jamie Foxx.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_040.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Paul Giamatti.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_041.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Roles › Sally Field.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_042.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › p_225586.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_043.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › p_230293.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_044.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › p_231158.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_045.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › sp_men7.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_046.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › sp_men8.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_047.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › Story › sp_men9.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_048.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "19_20 › Web site1 › Photos › swing.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_049.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › animated_banner.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_050.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › background.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_051.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › cpu.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_052.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › cpu2.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_053.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › i-o_devices.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_054.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › io_devices.pptx",
+      "description": "Презентационен файл",
+      "file": "files/exercises/exercise_055.pptx",
+      "icon": "📊"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › motherboard.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_056.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › motherboard2.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_057.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › pc.gif",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_058.gif",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › ram.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_059.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Pictures › shema.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_060.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Text › cpu.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_061.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Text › i-o devices.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_062.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Text › motherboard.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_063.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Text › nachalo.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_064.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Компютърна система › Text › ram.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_065.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 1-1.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_066.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 1-2.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_067.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 1-3.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_068.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 2-1.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_069.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 2-2.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_070.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › 3-1.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_071.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › Logo Луна.png",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_072.png",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Лунна нощ › Текст за сайта на Хотел “Лунна нощ”.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_073.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 01.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_074.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 02.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_075.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 03.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_076.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 04.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_077.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 05.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_078.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 06.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_079.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 07.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_080.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 08.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_081.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 09.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_082.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › 10.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_083.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › hotel.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_084.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "24 › Проект_Хотел_Планински рай › logo.png",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_085.png",
+      "icon": "🖼️"
+    },
+    {
+      "title": "25-28 › Упражнение_Работа с AI.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_086.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "9 › mobile › Andesite.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_087.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › Basalt.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_088.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › Dolomit.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_089.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › Gabbro.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_090.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › Gneiss.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_091.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › mururoa.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_092.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › norils.jpg",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_093.jpg",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › Presentation.pptx",
+      "description": "Презентационен файл",
+      "file": "files/exercises/exercise_094.pptx",
+      "icon": "📊"
+    },
+    {
+      "title": "9 › mobile › Radioactive.png",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_095.png",
+      "icon": "🖼️"
+    },
+    {
+      "title": "9 › mobile › rezultati.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_096.xlsx",
+      "icon": "📈"
+    },
+    {
+      "title": "9 › mobile › skali.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_097.docx",
+      "icon": "📝"
+    }
+  ],
+  "images": [
+    {
+      "title": "Корица на комплекта",
+      "file": "images/cover.png"
+    },
+    {
+      "title": "Какво научихме в 8. клас",
+      "file": "images/what-we-learned-8.png"
+    }
+  ],
+  "videos": [],
+  "audio": [],
+  "methodology": [
+    {
+      "title": "Описание на учебен комплект ИТ 8 клас",
+      "description": "PDF описание и каталог на ресурсите",
+      "file": "pdf/catalog/catalog_001.pdf",
+      "icon": "📘"
+    }
+  ],
+  "teacherNotes": [
+    {
+      "title": "Критерии за оценка на проект уеб сайт",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_003.pdf",
+      "icon": "✅"
+    }
+  ],
+  "assessment": [
+    {
+      "title": "Ключ Изходно ниво ИТ 8 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_001.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Ключ Компютърни системи и приложни програми. Архивиране на данни 8 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_002.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Тест Изходно ниво ИТ 8 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_004.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Тест Компютърни системи и приложни програми. Архивиране на данни 8 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_005.pdf",
+      "icon": "✅"
+    }
+  ],
+  "download": null,
+  "conductLesson": [
+    {
+      "title": "Избери урок",
+      "description": "Отвори интерактивния каталог и избери презентация или свързан ресурс.",
+      "file": "catalog/lessons.html"
+    },
+    {
+      "title": "Представи учебното съдържание",
+      "description": "Отвори раздел „Презентации“ и избери урок.",
+      "tab": "presentations"
+    },
+    {
+      "title": "Организирай упражнение",
+      "description": "Отвори раздел „Ресурси за упражнение“ и избери необходимия файл.",
+      "tab": "worksheets"
+    },
+    {
+      "title": "Провери знанията",
+      "description": "Отвори раздел „Контрол и оценяване“ и избери тест.",
+      "tab": "assessment"
+    }
+  ]
+}

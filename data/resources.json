@@ -263,5 +263,45 @@
     "lessonUrl": "/pages/lesson.html?id=KMIT7-001",
     "resourceFolder": "/resources/kmit/KMIT7-001",
     "packManifest": "/resources/kmit/KMIT7-001/pack.json"
+  },
+  {
+    "id": "IT8-001",
+    "title": "Информационни технологии - 8. клас: пълен учебен комплект",
+    "subject": "ИТ",
+    "subjectCode": "it",
+    "grade": 8,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси и тестове по информационни технологии за 8. клас.",
+    "objectives": [
+      "Подпомага преподаването на учебното съдържание по ИТ за 8. клас.",
+      "Осигурява презентации и ресурси за упражнения.",
+      "Предлага тестове за контрол и оценяване."
+    ],
+    "tags": [
+      "ИТ",
+      "8. клас",
+      "уеб дизайн",
+      "компютърни системи",
+      "проекти",
+      "изкуствен интелект"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-08-09",
+    "updated": "2026-08-09",
+    "lessonUrl": "/pages/lesson.html?id=IT8-001",
+    "resourceFolder": "/resources/it/IT8-001",
+    "packManifest": "/resources/it/IT8-001/pack.json"
   }
 ]
