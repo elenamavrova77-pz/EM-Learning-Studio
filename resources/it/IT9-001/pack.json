@@ -1,0 +1,426 @@
+{
+  "id": "IT9-001",
+  "title": "Информационни технологии - 9. клас: пълен учебен комплект",
+  "icon": "💻",
+  "cover": "images/cover.png",
+  "description": "Годишен учебен комплект по информационни технологии за 9. клас. Съдържа презентации и работни материали към уроците, ресурси за практическа работа, тестове и ключове за контрол и оценяване. Темите обхващат компютърни системи, компютърни мрежи и услуги, приложни програми, електронни таблици, текстообработка, електронни услуги и проектна работа.",
+  "duration": "Учебна година",
+  "lessonType": "Годишен учебен комплект",
+  "method": "Демонстрация, практическа работа, проектна дейност и контрол на знанията",
+  "objectives": [
+    "Подпомага преподаването на темите от учебната програма по информационни технологии за 9. клас.",
+    "Осигурява презентации и работни материали за въвеждане и затвърдяване на учебното съдържание.",
+    "Предлага практически ресурси за работа с мрежи, електронни таблици, текстообработка и електронни услуги.",
+    "Подкрепя контрола и оценяването чрез тестове и ключове."
+  ],
+  "competencies": [
+    "Дигитална компетентност.",
+    "Работа с компютърни системи и мрежи.",
+    "Сигурност и защита на личните данни.",
+    "Работа с приложни програми и електронни таблици.",
+    "Използване на електронни услуги и електронна търговия.",
+    "Проектна работа и представяне на резултати."
+  ],
+  "materials": [
+    "Компютър и интерактивен дисплей.",
+    "Интернет връзка.",
+    "Офис пакет и браузър.",
+    "Файловете за упражнения от комплекта."
+  ],
+  "tags": [
+    "ИТ",
+    "9. клас",
+    "компютърни системи",
+    "мрежи",
+    "електронни таблици",
+    "текстообработка",
+    "електронни услуги",
+    "проекти"
+  ],
+  "presentations": [
+    {
+      "title": "1 2 Суперкомпютри Грид и облачни технологии",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_001.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "3 Системи за глобално позициониране",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_002.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "4 Локални компютърни мрежи",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_003.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "5 Глобални компютърни мрежи",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_004.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "6 Основни комуникационни устройства и съобщителни среди",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_005.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "7 Свързване и конфигуриране на малка мрежа",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_006.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "8 Споделяне на ресурси в локална мрежа",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_007.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "9 Защита на информацията в мрежова среда",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_008.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "10 Защита на лични данни",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_009.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "11 Информация и услуги за гражданите в интернет",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_010.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "12 Електронна търговия",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_011.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "13 Електронни разплащания",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_012.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "14 Шаблони и теми в текстов документ",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_013.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "15 Използване на шаблони и теми в текстов документ Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_014.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "16 Сортиране в електронна таблица по няколко признака",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_015.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "17 Филтриране на данни в електронна таблица",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_016.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "18 Техники за пресмятане в електронна таблица",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_017.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "19 Валидиране на данни в електронна таблица",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_018.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "20 Сортиране, филтриране и валидиране на данни в електронна таблица Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_019.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "21 Създаване на циркулярни писма",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_020.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "22 Създаване на пощенски плик Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_021.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "23 Формуляри",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_022.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "24 Работен лист Формуляри в текстообработваща система",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_023.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "25 Изготвяне на справки",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_024.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "26 Обобщаване на данни в ЕТ",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_025.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "27 Приложни програми Упражнение",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_026.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "28 Работа по проекти",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_027.pdf",
+      "icon": "📊"
+    },
+    {
+      "title": "29 Работен лист Проект Олимпиада по математика",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_028.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "30 Работен лист Проект Заявление за кандидатстване във ВУЗ",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_029.pdf",
+      "icon": "📝"
+    },
+    {
+      "title": "31 Работен лист Проект Държавите на Балканския полуостровс",
+      "description": "PDF ресурс за директен преглед",
+      "file": "pdf/presentations/presentation_030.pdf",
+      "icon": "📝"
+    }
+  ],
+  "worksheets": [
+    {
+      "title": "14_15 › leksikon.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_001.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "14_15 › pismo.png",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_002.png",
+      "icon": "🖼️"
+    },
+    {
+      "title": "14_15 › pokana.docx",
+      "description": "Редактируем документ",
+      "file": "files/exercises/exercise_003.docx",
+      "icon": "📝"
+    },
+    {
+      "title": "16 › knigi.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_004.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "16 › knigi_new.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_005.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "16 › kurs.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_006.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "16 › otsenka.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_007.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "17 › kurs.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_008.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "18 › kurs.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_009.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "18 › stoki.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_010.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "19 › firma.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_011.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "19 › obrazovanie.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_012.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "20 › country.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_013.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "20 › register.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_014.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "22 › marka.png",
+      "description": "Изображение",
+      "file": "files/exercises/exercise_015.png",
+      "icon": "🖼️"
+    },
+    {
+      "title": "25 › knigi_spravka.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_016.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "26 › oborot.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_017.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "27 › bvp.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_018.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "27 › kurs.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_019.xlsx",
+      "icon": "📗"
+    },
+    {
+      "title": "27 › register.xlsx",
+      "description": "Електронна таблица",
+      "file": "files/exercises/exercise_020.xlsx",
+      "icon": "📗"
+    }
+  ],
+  "images": [
+    {
+      "title": "Корица на комплекта",
+      "file": "images/cover.png"
+    },
+    {
+      "title": "Какво научихме в 9. клас",
+      "file": "images/what-we-learned-9.png"
+    }
+  ],
+  "videos": [],
+  "audio": [],
+  "methodology": [
+    {
+      "title": "Описание на учебен комплект ИТ 9 клас",
+      "description": "PDF описание и каталог на ресурсите",
+      "file": "pdf/catalog/catalog_001.pdf",
+      "icon": "📘"
+    }
+  ],
+  "teacherNotes": [],
+  "assessment": [
+    {
+      "title": "Ключ Изходно ниво ИТ 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_001.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Тест Изходно ниво ИТ 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_002.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Ключ Компютърни системи Компютърни мрежи и услуги 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_003.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Тест Компютърни системи Компютърни мрежи и услуги 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_004.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Ключ Приложни програми 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_005.pdf",
+      "icon": "✅"
+    },
+    {
+      "title": "Тест Приложни програми 9 клас",
+      "description": "PDF материал за директен преглед",
+      "file": "pdf/assessment/assessment_006.pdf",
+      "icon": "✅"
+    }
+  ],
+  "download": null,
+  "conductLesson": [
+    {
+      "title": "Избери урок",
+      "description": "Отвори интерактивния каталог и избери презентация или свързан ресурс.",
+      "file": "catalog/lessons.html"
+    },
+    {
+      "title": "Представи учебното съдържание",
+      "description": "Отвори раздел „Презентации“ и избери урок.",
+      "tab": "presentations"
+    },
+    {
+      "title": "Организирай упражнение",
+      "description": "Отвори раздел „Ресурси за упражнение“ и избери необходимия файл.",
+      "tab": "worksheets"
+    },
+    {
+      "title": "Провери знанията",
+      "description": "Отвори раздел „Контрол и оценяване“ и избери тест.",
+      "tab": "assessment"
+    }
+  ]
+}

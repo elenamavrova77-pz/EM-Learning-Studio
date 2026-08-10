@@ -303,5 +303,45 @@
     "lessonUrl": "/pages/lesson.html?id=IT8-001",
     "resourceFolder": "/resources/it/IT8-001",
     "packManifest": "/resources/it/IT8-001/pack.json"
+  },
+  {
+    "id": "IT9-001",
+    "title": "Информационни технологии - 9. клас: пълен учебен комплект",
+    "subject": "ИТ",
+    "subjectCode": "it",
+    "grade": 9,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси и тестове по информационни технологии за 9. клас.",
+    "objectives": [
+      "Подпомага преподаването на учебното съдържание по ИТ за 9. клас.",
+      "Осигурява презентации и ресурси за упражнения.",
+      "Предлага тестове за контрол и оценяване."
+    ],
+    "tags": [
+      "ИТ",
+      "9. клас",
+      "компютърни системи",
+      "мрежи",
+      "приложни програми",
+      "електронни таблици"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-08-10",
+    "updated": "2026-08-10",
+    "lessonUrl": "/pages/lesson.html?id=IT9-001",
+    "resourceFolder": "/resources/it/IT9-001",
+    "packManifest": "/resources/it/IT9-001/pack.json"
   }
 ]
