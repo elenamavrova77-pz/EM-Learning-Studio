@@ -343,5 +343,45 @@
     "lessonUrl": "/pages/lesson.html?id=IT9-001",
     "resourceFolder": "/resources/it/IT9-001",
     "packManifest": "/resources/it/IT9-001/pack.json"
+  },
+  {
+    "id": "IT10-001",
+    "title": "Информационни технологии - 10. клас: пълен учебен комплект",
+    "subject": "ИТ",
+    "subjectCode": "it",
+    "grade": 10,
+    "type": "Годишен учебен комплект",
+    "duration": "Учебна година",
+    "difficulty": "По учебната програма",
+    "description": "Презентации, практически ресурси и тестове по Информационни технологии за 10. клас.",
+    "objectives": [
+      "Подпомага преподаването на учебното съдържание по ИТ за 10. клас.",
+      "Осигурява презентации и ресурси за упражнения.",
+      "Предлага тестове за контрол и оценяване."
+    ],
+    "tags": [
+      "ИТ",
+      "10. клас",
+      "алгоритми",
+      "дигитално съдържание",
+      "сигурност",
+      "макроси"
+    ],
+    "icon": "💻",
+    "theme": "teal",
+    "game": "",
+    "presentation": "",
+    "worksheet": "",
+    "methodology": "",
+    "assessment": "",
+    "video": "",
+    "download": "",
+    "published": true,
+    "featured": true,
+    "created": "2026-08-11",
+    "updated": "2026-08-11",
+    "lessonUrl": "/pages/lesson.html?id=IT10-001",
+    "resourceFolder": "/resources/it/IT10-001",
+    "packManifest": "/resources/it/IT10-001/pack.json"
   }
 ]
