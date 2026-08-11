@@ -355,10 +355,16 @@
   "audio": [],
   "methodology": [
     {
-      "title": "Описание на учебен комплект ИТ 9 клас",
-      "description": "PDF описание и каталог на ресурсите",
-      "file": "pdf/catalog/catalog_001.pdf",
+      "title": "Описание на учебния комплект – ИТ 9. клас",
+      "description": "Описание на целите, съдържанието и организацията на комплекта",
+      "file": "pdf/catalog/description_001.pdf",
       "icon": "📘"
+    },
+    {
+      "title": "Каталог на ресурсите – ИТ 9. клас",
+      "description": "Подробна таблица на уроците и ресурсите",
+      "file": "pdf/catalog/catalog_001.pdf",
+      "icon": "📑"
     }
   ],
   "teacherNotes": [],
