@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>БДП + Математика — 5. клас</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:system-ui,sans-serif;background:#f5f4f0;color:#1a1a18;min-height:100vh;padding:1.5rem 1rem;}
+  #app{max-width:740px;margin:0 auto;}
+  .top{display:flex;align-items:baseline;gap:10px;margin-bottom:4px;}
+  .top-icon{font-size:28px;}
+  h1{font-size:22px;font-weight:700;}
+  .subtitle{font-size:14px;color:#888;margin-bottom:1.5rem;}
+  .tabs{display:flex;gap:8px;margin-bottom:1.5rem;flex-wrap:wrap;}
+  .tab{padding:9px 18px;border:1.5px solid #d0cfc8;border-radius:10px;font-size:14px;color:#666;cursor:pointer;background:#fff;font-family:inherit;}
+  .tab.active{background:#EEEDFE;border-color:#534AB7;color:#3C3489;font-weight:600;}
+  .section{display:none;}
+  .section.visible{display:block;}
+  .score-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:1.5rem;}
+  .sc{background:#f0eff8;border-radius:10px;padding:9px 18px;text-align:center;flex:1;}
+  .sc-n{font-size:22px;font-weight:700;color:#534AB7;}
+  .sc-l{font-size:11px;color:#888;}
+  .q-card{background:#fff;border:1.5px solid #e0dfd8;border-radius:12px;padding:1.25rem;margin-bottom:1rem;}
+  .q-text{font-size:16px;font-weight:600;color:#1a1a18;margin-bottom:1rem;line-height:1.5;}
+  .opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
+  .opt{padding:10px 14px;border:1.5px solid #e0dfd8;border-radius:10px;cursor:pointer;font-size:14px;color:#1a1a18;background:#fff;display:flex;align-items:center;gap:8px;transition:all 0.15s;font-family:inherit;}
+  .opt:hover{background:#f5f4f0;}
+  .opt.sel{border-color:#534AB7;background:#EEEDFE;color:#3C3489;}
+  .opt.correct{border-color:#1D9E75;background:#E1F5EE;color:#085041;}
+  .opt.wrong{border-color:#D85A30;background:#FAECE7;color:#4A1B0C;}
+  .opt-l{width:26px;height:26px;border-radius:50%;border:1.5px solid #ddd;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;color:#888;}
+  .opt.sel .opt-l{background:#534AB7;color:#fff;border-color:#534AB7;}
+  .opt.correct .opt-l{background:#1D9E75;color:#fff;border-color:#1D9E75;}
+  .opt.wrong .opt-l{background:#D85A30;color:#fff;border-color:#D85A30;}
+  .exp{padding:10px 14px;border-radius:10px;font-size:13px;margin-bottom:0.75rem;line-height:1.6;}
+  .exp.ok{background:#E1F5EE;color:#085041;border:1px solid #5DCAA5;}
+  .exp.err{background:#FAECE7;color:#4A1B0C;border:1px solid #F0997B;}
+  .btn{padding:10px 24px;border:1.5px solid #d0cfc8;border-radius:10px;font-size:14px;color:#333;background:#fff;cursor:pointer;font-family:inherit;}
+  .btn:hover{background:#f5f4f0;}
+  .btn.primary{background:#534AB7;color:#fff;border-color:#534AB7;}
+  .btn.primary:hover{background:#3C3489;}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;}
+  .progress{font-size:13px;color:#888;margin-bottom:5px;}
+  .prog-bar{height:5px;background:#eee;border-radius:3px;margin-bottom:1.5rem;}
+  .prog-fill{height:5px;background:#534AB7;border-radius:3px;transition:width 0.3s;}
+  .finish{background:#f9f8f5;border-radius:14px;padding:2rem;text-align:center;}
+  .big{font-size:56px;font-weight:700;color:#534AB7;}
+  .rev-item{padding:9px 13px;border-radius:10px;margin-bottom:6px;font-size:13px;line-height:1.5;}
+  .rev-item.ok{background:#E1F5EE;color:#085041;border:1px solid #5DCAA5;}
+  .rev-item.err{background:#FAECE7;color:#4A1B0C;border:1px solid #F0997B;}
+  canvas{width:100%;border-radius:12px;border:1.5px solid #e0dfd8;display:block;background:#e8e6df;}
+  .road-q{background:#fff;border:1.5px solid #e0dfd8;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;}
+  .road-opts{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:1rem;}
+  input[type=number]{width:100%;padding:9px 12px;border:1.5px solid #e0dfd8;border-radius:10px;font-size:15px;background:#fff;color:#1a1a18;font-family:inherit;outline:none;}
+  input[type=number]:focus{border-color:#534AB7;}
+  label{font-size:12px;color:#888;display:block;margin-bottom:5px;}
+  .sp-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:1rem;}
+  .highlight{background:#EEEDFE;border-radius:10px;padding:12px 16px;font-size:14px;color:#3C3489;font-weight:600;margin-top:0.75rem;}
+  .box{background:#f9f8f5;border-radius:12px;padding:1rem 1.25rem;margin-bottom:1rem;}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="top">
+    <span class="top-icon">🚦</span>
+    <h1>БДП + Математика</h1>
+  </div>
+  <p class="subtitle">5. клас — три режима на игра</p>
+
+  <div class="tabs">
+    <div class="tab active" onclick="showTab('quiz')">Викторина</div>
+    <div class="tab" onclick="showTab('road')">Пътна симулация</div>
+    <div class="tab" onclick="showTab('speed')">Скоростомер</div>
+  </div>
+
+  <!-- ВИКТОРИНА -->
+  <div id="tab-quiz" class="section visible">
+    <div class="score-row">
+      <div class="sc"><div class="sc-n" id="q-score">0</div><div class="sc-l">точки</div></div>
+      <div class="sc"><div class="sc-n" id="q-correct">0</div><div class="sc-l">верни</div></div>
+      <div class="sc"><div class="sc-n" id="q-wrong">0</div><div class="sc-l">грешни</div></div>
+    </div>
+    <div class="progress" id="q-prog"></div>
+    <div class="prog-bar"><div class="prog-fill" id="q-progbar" style="width:0%"></div></div>
+    <div id="q-area"></div>
+  </div>
+
+  <!-- ПЪТНА СИМУЛАЦИЯ -->
+  <div id="tab-road" class="section">
+    <p style="font-size:13px;color:#888;margin-bottom:0.75rem;">Отговори правилно — колата продължава напред. Грешен отговор = изгубен живот!</p>
+    <div class="score-row">
+      <div class="sc"><div class="sc-n" id="r-lives">♥♥♥</div><div class="sc-l">животи</div></div>
+      <div class="sc"><div class="sc-n" id="r-dist">0</div><div class="sc-l">км</div></div>
+      <div class="sc"><div class="sc-n" id="r-score">0</div><div class="sc-l">точки</div></div>
+    </div>
+    <canvas id="road-canvas" height="160"></canvas>
+    <div class="road-q" id="r-qbox"></div>
+    <div class="road-opts" id="r-opts"></div>
+    <div id="r-feedback"></div>
+  </div>
+
+  <!-- СКОРОСТОМЕР -->
+  <div id="tab-speed" class="section">
+    <p style="font-size:13px;color:#888;margin-bottom:1rem;">Въведи две стойности — третата се изчислява автоматично.</p>
+    <div class="sp-grid">
+      <div><label>Скорост (km/h)</label><input type="number" id="sp-v" placeholder="напр. 50" oninput="calcSpeed()"/></div>
+      <div><label>Разстояние (km)</label><input type="number" id="sp-s" placeholder="напр. 10" oninput="calcSpeed()"/></div>
+      <div><label>Време (мин)</label><input type="number" id="sp-t" placeholder="напр. 12" oninput="calcSpeed()"/></div>
+    </div>
+    <div id="sp-result"></div>
+    <div class="box">
+      <p style="font-size:13px;font-weight:600;color:#1a1a18;margin-bottom:10px;">Спирачен път по скорост:</p>
+      <div id="sp-brake"></div>
+    </div>
+    <div class="box">
+      <p style="font-size:13px;font-weight:600;color:#1a1a18;margin-bottom:6px;">Задача за размисъл:</p>
+      <p id="sp-task" style="font-size:14px;color:#555;line-height:1.6;"></p>
+    </div>
+  </div>
+</div>
+
+<script>
+const QS=[
+  {q:"Каква е максималната скорост в населено място?",opts:["30 km/h","50 km/h","70 km/h","90 km/h"],ans:1,exp:"В населено място е 50 km/h. В училищна зона — само 30 km/h.",cat:"БДП"},
+  {q:"Велосипедист кара с 12 km/h в продължение на 30 минути. Колко километра изминава?",opts:["3 km","6 km","12 km","24 km"],ans:1,exp:"s = v × t = 12 × 0.5 = 6 km",cat:"Математика"},
+  {q:"Кой пътен знак е триъгълен с червен кант?",opts:["Забранителен","Предупредителен","Информационен","Задължителен"],ans:1,exp:"Триъгълникът означава внимание. Кръгът — забрана или задължение.",cat:"БДП"},
+  {q:"При 50 km/h спирачният път е 42 м. При 30 km/h е 18 м. С колко метра е по-кратък?",opts:["12 м","18 м","24 м","42 м"],ans:2,exp:"42 − 18 = 24 м. По-ниската скорост дава значително по-кратък спирачен път.",cat:"Математика"},
+  {q:"Знакът СТОП е правилен осмоъгълник със страна 20 cm. Колко е периметърът?",opts:["120 cm","140 cm","160 cm","180 cm"],ans:2,exp:"P = 8 × 20 = 160 cm. Осмоъгълникът има 8 равни страни.",cat:"Математика"},
+  {q:"Пешеходецът трябва да пресича:",opts:["Навсякъде","Само на пешеходна пътека","На червено","Между колите"],ans:1,exp:"Пешеходците пресичат само на обозначени пешеходни пътеки или кръстовища.",cat:"БДП"},
+  {q:"Кръгъл пътен знак с диаметър 40 cm — каква е обиколката? (π ≈ 3,14)",opts:["62,8 cm","125,6 cm","80 cm","40 cm"],ans:1,exp:"C = π × d = 3.14 × 40 = 125.6 cm",cat:"Математика"},
+  {q:"Колата измина 90 м за 10 секунди. Каква е скоростта в m/s?",opts:["7 m/s","9 m/s","10 m/s","90 m/s"],ans:1,exp:"v = s ÷ t = 90 ÷ 10 = 9 m/s",cat:"Математика"},
+  {q:"Каква светлина позволява на пешеходеца да пресича?",opts:["Червена","Жълта","Зелена","Мигаща"],ans:2,exp:"Пешеходците пресичат само на зелена светлина, след като се уверят, че е безопасно.",cat:"БДП"},
+  {q:"Скоростта се удвоява. Спирачният път се увеличава приблизително:",opts:["2 пъти","3 пъти","4 пъти","10 пъти"],ans:2,exp:"Спирачният път нараства с квадрата на скоростта. 2× скорост → ~4× по-дълъг спирачен път!",cat:"Математика"},
+  {q:"Велосипедистът трябва да кара по:",opts:["Тротоара","Средата на улицата","Дясната страна на платното","Насрещната лента"],ans:2,exp:"Велосипедистите карат по дясната страна на платното или по велоалея.",cat:"БДП"},
+  {q:"Предупредителен триъгълен знак има страна 35 cm. Колко е периметърът?",opts:["70 cm","105 cm","140 cm","35 cm"],ans:1,exp:"P = 3 × 35 = 105 cm. Равностранният триъгълник има три равни страни.",cat:"Математика"},
+];
+
+const ROAD_QS=[
+  {q:"Максимална скорост в населено място?",opts:["30 km/h","50 km/h","70 km/h","90 km/h"],ans:1,exp:"50 km/h е лимитът в населено място."},
+  {q:"Велосипедист: 10 km за 30 мин — каква скорост?",opts:["5 km/h","10 km/h","20 km/h","30 km/h"],ans:2,exp:"v = 10 ÷ 0.5 = 20 km/h"},
+  {q:"Триъгълен знак означава?",opts:["Забрана","Внимание","Информация","Стоп"],ans:1,exp:"Триъгълник = предупреждение."},
+  {q:"Общ спирачен път при 50 km/h?",opts:["18 м","28 м","42 м","90 м"],ans:2,exp:"Около 42 м — реакционен + спирачен."},
+  {q:"P на осмоъгълник страна 10 cm?",opts:["40 cm","60 cm","80 cm","100 cm"],ans:2,exp:"8 × 10 = 80 cm"},
+  {q:"На кой цвят пешеходецът пресича?",opts:["Червено","Жълто","Зелено","Мигащо"],ans:2,exp:"Само на зелено!"},
+  {q:"v = 60 km/h, t = 0.5 ч → s = ?",opts:["30 km","60 km","120 km","15 km"],ans:0,exp:"s = 60 × 0.5 = 30 km"},
+  {q:"C на кръг с d = 40 cm (π=3.14)?",opts:["62.8 cm","125.6 cm","80 cm","40 cm"],ans:1,exp:"C = 3.14 × 40 = 125.6 cm"},
+];
+
+const BRAKES=[[30,18],[50,42],[70,75],[90,115]];
+const TASKS=[
+  "Колата кара 60 km/h. За 45 минути колко km изминава?",
+  "Велосипедист изминава 8 km за 24 минути. Каква е скоростта му?",
+  "Пешеходец върви с 5 km/h. Колко минути му трябват за 2 km?",
+  "Колата е на 30 м от пешеходна пътека, кара с 30 km/h (спирачен път 18 м). Ще спре ли?",
+  "Автобусът кара 80 km/h и измина 40 km. Колко минути пътува?",
+];
+
+function shuffle(a){return [...a].sort(()=>Math.random()-0.5);}
+
+// QUIZ
+let qS={idx:0,sel:null,checked:false,score:0,correct:0,wrong:0,qs:[],done:false};
+
+function initQuiz(){
+  qS={idx:0,sel:null,checked:false,score:0,correct:0,wrong:0,qs:shuffle(QS).slice(0,10),done:false};
+  renderQuiz();
+}
+
+function renderQuiz(){
+  const a=document.getElementById('q-area');
+  if(qS.done){renderQFinish();return;}
+  const q=qS.qs[qS.idx];
+  const pct=Math.round(qS.idx/qS.qs.length*100);
+  document.getElementById('q-prog').textContent=`Въпрос ${qS.idx+1} от ${qS.qs.length} · ${q.cat}`;
+  document.getElementById('q-progbar').style.width=pct+'%';
+  const ls=['А','Б','В','Г'];
+  let html=`<div class="q-card"><div class="q-text">${q.q}</div><div class="opts">`;
+  q.opts.forEach((o,i)=>{
+    let c='opt';
+    if(qS.checked){if(i===q.ans)c+=' correct';else if(i===qS.sel)c+=' wrong';}
+    else if(i===qS.sel)c+=' sel';
+    const cl=qS.checked?'':'onclick="qSel('+i+')"';
+    html+=`<div class="${c}" ${cl}><span class="opt-l">${ls[i]}</span>${o}</div>`;
+  });
+  html+='</div>';
+  if(qS.checked){
+    const ok=qS.sel===q.ans;
+    html+=`<div class="exp ${ok?'ok':'err'}">${ok?'Вярно! ':'Грешно! '}${q.exp}</div>`;
+    html+=`<div class="actions"><button class="btn primary" onclick="qNext()">${qS.idx<qS.qs.length-1?'Следващ въпрос':'Виж резултата'}</button></div>`;
+  } else {
+    html+=`<div class="actions"><button class="btn primary" onclick="qCheck()">Провери</button></div>`;
+  }
+  html+='</div>';
+  a.innerHTML=html;
+  document.getElementById('q-score').textContent=qS.score;
+  document.getElementById('q-correct').textContent=qS.correct;
+  document.getElementById('q-wrong').textContent=qS.wrong;
+}
+
+function qSel(i){if(qS.checked)return;qS.sel=i;renderQuiz();}
+function qCheck(){
+  if(qS.sel===null)return;
+  qS.checked=true;
+  if(qS.sel===qS.qs[qS.idx].ans){qS.score++;qS.correct++;}else qS.wrong++;
+  renderQuiz();
+}
+function qNext(){qS.idx++;qS.sel=null;qS.checked=false;if(qS.idx>=qS.qs.length)qS.done=true;renderQuiz();}
+function renderQFinish(){
+  const pct=Math.round(qS.score/qS.qs.length*100);
+  const m=pct>=90?'Отличен резултат!':pct>=70?'Много добре!':pct>=50?'Добре — продължавай!':'Опитай пак!';
+  let rev='<div style="margin-top:1.5rem;text-align:left;">';
+  qS.qs.forEach((q,i)=>{
+    const ok=i<qS.correct;
+    rev+=`<div class="rev-item ${ok?'ok':'err'}">${i+1}. ${q.q}</div>`;
+  });
+  rev+='</div>';
+  document.getElementById('q-area').innerHTML=`
+    <div class="finish">
+      <div class="big">${qS.score}<span style="font-size:24px;color:#aaa;">/${qS.qs.length}</span></div>
+      <p style="font-size:18px;font-weight:600;margin:8px 0;">${m}</p>
+      <p style="font-size:14px;color:#888;">${pct}% верни отговора</p>
+      <button class="btn primary" style="margin-top:1rem;" onclick="initQuiz()">Играй отново</button>
+      ${rev}
+    </div>`;
+}
+
+// ROAD
+let rS={lives:3,dist:0,score:0,qi:0,qs:[],sel:null,checked:false,running:false,done:false,frame:0};
+let rAnim=null;
+
+function initRoad(){
+  rS={lives:3,dist:0,score:0,qi:0,qs:shuffle(ROAD_QS),sel:null,checked:false,running:true,done:false,frame:0};
+  updateRoadUI();
+  renderRoadQ();
+  startAnim();
+}
+
+function startAnim(){
+  if(rAnim) cancelAnimationFrame(rAnim);
+  const canvas=document.getElementById('road-canvas');
+  if(!canvas) return;
+  const ctx=canvas.getContext('2d');
+  let offset=0;
+  function draw(){
+    if(!document.getElementById('road-canvas')){cancelAnimationFrame(rAnim);return;}
+    canvas.width=canvas.offsetWidth||680;
+    const w=canvas.width,h=160;
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle='#b8d4e8';ctx.fillRect(0,0,w,85);
+    ctx.fillStyle='#7aaa55';ctx.fillRect(0,85,w,75);
+    ctx.fillStyle='#4a4a4a';ctx.fillRect(0,92,w,58);
+    ctx.fillStyle='#fff';
+    for(let x=-60+(offset%60);x<w+60;x+=60) ctx.fillRect(x,119,40,6);
+    const cx=60;
+    ctx.fillStyle='#534AB7';ctx.fillRect(cx,96,60,30);
+    ctx.fillStyle='#EEEDFE';ctx.fillRect(cx+8,100,44,14);
+    ctx.fillStyle='#222';
+    ctx.beginPath();ctx.arc(cx+12,127,7,0,Math.PI*2);ctx.fill();
+    ctx.beginPath();ctx.arc(cx+48,127,7,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='rgba(255,200,0,0.9)';ctx.fillRect(cx+54,105,8,6);
+    if(rS.running&&!rS.checked) offset+=2;
+    rAnim=requestAnimationFrame(draw);
+  }
+  draw();
+}
+
+function renderRoadQ(){
+  if(rS.done) return;
+  const q=rS.qs[rS.qi%rS.qs.length];
+  document.getElementById('r-qbox').innerHTML=`<p style="font-size:14px;font-weight:600;">${q.q}</p>`;
+  const ls=['А','Б','В','Г'];
+  let html='';
+  q.opts.forEach((o,i)=>{
+    let c='opt';
+    if(rS.checked){if(i===q.ans)c+=' correct';else if(i===rS.sel)c+=' wrong';}
+    else if(i===rS.sel)c+=' sel';
+    const cl=rS.checked?'':'onclick="rSel('+i+')"';
+    html+=`<div class="${c}" ${cl}><span class="opt-l">${ls[i]}</span>${o}</div>`;
+  });
+  document.getElementById('r-opts').innerHTML=html;
+  if(!rS.checked){
+    document.getElementById('r-feedback').innerHTML=`<div class="actions"><button class="btn primary" onclick="rCheck()">Провери</button></div>`;
+  }
+}
+
+function rSel(i){if(rS.checked)return;rS.sel=i;renderRoadQ();}
+function rCheck(){
+  if(rS.sel===null)return;
+  const q=rS.qs[rS.qi%rS.qs.length];
+  rS.checked=true;
+  const ok=rS.sel===q.ans;
+  if(ok){rS.score+=2;rS.dist+=5;}else{rS.lives--;rS.running=false;}
+  updateRoadUI();
+  renderRoadQ();
+  const nxt=rS.lives<=0
+    ?`<button class="btn primary" onclick="initRoad()">Играй отново</button>`
+    :(rS.qi>=rS.qs.length-1
+      ?`<div class="finish" style="margin-top:1rem;"><div class="big">${rS.score}</div><p style="font-size:14px;color:#888;">${rS.dist} km изминати</p><button class="btn primary" style="margin-top:1rem;" onclick="initRoad()">Играй отново</button></div>`
+      :`<button class="btn primary" onclick="rNext()">Следващ въпрос</button>`);
+  document.getElementById('r-feedback').innerHTML=`
+    <div class="exp ${ok?'ok':'err'}" style="margin-bottom:0.75rem;">${ok?'Вярно! Карай напред! ':'Грешно! Изгуби живот! '}${q.exp}</div>
+    <div class="actions">${nxt}</div>`;
+}
+function rNext(){rS.qi++;rS.sel=null;rS.checked=false;rS.running=true;renderRoadQ();}
+function updateRoadUI(){
+  document.getElementById('r-lives').textContent='♥'.repeat(Math.max(0,rS.lives))+'♡'.repeat(Math.max(0,3-rS.lives));
+  document.getElementById('r-dist').textContent=rS.dist;
+  document.getElementById('r-score').textContent=rS.score;
+}
+
+// SPEED
+let taskIdx=0;
+function calcSpeed(){
+  const v=parseFloat(document.getElementById('sp-v').value);
+  const s=parseFloat(document.getElementById('sp-s').value);
+  const t=parseFloat(document.getElementById('sp-t').value);
+  const res=document.getElementById('sp-result');
+  let html='';
+  if(v&&t&&!s) html=`<div class="exp ok">s = v × t = ${v} × ${(t/60).toFixed(3)} ч = <strong>${(v*t/60).toFixed(2)} km</strong></div>`;
+  else if(s&&t&&!v) html=`<div class="exp ok">v = s ÷ t = ${s} ÷ ${(t/60).toFixed(3)} ч = <strong>${(s/(t/60)).toFixed(1)} km/h</strong></div>`;
+  else if(v&&s&&!t) html=`<div class="exp ok">t = s ÷ v = ${s} ÷ ${v} × 60 = <strong>${(s/v*60).toFixed(1)} мин</strong></div>`;
+  res.innerHTML=html;
+  let bHtml='';
+  BRAKES.forEach(([sp,br])=>{
+    const col=sp<=30?'#1D9E75':sp<=50?'#BA7517':'#D85A30';
+    bHtml+=`<div style="display:flex;align-items:center;gap:10px;margin-bottom:7px;">
+      <span style="width:65px;font-size:13px;font-weight:600;color:#1a1a18;">${sp} km/h</span>
+      <div style="flex:1;height:16px;background:#eee;border-radius:4px;overflow:hidden;">
+        <div style="height:100%;width:${Math.min(100,br/1.15)}%;background:${col};border-radius:4px;"></div>
+      </div>
+      <span style="width:46px;font-size:13px;color:#555;text-align:right;">${br} м</span>
+    </div>`;
+  });
+  document.getElementById('sp-brake').innerHTML=bHtml;
+  document.getElementById('sp-task').textContent=TASKS[taskIdx%TASKS.length];
+}
+
+function showTab(id){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['quiz','road','speed'][i]===id));
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('visible'));
+  document.getElementById('tab-'+id).classList.add('visible');
+  if(id==='road'){if(!rS.running&&!rS.done)initRoad();else startAnim();}
+  if(id==='speed') calcSpeed();
+}
+
+initQuiz();
+calcSpeed();
+</script>
+</body>
+</html>
