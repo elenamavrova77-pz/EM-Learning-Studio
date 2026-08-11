@@ -8,6 +8,29 @@ const search = document.getElementById('search');
 const buttons = [...document.querySelectorAll('.filter')];
 const gradeButtons = [...document.querySelectorAll('.grade-filter')];
 
+// Ако страницата вече е за конкретен предмет/клас, използваме
+// активните бутони като начални филтри. Така на страница за 9. клас
+// не се показват ресурси от 5., 6., 7. и 8. клас.
+const pageSubjectButton = buttons.find(
+  button => button.classList.contains('active') && button.dataset.filter
+);
+const pageGradeButton = gradeButtons.find(
+  button => button.classList.contains('active') && button.dataset.grade
+);
+
+if (pageSubjectButton) active = pageSubjectButton.dataset.filter;
+if (pageGradeButton) activeGrade = pageGradeButton.dataset.grade;
+
+// Надежден филтър според адреса на страницата.
+// Работи дори ако браузърът е запазил стара версия на активните бутони.
+const pathMatch = window.location.pathname.match(
+  /\/pages\/(mathematics|kmit|it)\/grade-(\d+)\.html$/i
+);
+if (pathMatch) {
+  active = pathMatch[1].toLowerCase();
+  activeGrade = pathMatch[2];
+}
+
 function themeClass(theme) {
   return theme === 'teal' ? 'teal'
        : theme === 'purple' ? 'purple'
@@ -69,7 +92,7 @@ if (search) search.addEventListener('input', render);
 
 async function loadPublishedResources() {
   try {
-    const response = await fetch(EMLS.url('data/resources.json') + '?v=8.8.1', { cache: 'no-store' });
+    const response = await fetch(EMLS.url('data/resources.json') + '?v=8.8.5', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const resources = await response.json();
 
