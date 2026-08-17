@@ -26,27 +26,22 @@
       display:flex;
       justify-content:center;
       align-items:center;
-      background:rgba(255,255,255,.82);
-      border-radius:16px;
-      padding:8px;
-      box-shadow:0 8px 22px rgba(10,35,55,.12);
-      backdrop-filter: blur(2px);
     }
     .hero-media-logo img{
       display:block;
-      width:clamp(72px, 7.5vw, 108px);
+      width:clamp(68px, 7vw, 96px);
       height:auto;
       object-fit:contain;
+      border-radius:50%;
+      box-shadow:0 8px 22px rgba(10,35,55,.14);
     }
     @media (max-width: 820px){
       .hero-media-logo{
         right:12px;
         bottom:12px;
-        padding:6px;
-        border-radius:12px;
       }
       .hero-media-logo img{
-        width:78px;
+        width:72px;
       }
     }
   </style>
