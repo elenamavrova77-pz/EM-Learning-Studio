@@ -1,0 +1,120 @@
+{
+  "id": "M6-002",
+  "title": "Стани богат със знания по математика",
+  "icon": "🏆",
+  "cover": "images/cover.png",
+  "description": "Математическо състезание в три игрови кръга за затвърдяване на знанията по темата „Дроби и числа“ в 6. клас. Комплектът включва три варианта на играта, сценарий и бележки за учителя.",
+  "duration": "40–45 минути",
+  "lessonType": "Урок за затвърдяване на знания и умения",
+  "method": "Игрово-базирано, състезателно и екипно обучение",
+  "objectives": [
+    "Извършва аритметични действия с обикновени и десетични дроби и рационални числа.",
+    "Разпознава и прилага знания за проценти, множества и взаимно прости числа.",
+    "Определя координати на точки и работи с Декартова координатна система.",
+    "Решава текстови задачи и аргументира избраното решение."
+  ],
+  "competencies": [
+    "Математическа компетентност.",
+    "Дигитална компетентност.",
+    "Умения за учене, екипна работа и комуникация."
+  ],
+  "materials": [
+    "Компютър и интерактивен дисплей или проектор.",
+    "Интернет връзка за защитените презентации.",
+    "Онлайн колело за случаен избор на участници."
+  ],
+  "tags": [
+    "дроби",
+    "рационални числа",
+    "проценти",
+    "координатна система",
+    "множества",
+    "Стани богат",
+    "6. клас"
+  ],
+  "presentations": [
+    {
+      "title": "Игра 1",
+      "description": "Първи вариант на математическото състезание – 10 задачи и три сигурни нива.",
+      "file": "presentations/game1.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQBvRuatlzTWS6udTmv_LqT_ASKRfrCae6FSqdBvwH17fAk?e=YKzsXv",
+      "icon": "🏆"
+    },
+    {
+      "title": "Игра 2",
+      "description": "Втори вариант на математическото състезание – 10 задачи и три сигурни нива.",
+      "file": "presentations/game2.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQA2Wh-cu_8NRIH-u50Q65QwAYVaZz-iIO7avwgpA8mtm5U?e=rxKcrb",
+      "icon": "🏆"
+    },
+    {
+      "title": "Игра 3",
+      "description": "Трети вариант на математическото състезание – 10 задачи и три сигурни нива.",
+      "file": "presentations/game3.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQAz6vnzrkC9SLKDd0DzoiqlAe7tREgvCftpvKEgiqBGpg4?e=eNhk50",
+      "icon": "🏆"
+    }
+  ],
+  "worksheets": [],
+  "images": [
+    {
+      "title": "Корица на урока",
+      "file": "images/cover.png"
+    }
+  ],
+  "videos": [],
+  "audio": [],
+  "methodology": [
+    {
+      "title": "Сценарий на математическото състезание",
+      "description": "Пълна методическа разработка с цели, задачи, очаквани резултати, регламент и трите варианта на задачите.",
+      "file": "methodology/scenario.pdf",
+      "icon": "📘"
+    }
+  ],
+  "teacherNotes": [
+    {
+      "title": "Бележки на учителя",
+      "description": "Кратки насоки за организация, регламент, последователност и наблюдение.",
+      "file": "teacher-notes/teacher-notes.pdf",
+      "icon": "📄"
+    }
+  ],
+  "assessment": [],
+  "download": null,
+  "conductLesson": [
+    {
+      "title": "Въведение и регламент",
+      "description": "Представи темата, точкуването и трите сигурни нива.",
+      "file": "methodology/scenario.pdf"
+    },
+    {
+      "title": "Определи участниците",
+      "description": "Избери участниците чрез онлайн колело или друг случаен избор.",
+      "file": ""
+    },
+    {
+      "title": "Игра 1",
+      "description": "Стартирай първия вариант на „Стани богат със знания по математика“.",
+      "file": "presentations/game1.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQBvRuatlzTWS6udTmv_LqT_ASKRfrCae6FSqdBvwH17fAk?e=YKzsXv"
+    },
+    {
+      "title": "Игра 2",
+      "description": "Стартирай втория вариант на „Стани богат със знания по математика“.",
+      "file": "presentations/game2.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQA2Wh-cu_8NRIH-u50Q65QwAYVaZz-iIO7avwgpA8mtm5U?e=rxKcrb"
+    },
+    {
+      "title": "Игра 3",
+      "description": "Стартирай третия вариант на „Стани богат със знания по математика“.",
+      "file": "presentations/game3.pdf",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQAz6vnzrkC9SLKDd0DzoiqlAe7tREgvCftpvKEgiqBGpg4?e=eNhk50"
+    },
+    {
+      "title": "Обобщение и рефлексия",
+      "description": "Обсъди стратегиите, затрудненията и най-важните математически знания, приложени в игрите.",
+      "file": "teacher-notes/teacher-notes.pdf"
+    }
+  ]
+}
