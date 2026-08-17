@@ -1,0 +1,85 @@
+{
+  "id": "M7-001",
+  "title": "Денят на числото Пи",
+  "icon": "π",
+  "cover": "images/cover.png",
+  "description": "Математическо състезание за 7. клас, посветено на Деня на числото Пи, с история на π, пет категории въпроси и задачи и подготовка за НВО.",
+  "duration": "40–45 минути",
+  "lessonType": "Затвърдяване на знанията",
+  "method": "Екипна състезателна игра, презентация и дискусия",
+  "objectives": [
+    "Затвърдява знанията по математика от 5., 6. и 7. клас.",
+    "Извършва действия с дроби и рационални числа.",
+    "Решава линейни и модулни уравнения и геометрични задачи.",
+    "Прилага знанията си в задачи, близки до формата на НВО."
+  ],
+  "competencies": [
+    "Математическа компетентност.",
+    "Умения за учене и решаване на проблеми.",
+    "Комуникативни умения и работа в екип."
+  ],
+  "materials": [
+    "Интерактивна дъска или проектор.",
+    "Защитена PowerPoint презентация.",
+    "Карти с номера на въпросите и цветни карти за двата отбора."
+  ],
+  "tags": [
+    "числото π",
+    "състезание",
+    "НВО",
+    "рационални числа",
+    "геометрия",
+    "уравнения",
+    "7. клас"
+  ],
+  "presentations": [
+    {
+      "title": "Денят на числото Пи – 7. клас",
+      "description": "Защитена интерактивна PowerPoint презентация с историята на π и състезателното табло.",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQDcZ45ZQXyzSKFSfWw2WxBTASNm5dTiMf727iAx8ElmSjs?e=t9iJZz",
+      "icon": "📊"
+    }
+  ],
+  "worksheets": [],
+  "images": [
+    {
+      "title": "Корица на урока",
+      "file": "images/cover.png"
+    }
+  ],
+  "videos": [],
+  "audio": [],
+  "methodology": [
+    {
+      "title": "Методическа разработка",
+      "description": "Цели, задачи, очаквани резултати, правила, категории и ход на математическото състезание.",
+      "file": "methodology/methodology.pdf",
+      "icon": "📘"
+    }
+  ],
+  "teacherNotes": [],
+  "assessment": [],
+  "download": null,
+  "conductLesson": [
+    {
+      "title": "Въведение: историята на числото Пи",
+      "description": "Представяне на историята и значението на числото π.",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQDcZ45ZQXyzSKFSfWw2WxBTASNm5dTiMf727iAx8ElmSjs?e=t9iJZz"
+    },
+    {
+      "title": "Запознаване с регламента",
+      "description": "Два отбора, 20 въпроса и задачи, пет категории.",
+      "file": "methodology/methodology.pdf"
+    },
+    {
+      "title": "Математическо състезание",
+      "description": "Категории: Математици, Определения, Формули, Въпроси и Задачи.",
+      "url": "https://minedusci-my.sharepoint.com/:p:/g/personal/elena_mavrova-nenkova_edu_mon_bg/IQDcZ45ZQXyzSKFSfWw2WxBTASNm5dTiMf727iAx8ElmSjs?e=t9iJZz"
+    },
+    {
+      "title": "Финал и резултати",
+      "description": "Обявяване на победителя и заключителна част за Деня на π.",
+      "file": "methodology/methodology.pdf"
+    }
+  ]
+}
