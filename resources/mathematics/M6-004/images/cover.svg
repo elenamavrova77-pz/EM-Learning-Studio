@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0" stop-color="#1f4e78"/>
+    <stop offset=".5" stop-color="#7c3aed"/>
+    <stop offset="1" stop-color="#0891b2"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="675" rx="40" fill="url(#g)"/>
+<circle cx="120" cy="110" r="75" fill="#facc15" opacity=".9"/>
+<circle cx="1080" cy="560" r="95" fill="#f472b6" opacity=".55"/>
+<g fill="#fff" opacity=".16" font-family="Arial" font-weight="700">
+  <text x="70" y="580" font-size="110">π</text>
+  <text x="980" y="150" font-size="90">%</text>
+  <text x="1040" y="300" font-size="90">△</text>
+  <text x="180" y="220" font-size="80">÷</text>
+</g>
+<text x="600" y="210" text-anchor="middle" fill="#fff" font-family="Arial" font-size="58" font-weight="800">Клуб „Математически предизвикателства“</text>
+<text x="600" y="292" text-anchor="middle" fill="#fde68a" font-family="Arial" font-size="42" font-weight="800">6. клас</text>
+<text x="600" y="382" text-anchor="middle" fill="#fff" font-family="Arial" font-size="44" font-weight="800">Финалната мисия</text>
+<text x="600" y="440" text-anchor="middle" fill="#e0f2fe" font-family="Arial" font-size="34" font-weight="700">Математически шампиони</text>
+<text x="600" y="535" text-anchor="middle" fill="#fff" font-family="Arial" font-size="26">Ръководител: Елена Маврова-Ненкова</text>
+</svg>
