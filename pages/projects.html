@@ -3,72 +3,135 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Авторски колекции | EM Learning Studio</title>
-  <meta name="description" content="Авторски образователни колекции, курсове и проекти в EM Learning Studio.">
+  <title>Авторски проекти | EM Learning Studio</title>
   <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../favicon.png">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
   <style>
-    .collections-hero{padding:56px 0 28px}
-    .collections-hero h1{font-size:clamp(38px,6vw,64px);margin:0 0 12px;color:#17365d}
-    .collections-hero p{max-width:820px;font-size:19px;line-height:1.6;color:#5d7185}
-    .collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:18px 0 60px}
+    .project-card-link{display:block;color:inherit;text-decoration:none}
+    .project-card-link .card{height:100%;transition:transform .2s ease,box-shadow .2s ease}
+    .project-card-link:hover .card{transform:translateY(-5px);box-shadow:0 18px 42px rgba(20,70,110,.14)}
+    .collection-section{padding:20px 0 64px}
+    .collection-section h2{font-size:clamp(30px,4vw,46px);color:#17365d;margin:10px 0 8px}
+    .collection-section .lead{max-width:820px;color:#5f7488;line-height:1.65;margin:0 0 22px}
+    .collection-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
     .collection-card{background:#fff;border-radius:26px;overflow:hidden;border:1px solid rgba(20,70,110,.10);box-shadow:0 16px 42px rgba(20,70,110,.10);display:flex;flex-direction:column}
     .collection-cover{aspect-ratio:16/9;background:linear-gradient(135deg,#17365d,#7c3aed,#0891b2);display:grid;place-items:center;overflow:hidden}
     .collection-cover img{width:100%;height:100%;object-fit:cover}
     .collection-body{padding:22px;display:flex;flex-direction:column;gap:12px;flex:1}
     .collection-kicker{display:inline-flex;align-self:flex-start;padding:6px 10px;border-radius:999px;background:#f3e8ff;color:#6b21a8;font-weight:800;font-size:12px}
-    .collection-card h2{margin:0;color:#17365d;font-size:24px}
+    .collection-card h3{margin:0;color:#17365d;font-size:24px}
     .collection-card p{margin:0;color:#5d7185;line-height:1.55}
-    .collection-meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:2px}
+    .collection-meta{display:flex;gap:8px;flex-wrap:wrap}
     .collection-meta span{background:#f4f8fc;color:#365269;border-radius:999px;padding:6px 10px;font-size:12px;font-weight:700}
     .collection-actions{margin-top:auto;padding-top:8px;display:flex;gap:10px;flex-wrap:wrap}
     .collection-actions a{text-decoration:none}
-    .open-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:14px;padding:10px 16px;background:#1f4e78;color:#fff;font-weight:800}
-    .game-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:14px;padding:10px 16px;background:#7c3aed;color:#fff;font-weight:800}
+    .open-btn,.game-btn{display:inline-flex;align-items:center;justify-content:center;min-height:44px;border-radius:14px;padding:10px 16px;color:#fff;font-weight:800}
+    .open-btn{background:#1f4e78}.game-btn{background:#7c3aed}
     .empty-card{grid-column:1/-1;background:#fff;border-radius:24px;padding:34px;text-align:center;color:#64748b;border:1px solid #dfe8ef}
     @media(max-width:980px){.collection-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:680px){.collection-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
-  <nav class="site-nav">
-    <div class="container nav-inner">
-      <a class="brand" href="../index.html"><span class="brand-mark">EM</span><span>EM Learning Studio</span></a>
-      <div class="nav-links">
-        <a href="mathematics.html">Математика</a>
-        <a href="kmit.html">КМИТ</a>
-        <a href="it.html">ИТ</a>
-        <a href="interdisciplinary.html">Интердисциплинарни</a>
-        <a href="projects.html" aria-current="page">Проекти</a>
-      </div>
-      <a class="primary-btn nav-button" href="library.html">🎮 Библиотека</a>
+
+<nav>
+  <div class="container nav">
+    <a class="brand" href="../index.html"><span class="mark">EM</span><span>EM Learning Studio</span></a>
+    <div class="links">
+      <a href="../index.html">Начало</a>
+      <a href="../pages/mathematics.html">Математика</a>
+      <a href="../pages/it.html">ИТ</a>
+      <a href="../pages/bdp.html">БДП</a>
+      <a href="../pages/interdisciplinary.html">Интердисциплинарни</a>
+      <a href="../pages/projects.html">Проекти</a>
+      <a href="../pages/about.html">За автора</a>
     </div>
-  </nav>
+    <a class="cta" href="../pages/library.html">🎮 Играй</a>
+  </div>
+</nav>
 
-  <main>
-    <section class="collections-hero">
-      <div class="container">
-        <span class="eyebrow"><strong>Авторски</strong> ресурси</span>
-        <h1>Авторски колекции</h1>
-        <p>Цялостни авторски курсове, клубове и тематични комплекти, които обединяват учебни материали, интерактивни игри, методически ресурси и финални продукти.</p>
-      </div>
-    </section>
+<header class="page-hero">
+  <div class="container">
+    <span class="badge">EM Learning Studio</span>
+    <h1>Авторски проекти</h1>
+    <p>Място за педагогически практики, STEM дейности и образователни инициативи.</p>
+  </div>
+</header>
 
-    <section>
-      <div class="container">
-        <div id="collectionsGrid" class="collection-grid">
-          <div class="empty-card">Зареждане на авторските колекции...</div>
-        </div>
-      </div>
-    </section>
-  </main>
+<section>
+  <div class="container">
+    <div class="feature-grid">
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div><strong>EM Learning Studio</strong><br><small>Учи. Играй. Побеждавай.</small></div>
-      <div><small>Автор: Елена Маврова-Ненкова · © 2026</small></div>
+      <a class="project-card-link" href="#interinstitutional">
+        <article class="card">
+          <div class="banner orange"><div class="icon">🤝</div></div>
+          <div class="body">
+            <h3>Междуинституционални практики</h3>
+            <p>Открити и интердисциплинарни уроци с партньорски училища.</p>
+          </div>
+        </article>
+      </a>
+
+      <a class="project-card-link" href="#stem">
+        <article class="card">
+          <div class="banner teal"><div class="icon">🧪</div></div>
+          <div class="body">
+            <h3>STEM и дигитални проекти</h3>
+            <p>Игри, симулации, Scratch, HTML и работа с интерактивен дисплей.</p>
+          </div>
+        </article>
+      </a>
+
+      <a class="project-card-link" href="#festivals">
+        <article class="card">
+          <div class="banner purple"><div class="icon">🏆</div></div>
+          <div class="body">
+            <h3>Фестивали и инициативи</h3>
+            <p>Училищни събития, младежки фестивали и образователни кампании.</p>
+          </div>
+        </article>
+      </a>
+
+      <a class="project-card-link" href="#collections">
+        <article class="card">
+          <div class="banner"><div class="icon">📚</div></div>
+          <div class="body">
+            <h3>Авторски колекции</h3>
+            <p>Серии от игри, уроци, работни листове и методически разработки.</p>
+          </div>
+        </article>
+      </a>
+
     </div>
-  </footer>
+  </div>
+</section>
 
+<!-- Запазени котви за трите съществуващи раздела -->
+<div id="interinstitutional"></div>
+<div id="stem"></div>
+<div id="festivals"></div>
+
+<section id="collections" class="collection-section">
+  <div class="container">
+    <span class="badge">Авторски ресурси</span>
+    <h2>Авторски колекции</h2>
+    <p class="lead">Цялостни авторски курсове, клубове и тематични комплекти, които обединяват учебни материали, интерактивни игри, методически ресурси и финални продукти.</p>
+    <div id="collectionsGrid" class="collection-grid">
+      <div class="empty-card">Зареждане на авторските колекции...</div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container foot">
+    <div><strong>EM Learning Studio</strong><br><span class="small">Учи. Играй. Побеждавай.</span></div>
+    <div class="small">Автор: Елена Маврова-Ненкова</div>
+  </div>
+</footer>
+
+<script src="../js/config.js"></script>
 <script>
 (async function(){
   const grid = document.getElementById('collectionsGrid');
@@ -79,7 +142,7 @@
     const all = await res.json();
     const items = all.filter(x => x && x.published !== false && x.subjectCode === 'collections');
     if(!items.length){
-      grid.innerHTML = '<div class="empty-card"><h2>Скоро ще има нови авторски колекции.</h2><p>Разделът е готов за публикуване на цялостни авторски курсове и проекти.</p></div>';
+      grid.innerHTML = '<div class="empty-card"><h3>Скоро ще има нови авторски колекции.</h3></div>';
       return;
     }
     grid.innerHTML = items.map(item => {
@@ -92,10 +155,10 @@
           <div class="collection-cover">${cover ? `<img src="${esc(cover)}" alt="Корица на ${esc(item.title)}">` : '<div style="font-size:70px">🏆</div>'}</div>
           <div class="collection-body">
             <span class="collection-kicker">${esc(item.type || 'Авторска колекция')}</span>
-            <h2>${esc(item.title)}</h2>
+            <h3>${esc(item.title)}</h3>
             <p>${esc(item.description || '')}</p>
             <div class="collection-meta">
-              <span>6. клас</span>
+              <span>${esc(item.grade ? item.grade+'. клас' : '')}</span>
               <span>${esc(item.duration || '')}</span>
               <span>Математика</span>
             </div>
@@ -108,7 +171,7 @@
     }).join('');
   }catch(err){
     console.error(err);
-    grid.innerHTML = '<div class="empty-card"><h2>Колекциите не могат да бъдат заредени.</h2><p>Провери файла data/resources.json.</p></div>';
+    grid.innerHTML = '<div class="empty-card"><h3>Колекциите не могат да бъдат заредени.</h3><p>Провери data/resources.json.</p></div>';
   }
 })();
 </script>
