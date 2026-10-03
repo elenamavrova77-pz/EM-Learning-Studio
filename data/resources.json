@@ -146,44 +146,43 @@
     "lessonUrl": "pages/lesson.html?id=INT-001"
   },
   {
-    "id": "M6-004",
-    "title": "Клуб „Математически предизвикателства“",
-    "subject": "Математика",
-    "subjectCode": "mathematics",
+    "id": "COL-001",
+    "title": "Математика в действие – Клуб „Математически предизвикателства“",
+    "subject": "Авторски колекции",
+    "subjectCode": "collections",
     "grade": 6,
-    "type": "Занимания по интереси",
+    "type": "Авторска колекция",
     "duration": "60 учебни часа",
     "difficulty": "Средно",
-    "description": "30 тематични математически мисии за 6. клас с практическа, игрова и проектна насоченост, завършващи с интерактивна отборна игра „Математически шампиони“.",
+    "description": "Цялостна авторска колекция за 6. клас с 30 математически мисии, книги за ученика и учителя, методически пакет и финална интерактивна игра.",
     "objectives": [
-      "Прилага математически знания в практически и реални ситуации.",
-      "Развива логическо, аналитично и критическо мислене.",
-      "Работи в екип, аргументира решения и използва интерактивни ресурси."
+      "Прилага математиката в реални и практически ситуации.",
+      "Развива логическо и критическо мислене.",
+      "Работи в екип и създава математически продукти."
     ],
     "tags": [
+      "авторска колекция",
+      "математика",
+      "6 клас",
       "занимания по интереси",
-      "математически предизвикателства",
-      "интерактивна игра",
-      "отбори",
-      "проектно обучение",
-      "6 клас"
+      "30 мисии"
     ],
     "icon": "🏆",
     "theme": "purple",
-    "game": "resources/mathematics/M6-004/game/final-mission.html",
+    "game": "resources/collections/COL-001/game/final-mission.html",
     "presentation": "",
     "worksheet": "",
     "methodology": "",
     "assessment": "",
     "video": "",
-    "download": "",
+    "download": "resources/collections/COL-001/downloads/matematika-v-deystvie-collection.zip",
     "published": true,
     "featured": true,
     "created": "2026-10-03",
     "updated": "2026-10-03",
     "gameTitle": "Финалната мисия: Математически шампиони",
-    "lessonUrl": "pages/lesson.html?id=M6-004",
-    "resourceFolder": "resources/mathematics/M6-004",
-    "packManifest": "resources/mathematics/M6-004/pack.json"
+    "lessonUrl": "pages/lesson.html?id=COL-001",
+    "resourceFolder": "resources/collections/COL-001",
+    "packManifest": "resources/collections/COL-001/pack.json"
   }
 ]

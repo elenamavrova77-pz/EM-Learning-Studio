@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Финалната мисия – Математически шампиони</title>
+<style>
+:root{
+  --navy:#0f172a; --blue:#1d4ed8; --cyan:#0891b2; --green:#15803d;
+  --orange:#ea580c; --purple:#7c3aed; --pink:#db2777; --yellow:#facc15;
+  --white:#fff; --ink:#0f172a; --muted:#475569;
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:Arial,Helvetica,sans-serif;background:#0f172a;color:#fff}
+body{min-height:100vh;overflow-x:hidden}
+button,input{font:inherit}
+button{cursor:pointer}
+.app{
+  min-height:100vh; position:relative; padding:18px;
+  background:
+    radial-gradient(circle at 10% 12%,rgba(255,214,102,.52) 0 7%,transparent 8%),
+    radial-gradient(circle at 88% 18%,rgba(100,210,255,.48) 0 8%,transparent 9%),
+    radial-gradient(circle at 78% 88%,rgba(255,126,180,.36) 0 10%,transparent 11%),
+    linear-gradient(135deg,#0f172a 0%,#312e81 35%,#075985 68%,#064e3b 100%);
+}
+.app:before{
+  content:""; position:absolute; inset:0; pointer-events:none; opacity:.14;
+  background-image:
+    linear-gradient(rgba(255,255,255,.18) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.18) 1px,transparent 1px);
+  background-size:36px 36px;
+}
+.symbol{position:absolute;font-weight:900;color:rgba(255,255,255,.14);pointer-events:none;user-select:none}
+.s1{left:2%;top:18%;font-size:76px}.s2{right:3%;top:25%;font-size:92px}.s3{left:4%;bottom:8%;font-size:78px}.s4{right:4%;bottom:10%;font-size:82px}
+.wrap{position:relative;z-index:2;max-width:1480px;margin:0 auto}
+.hero{
+  background:rgba(255,255,255,.96); color:var(--ink); border-radius:28px; padding:20px 24px;
+  box-shadow:0 18px 45px rgba(0,0,0,.25); display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap;
+}
+.badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.badge{padding:7px 11px;border-radius:999px;font-weight:800;font-size:13px}
+.b1{background:#fef3c7;color:#92400e}.b2{background:#dbeafe;color:#1e40af}.b3{background:#fce7f3;color:#9d174d}
+h1{margin:0;font-size:clamp(28px,4vw,54px);line-height:1.04}
+.subtitle{margin:8px 0 0;color:#475569;font-size:clamp(15px,1.8vw,21px);font-weight:600}
+.hero-actions{display:flex;gap:10px;flex-wrap:wrap}
+.top-btn{border:0;border-radius:18px;padding:13px 18px;color:white;font-weight:900;box-shadow:0 8px 20px rgba(0,0,0,.18);min-height:50px}
+.reset{background:linear-gradient(90deg,#c026d3,#7c3aed)}
+.full{background:linear-gradient(90deg,#0284c7,#0f766e)}
+.teams{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:16px}
+.team-card{border-radius:26px;padding:16px 18px;box-shadow:0 18px 45px rgba(0,0,0,.22);border:2px solid rgba(255,255,255,.5);color:#0f172a}
+.team-a{background:linear-gradient(135deg,#cffafe,#bae6fd)}
+.team-b{background:linear-gradient(135deg,#ffedd5,#fde68a)}
+.team-c{background:linear-gradient(135deg,#ede9fe,#ddd6fe)}
+.team-row{display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center}
+.team-icon{width:64px;height:64px;border-radius:20px;display:grid;place-items:center;font-size:34px;color:white;box-shadow:0 8px 18px rgba(0,0,0,.16)}
+.team-a .team-icon{background:#0284c7}.team-b .team-icon{background:#ea580c}.team-c .team-icon{background:#7c3aed}
+.team-card label{display:block;font-weight:900;font-size:13px;margin-bottom:5px}
+.team-card input{width:100%;border:2px solid rgba(15,23,42,.15);border-radius:14px;padding:10px 12px;font-weight:900;font-size:18px;background:rgba(255,255,255,.9);color:#0f172a}
+.score-label{font-size:12px;font-weight:900;text-align:center}.score{font-size:40px;font-weight:900;text-align:center}
+.status{
+  margin-top:14px;border-radius:22px;background:rgba(15,23,42,.78);border:1px solid rgba(255,255,255,.2);
+  padding:14px 18px;display:flex;gap:12px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  box-shadow:0 14px 35px rgba(0,0,0,.18)
+}
+.turn small{color:#a5f3fc;font-weight:900;text-transform:uppercase;letter-spacing:.08em}.turn strong{display:block;font-size:24px}
+.medals{background:linear-gradient(90deg,#fde047,#f59e0b);color:#422006;border-radius:18px;padding:10px 15px;font-weight:900;text-align:center}
+.arena-head{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:18px 0 10px}
+.arena-head h2{margin:0;font-size:28px}.arena-head p{margin:2px 0 0;color:#bae6fd;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.arena{
+  min-height:170px;border:4px solid transparent;border-radius:28px;padding:16px;text-align:left;
+  box-shadow:0 16px 36px rgba(0,0,0,.22);transition:.18s ease;position:relative;overflow:hidden;color:#0f172a
+}
+.arena:hover{transform:translateY(-4px) scale(1.01)}
+.arena[disabled]{opacity:.7;filter:grayscale(.2);cursor:default;transform:none}
+.arena-top{display:flex;justify-content:space-between;align-items:flex-start;gap:8px}
+.arena-icon{width:58px;height:58px;border-radius:18px;display:grid;place-items:center;color:#fff;font-size:32px;box-shadow:0 8px 18px rgba(0,0,0,.14)}
+.points{border-radius:999px;padding:6px 10px;background:rgba(255,255,255,.8);font-size:12px;font-weight:900}
+.arena-title{margin-top:16px;font-size:20px;font-weight:900}.arena-sub{margin-top:5px;font-size:14px;font-weight:700;opacity:.7}
+.panel{
+  margin-top:18px;background:#fff;color:#0f172a;border:4px solid #fde047;border-radius:28px;padding:20px;
+  box-shadow:0 22px 50px rgba(0,0,0,.28)
+}
+.hidden{display:none!important}
+.panel-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.label{font-weight:900;color:#6d28d9;text-transform:uppercase;letter-spacing:.06em;font-size:13px}
+.question{margin:6px 0 0;font-size:clamp(22px,3vw,34px);line-height:1.15}
+.close{border:0;background:#e2e8f0;border-radius:14px;padding:10px 14px;font-weight:900;color:#334155}
+.answers{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.answer{min-height:62px;border:2px solid #ddd6fe;border-radius:18px;background:linear-gradient(90deg,#f5f3ff,#fdf2f8);padding:13px 15px;text-align:left;font-weight:900;color:#0f172a}
+.answer:hover{border-color:#8b5cf6}
+.answer:disabled{cursor:default}
+.feedback{margin-top:14px;border-radius:16px;padding:13px;background:#f8fafc;color:#334155;font-weight:900;min-height:48px}
+.final{
+  margin-top:18px;border:4px solid #fde047;border-radius:28px;padding:26px;text-align:center;color:#0f172a;
+  background:linear-gradient(135deg,#fef3c7,#fce7f3,#cffafe);box-shadow:0 24px 55px rgba(0,0,0,.3)
+}
+.final .big{font-size:64px}.final h2{margin:8px 0;font-size:34px;color:#581c87}
+.final-message{max-width:800px;margin:14px auto;background:rgba(255,255,255,.8);border-radius:18px;padding:15px;font-size:20px;font-weight:900}
+.winner{max-width:800px;margin:14px auto 0;border-radius:18px;padding:16px;color:#fff;font-size:20px;font-weight:900;background:linear-gradient(90deg,#7c3aed,#db2777)}
+footer{text-align:center;color:#cbd5e1;font-size:13px;font-weight:700;padding:18px 0 4px}
+@media(max-width:1050px){.teams{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+@media(max-width:700px){.teams,.grid,.answers{grid-template-columns:1fr}.team-row{grid-template-columns:auto 1fr}.team-row>div:last-child{grid-column:1/-1}.score-label,.score{text-align:left}.app{padding:10px}.hero{padding:16px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="symbol s1">÷</div><div class="symbol s2">π</div><div class="symbol s3">△</div><div class="symbol s4">%</div>
+  <main class="wrap">
+    <section style="margin-bottom:14px;background:rgba(255,255,255,.96);color:#0f172a;border-radius:24px;padding:14px 18px;box-shadow:0 14px 35px rgba(0,0,0,.22);text-align:center;border:2px solid rgba(255,255,255,.6)">
+      <div style="font-size:clamp(20px,2.8vw,34px);font-weight:900;color:#1f4e78;line-height:1.15;">Клуб „Математически предизвикателства“</div>
+      <div style="margin-top:5px;font-size:clamp(15px,1.8vw,22px);font-weight:800;color:#7c3aed;">6. клас</div>
+      <div style="margin-top:4px;font-size:clamp(14px,1.6vw,19px);font-weight:700;color:#475569;">Ръководител: Елена Маврова-Ненкова</div>
+    </section>
+
+    <section class="hero">
+      <div>
+        <div class="badges"><span class="badge b1">30 МИСИИ</span><span class="badge b2">6 АРЕНИ</span><span class="badge b3">1 ГОЛЯМ ФИНАЛ</span></div>
+        <h1>🏆 Финалната мисия: Математически шампиони</h1>
+        <p class="subtitle">Преминете през шестте цветни арени. Във всяка арена има 3 въпроса – по един за всеки отбор. Всеки верен отговор носи 10 точки, а след третия въпрос арената се завършва с медал.</p>
+      </div>
+      <div class="hero-actions">
+        <button class="top-btn reset" id="resetBtn">🔄 Нова игра</button>
+        <button class="top-btn full" id="fullBtn">⛶ Цял екран</button>
+      </div>
+    </section>
+
+    <section class="teams">
+      <div class="team-card team-a">
+        <div class="team-row">
+          <div class="team-icon">🦅</div>
+          <div><label for="teamA">ОТБОР А</label><input id="teamA" value="Орли" maxlength="24"></div>
+          <div><div class="score-label">ТОЧКИ</div><div class="score" id="scoreA">0</div></div>
+        </div>
+      </div>
+      <div class="team-card team-b">
+        <div class="team-row">
+          <div class="team-icon">🐯</div>
+          <div><label for="teamB">ОТБОР Б</label><input id="teamB" value="Тигри" maxlength="24"></div>
+          <div><div class="score-label">ТОЧКИ</div><div class="score" id="scoreB">0</div></div>
+        </div>
+      </div>
+      <div class="team-card team-c">
+        <div class="team-row">
+          <div class="team-icon">🦅</div>
+          <div><label for="teamC">ОТБОР В</label><input id="teamC" value="Соколи" maxlength="24"></div>
+          <div><div class="score-label">ТОЧКИ</div><div class="score" id="scoreC">0</div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="status">
+      <div class="turn"><small>🎯 На ход</small><strong id="turnName">Орли</strong><span>Верен отговор: +10 т. • Всяка арена има 3 въпроса • Трите отбора се редуват на всеки въпрос.</span></div>
+      <div class="medals">🏅 МЕДАЛИ: <span id="medalCount">0</span>/6</div>
+    </section>
+
+    <section>
+      <div class="arena-head">
+        <div><p>ИЗБОР НА ПРЕДИЗВИКАТЕЛСТВО</p><h2>🌈 Шестте математически арени</h2></div>
+        <span>Завършената арена се заключва.</span>
+      </div>
+      <div class="grid" id="arenaGrid"></div>
+    </section>
+
+    <section id="questionPanel" class="panel hidden" aria-live="polite">
+      <div class="panel-head">
+        <div><div class="label" id="arenaLabel"></div><h2 class="question" id="questionText"></h2></div>
+        <button class="close" id="closeBtn">✕</button>
+      </div>
+      <div class="answers" id="answers"></div>
+      <div class="feedback" id="feedback">Изберете отговор.</div>
+    </section>
+
+    <section id="finalPanel" class="final hidden" aria-live="polite">
+      <div class="big">🏆✨🎉</div>
+      <h2>ГОЛЕМИЯТ ФИНАЛ Е ОТКЛЮЧЕН!</h2>
+      <p>Преминахте през всички шест математически арени.</p>
+      <div class="final-message">„Математиката е навсякъде — и вече умеете да я откривате!“</div>
+      <div class="winner" id="winnerText"></div>
+    </section>
+
+    <footer>„Математика в действие“ • 6. клас • Финална интерактивна игра</footer>
+  </main>
+</div>
+
+<script>
+const arenas = [
+  {
+    icon:'🔎', title:'Математически детективи',
+    bg:'linear-gradient(135deg,#dbeafe,#bfdbfe)', accent:'#1d4ed8',
+    questions:[
+      {q:'НОД на 18 и 24 е:', answers:['3','6','9','12'], correct:1, note:'18 = 2×3², 24 = 2³×3 → НОД = 6.'},
+      {q:'НОК на 6 и 8 е:', answers:['12','18','24','48'], correct:2, note:'Най-малкото общо кратно на 6 и 8 е 24.'},
+      {q:'Ако 2x + 5 = 19, тогава x =', answers:['5','6','7','8'], correct:2, note:'2x = 14, следователно x = 7.'}
+    ]
+  },
+  {
+    icon:'🛒', title:'Математика в ежедневието',
+    bg:'linear-gradient(135deg,#fef3c7,#fde68a)', accent:'#b45309',
+    questions:[
+      {q:'Раница струва 80 лв. и е намалена с 15%. Каква е новата цена?', answers:['64 лв.','68 лв.','72 лв.','74 лв.'], correct:1, note:'15% от 80 = 12, затова 80 − 12 = 68 лв.'},
+      {q:'Имаш бюджет 120 лв. и изразходваш 25%. Колко лева остават?', answers:['30 лв.','80 лв.','90 лв.','100 лв.'], correct:2, note:'25% от 120 = 30, остават 90 лв.'},
+      {q:'Цена 50 лв. се увеличава с 20%. Новата цена е:', answers:['55 лв.','60 лв.','65 лв.','70 лв.'], correct:1, note:'20% от 50 = 10, следователно новата цена е 60 лв.'}
+    ]
+  },
+  {
+    icon:'🏃', title:'Математика и спорт',
+    bg:'linear-gradient(135deg,#dcfce7,#bbf7d0)', accent:'#15803d',
+    questions:[
+      {q:'Спортист пробягва 1200 m за 5 min. Колко метра изминава средно за 1 min?', answers:['200 m','220 m','240 m','250 m'], correct:2, note:'1200 ÷ 5 = 240 m/min.'},
+      {q:'Бегач пробягва 2 km за 10 min. Какво разстояние ще измине за 15 min при същото темпо?', answers:['2,5 km','3 km','3,5 km','4 km'], correct:1, note:'За 5 min изминава 1 km, следователно за 15 min – 3 km.'},
+      {q:'От 20 наказателни удара са успешни 15. Каква е успеваемостта?', answers:['60%','70%','75%','80%'], correct:2, note:'15/20 = 0,75 = 75%.'}
+    ]
+  },
+  {
+    icon:'📐', title:'Геометрия около нас',
+    bg:'linear-gradient(135deg,#ede9fe,#ddd6fe)', accent:'#6d28d9',
+    questions:[
+      {q:'Правоъгълна площадка е 16 m × 10 m. Какво е лицето ѝ?', answers:['52 m²','120 m²','160 m²','260 m²'], correct:2, note:'S = 16 × 10 = 160 m².'},
+      {q:'Правоъгълник е с дължина 12 cm и ширина 7 cm. Периметърът е:', answers:['19 cm','38 cm','72 cm','84 cm'], correct:1, note:'P = 2×(12+7) = 38 cm.'},
+      {q:'Квадрат има страна 6 cm. Лицето му е:', answers:['12 cm²','24 cm²','36 cm²','48 cm²'], correct:2, note:'S = 6×6 = 36 cm².'}
+    ]
+  },
+  {
+    icon:'📊', title:'Данни и вероятности',
+    bg:'linear-gradient(135deg,#ffe4e6,#fecdd3)', accent:'#be123c',
+    questions:[
+      {q:'Каква е средната стойност на 10, 12, 12, 14, 16 и 20?', answers:['12','13','14','15'], correct:2, note:'Сборът е 84, а 84 ÷ 6 = 14.'},
+      {q:'Модата на данните 5, 7, 7, 8, 9, 7 е:', answers:['5','7','8','9'], correct:1, note:'Числото 7 се среща най-често.'},
+      {q:'В торбичка има 3 червени и 2 сини жетона. Вероятността за син жетон е:', answers:['1/5','2/5','3/5','4/5'], correct:1, note:'Общо са 5 жетона, от които 2 са сини → 2/5.'}
+    ]
+  },
+  {
+    icon:'🚀', title:'Мисии и проекти',
+    bg:'linear-gradient(135deg,#cffafe,#a5f3fc)', accent:'#0e7490',
+    questions:[
+      {q:'Бюджетът е 500 лв. Ако 40% са резерв, колко лева са това?', answers:['150 лв.','180 лв.','200 лв.','250 лв.'], correct:2, note:'40% от 500 = 200 лв.'},
+      {q:'За проект са нужни 8 комплекта по 12 лв. Каква е общата цена?', answers:['84 лв.','92 лв.','96 лв.','104 лв.'], correct:2, note:'8×12 = 96 лв.'},
+      {q:'От 30 задачи са изпълнени 24. Какъв процент от проекта е завършен?', answers:['70%','75%','80%','85%'], correct:2, note:'24/30 = 0,8 = 80%.'}
+    ]
+  }
+];
+
+let scores=[0,0,0], turn=0, current=null, currentQuestion=0;
+const done=new Set();
+const arenaProgress = Array(6).fill(0);
+
+const arenaGrid=document.getElementById('arenaGrid');
+const questionPanel=document.getElementById('questionPanel');
+const answersBox=document.getElementById('answers');
+const feedback=document.getElementById('feedback');
+const finalPanel=document.getElementById('finalPanel');
+
+function teamName(i){
+  const ids=['teamA','teamB','teamC'];
+  const defaults=['Отбор А','Отбор Б','Отбор В'];
+  const el=document.getElementById(ids[i]);
+  return el.value.trim() || defaults[i];
+}
+function nextTurn(){
+  turn=(turn+1)%3;
+}
+function update(){
+  document.getElementById('scoreA').textContent=scores[0];
+  document.getElementById('scoreB').textContent=scores[1];
+  document.getElementById('scoreC').textContent=scores[2];
+  document.getElementById('turnName').textContent=teamName(turn);
+  document.getElementById('medalCount').textContent=done.size;
+}
+function renderArenas(){
+  arenaGrid.innerHTML='';
+  arenas.forEach((a,i)=>{
+    const b=document.createElement('button');
+    b.className='arena';
+    b.type='button';
+    b.style.background=a.bg;
+    b.style.borderColor=done.has(i)?'#facc15':a.accent;
+    if(done.has(i)) b.disabled=true;
+    const progress = arenaProgress[i];
+    b.innerHTML=
+      '<div class="arena-top">'+
+        '<div class="arena-icon" style="background:'+a.accent+'">'+a.icon+'</div>'+
+        '<span class="points">'+(done.has(i)?'🏅 ГОТОВО':progress+'/3 • '+(progress*10)+' т.')+'</span>'+
+      '</div>'+
+      '<div class="arena-title">'+a.title+'</div>'+
+      '<div class="arena-sub">'+(done.has(i)?'Арената е покорена':'Въпрос '+(progress+1)+' от 3')+'</div>';
+    b.addEventListener('click',()=>openQuestion(i));
+    arenaGrid.appendChild(b);
+  });
+}
+function openQuestion(i){
+  current=i;
+  currentQuestion=arenaProgress[i];
+  const a=arenas[i];
+  const q=a.questions[currentQuestion];
+  document.getElementById('arenaLabel').textContent=a.icon+' '+a.title+' • Въпрос '+(currentQuestion+1)+'/3';
+  document.getElementById('questionText').textContent=q.q;
+  feedback.textContent='Изберете отговор.';
+  feedback.style.background='#f8fafc';
+  feedback.style.color='#334155';
+  answersBox.innerHTML='';
+  q.answers.forEach((ans,idx)=>{
+    const b=document.createElement('button');
+    b.type='button';
+    b.className='answer';
+    b.textContent=ans;
+    b.addEventListener('click',()=>answer(idx));
+    answersBox.appendChild(b);
+  });
+  questionPanel.classList.remove('hidden');
+  finalPanel.classList.add('hidden');
+  questionPanel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function answer(idx){
+  if(current===null) return;
+  const a=arenas[current];
+  const q=a.questions[currentQuestion];
+  const buttons=[...answersBox.querySelectorAll('button')];
+  buttons.forEach(b=>b.disabled=true);
+
+  if(idx===q.correct){
+    scores[turn]+=10;
+    arenaProgress[current]+=1;
+    feedback.textContent='🎉 ВЯРНО! +10 точки за '+teamName(turn)+'. '+q.note;
+    feedback.style.background='#dcfce7';
+    feedback.style.color='#166534';
+
+    if(arenaProgress[current] >= 3){
+      done.add(current);
+      setTimeout(()=>{
+        current=null;
+        questionPanel.classList.add('hidden');
+        nextTurn();
+        update();
+        renderArenas();
+        if(done.size===arenas.length) showFinal();
+      },1200);
+    } else {
+      setTimeout(()=>{
+        nextTurn();
+        update();
+        renderArenas();
+        currentQuestion=arenaProgress[current];
+        const nq=a.questions[currentQuestion];
+        document.getElementById('arenaLabel').textContent=a.icon+' '+a.title+' • Въпрос '+(currentQuestion+1)+'/3';
+        document.getElementById('questionText').textContent=nq.q;
+        feedback.textContent='🎯 Следващ въпрос. На ход е '+teamName(turn)+'.';
+        feedback.style.background='#e0f2fe';
+        feedback.style.color='#075985';
+        answersBox.innerHTML='';
+        nq.answers.forEach((ans,idx2)=>{
+          const b=document.createElement('button');
+          b.type='button';
+          b.className='answer';
+          b.textContent=ans;
+          b.addEventListener('click',()=>answer(idx2));
+          answersBox.appendChild(b);
+        });
+      },1000);
+    }
+  } else {
+    feedback.textContent='❌ Не е вярно. Ходът преминава към '+teamName((turn+1)%3)+'.';
+    feedback.style.background='#fee2e2';
+    feedback.style.color='#991b1b';
+    nextTurn();
+    update();
+    setTimeout(()=>{
+      feedback.textContent='🎯 Нов опит за '+teamName(turn)+'.';
+      feedback.style.background='#f8fafc';
+      feedback.style.color='#334155';
+      buttons.forEach(b=>b.disabled=false);
+    },750);
+  }
+}
+function showFinal(){
+  const maxScore=Math.max(...scores);
+  const winners=[0,1,2].filter(i=>scores[i]===maxScore);
+  let msg='';
+  if(winners.length===1){
+    const w=winners[0];
+    const rest=[0,1,2].filter(i=>i!==w).map(i=>teamName(i)+' – '+scores[i]+' т.').join(' • ');
+    msg='🥇 Шампион е '+teamName(w)+' с '+scores[w]+' точки! '+rest;
+  }else{
+    const names=winners.map(i=>teamName(i)).join(' и ');
+    msg='🤝 Равенство за първото място: '+names+' с по '+maxScore+' точки!';
+  }
+  document.getElementById('winnerText').textContent=msg;
+  finalPanel.classList.remove('hidden');
+  finalPanel.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function resetGame(){
+  scores=[0,0,0]; turn=0; current=null; currentQuestion=0; done.clear(); arenaProgress.fill(0);
+  questionPanel.classList.add('hidden');
+  finalPanel.classList.add('hidden');
+  feedback.textContent='Изберете отговор.';
+  update(); renderArenas();
+}
+document.getElementById('resetBtn').addEventListener('click',resetGame);
+document.getElementById('closeBtn').addEventListener('click',()=>{questionPanel.classList.add('hidden');current=null;});
+document.getElementById('teamA').addEventListener('input',update);
+document.getElementById('teamB').addEventListener('input',update);
+document.getElementById('teamC').addEventListener('input',update);
+document.getElementById('fullBtn').addEventListener('click',async()=>{
+  try{
+    if(!document.fullscreenElement){
+      await document.documentElement.requestFullscreen();
+    }else{
+      await document.exitFullscreen();
+    }
+  }catch(e){}
+});
+document.addEventListener('fullscreenchange',()=>{
+  document.getElementById('fullBtn').textContent=document.fullscreenElement?'⛶ Изход от цял екран':'⛶ Цял екран';
+});
+update();
+renderArenas();
+</script>
+</body>
+</html>

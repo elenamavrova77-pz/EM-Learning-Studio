@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#17365d"/><stop offset=".52" stop-color="#7c3aed"/><stop offset="1" stop-color="#0891b2"/></linearGradient></defs>
+<rect width="1200" height="675" rx="36" fill="url(#g)"/>
+<circle cx="115" cy="100" r="72" fill="#facc15" opacity=".9"/><circle cx="1080" cy="565" r="100" fill="#f472b6" opacity=".5"/>
+<g fill="#fff" opacity=".15" font-family="Arial" font-weight="700"><text x="80" y="580" font-size="110">π</text><text x="1000" y="150" font-size="90">%</text><text x="1020" y="320" font-size="90">△</text><text x="170" y="230" font-size="80">÷</text></g>
+<text x="600" y="180" text-anchor="middle" fill="#fde68a" font-family="Arial" font-size="28" font-weight="800">АВТОРСКА КОЛЕКЦИЯ</text>
+<text x="600" y="265" text-anchor="middle" fill="#fff" font-family="Arial" font-size="64" font-weight="900">МАТЕМАТИКА В ДЕЙСТВИЕ</text>
+<text x="600" y="340" text-anchor="middle" fill="#e0f2fe" font-family="Arial" font-size="36" font-weight="700">Мисии, игри и предизвикателства за 6. клас</text>
+<text x="600" y="430" text-anchor="middle" fill="#fff" font-family="Arial" font-size="30" font-weight="700">Клуб „Математически предизвикателства“</text>
+<text x="600" y="488" text-anchor="middle" fill="#fff" font-family="Arial" font-size="25">30 мисии • 60 учебни часа</text>
+<text x="600" y="555" text-anchor="middle" fill="#fff" font-family="Arial" font-size="24">Ръководител: Елена Маврова-Ненкова</text>
+</svg>
